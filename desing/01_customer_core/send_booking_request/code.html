@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Send Booking Request</title>
+<!-- Fonts and Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for cleaner mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased selection:bg-primary/20 selection:text-primary">
+<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-white dark:bg-slate-900 shadow-2xl overflow-hidden">
+<!-- Header -->
+<div class="sticky top-0 z-50 flex items-center justify-between bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-3 border-b border-slate-100 dark:border-slate-800">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-tight text-center">Confirm and pay</h2>
+<div class="size-10"></div> <!-- Spacer for centering -->
+</div>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto pb-32 no-scrollbar">
+<!-- Experience Summary Card -->
+<div class="p-4">
+<div class="flex gap-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-800 p-3 shadow-sm">
+<div class="h-24 w-24 shrink-0 overflow-hidden rounded-lg bg-slate-200">
+<div class="h-full w-full bg-cover bg-center" data-alt="Close up of hands making fresh pasta on a wooden table" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAIrQusqt1sXVaAgLfGHEKcb8SSAr6fRfJPkCq1nE1u2d0j3GePlsW54N-SJXG5nMs2SzaAUdyv5CxXEjqRFI6h5mRW92m1S005JHlNXndT3lgYd1DsHeugimNUj9xIkmqBF-L2TzuZ-zagIK_Vd5saLxiCK-XSYw_AqqUIPmrKMva4llSK4LqFW-QfCLsMNd5xezPkQzALryN9mLo5uhuMn1TAsSNp_cFpuCYKvCqKfHun_XehG3QYrWSsV4f7WATwmLOKN6hSRR0');"></div>
+</div>
+<div class="flex flex-col justify-center gap-1">
+<div class="flex items-center gap-1 text-xs font-medium text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[16px] text-primary">verified</span>
+<span>Authentic Experience</span>
+</div>
+<h3 class="text-base font-bold leading-snug line-clamp-2">Authentic Tuscan Cooking Class with Nonna</h3>
+<div class="mt-1 flex items-baseline gap-1">
+<span class="text-sm font-semibold text-primary">45€</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">/ person</span>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-t border-slate-100 dark:border-slate-800 mx-4"/>
+<!-- Dates Section -->
+<div class="p-4">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold">Dates</h3>
+<button class="text-sm font-semibold text-primary">Edit</button>
+</div>
+<!-- Calendar Widget -->
+<div class="rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-800 p-4 shadow-sm">
+<div class="flex items-center justify-between mb-4 px-2">
+<button class="p-1 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-full transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300 text-sm">arrow_back_ios</span>
+</button>
+<span class="text-base font-bold">October 2023</span>
+<button class="p-1 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-full transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300 text-sm">arrow_forward_ios</span>
+</button>
+</div>
+<div class="grid grid-cols-7 gap-y-2 mb-2">
+<div class="text-center text-xs font-bold text-slate-400">S</div>
+<div class="text-center text-xs font-bold text-slate-400">M</div>
+<div class="text-center text-xs font-bold text-slate-400">T</div>
+<div class="text-center text-xs font-bold text-slate-400">W</div>
+<div class="text-center text-xs font-bold text-slate-400">T</div>
+<div class="text-center text-xs font-bold text-slate-400">F</div>
+<div class="text-center text-xs font-bold text-slate-400">S</div>
+</div>
+<div class="grid grid-cols-7 gap-y-1">
+<!-- Empty cells -->
+<span></span><span></span><span></span>
+<!-- Days -->
+<button class="h-9 w-full flex items-center justify-center text-sm text-slate-600 dark:text-slate-300">1</button>
+<button class="h-9 w-full flex items-center justify-center text-sm text-slate-600 dark:text-slate-300">2</button>
+<button class="h-9 w-full flex items-center justify-center text-sm text-slate-600 dark:text-slate-300">3</button>
+<button class="h-9 w-full flex items-center justify-center text-sm text-slate-600 dark:text-slate-300">4</button>
+<!-- Selection Range -->
+<div class="h-9 w-full flex items-center justify-center relative">
+<div class="absolute inset-y-0 right-0 w-1/2 bg-primary/10 rounded-l-none"></div>
+<button class="relative z-10 size-9 flex items-center justify-center rounded-full bg-primary text-white text-sm font-semibold shadow-md">5</button>
+</div>
+<div class="h-9 w-full flex items-center justify-center bg-primary/10">
+<span class="text-sm font-medium text-primary">6</span>
+</div>
+<div class="h-9 w-full flex items-center justify-center relative">
+<div class="absolute inset-y-0 left-0 w-1/2 bg-primary/10 rounded-r-none"></div>
+<button class="relative z-10 size-9 flex items-center justify-center rounded-full bg-primary text-white text-sm font-semibold shadow-md">7</button>
+</div>
+<button class="h-9 w-full flex items-center justify-center text-sm text-slate-600 dark:text-slate-300">8</button>
+<button class="h-9 w-full flex items-center justify-center text-sm text-slate-600 dark:text-slate-300">9</button>
+<button class="h-9 w-full flex items-center justify-center text-sm text-slate-600 dark:text-slate-300">10</button>
+</div>
+</div>
+</div>
+<!-- Guests Section -->
+<div class="px-4 pb-6">
+<div class="flex items-center justify-between py-4 border-b border-slate-100 dark:border-slate-800">
+<div>
+<h3 class="text-base font-bold text-slate-900 dark:text-white">Guests</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Age 13+</p>
+</div>
+<div class="flex items-center gap-4">
+<button class="size-8 flex items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-50">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="text-base font-semibold min-w-[1rem] text-center">2</span>
+<button class="size-8 flex items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Message to Host -->
+<div class="px-4 pb-6">
+<h3 class="text-base font-bold mb-3">Message the Host</h3>
+<div class="relative">
+<textarea class="w-full rounded-xl border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 p-4 text-sm focus:border-primary focus:ring-primary min-h-[100px] resize-none" placeholder="Hi! I'm interested in booking..."></textarea>
+<div class="absolute bottom-3 right-3">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">edit</span>
+</div>
+</div>
+</div>
+<!-- Price Summary -->
+<div class="px-4 pb-4">
+<div class="rounded-xl bg-slate-50 dark:bg-slate-800/50 p-5 border border-slate-100 dark:border-slate-800">
+<h3 class="font-bold text-base mb-4">Price Summary</h3>
+<div class="flex justify-between items-center mb-2 text-sm text-slate-600 dark:text-slate-300">
+<span>45€ x 2 guests</span>
+<span>90€</span>
+</div>
+<div class="flex justify-between items-center mb-4 text-sm text-slate-600 dark:text-slate-300">
+<span>Service fee</span>
+<span>10€</span>
+</div>
+<div class="h-px w-full bg-slate-200 dark:bg-slate-700 mb-4"></div>
+<div class="flex justify-between items-center mb-2">
+<span class="font-bold text-slate-900 dark:text-white">Est. Total (EUR)</span>
+<span class="font-bold text-lg text-slate-900 dark:text-white">100€ - 130€</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+<span class="material-symbols-outlined text-[14px] align-text-bottom mr-1">info</span>
+                        Host will confirm final price based on seasonal ingredients.
+                    </p>
+</div>
+</div>
+</div>
+<!-- Sticky Footer Action Bar -->
+<div class="absolute bottom-0 left-0 w-full bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 p-4 pb-8 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+<button class="group relative flex h-12 w-full items-center justify-center overflow-hidden rounded-xl bg-primary text-white shadow-lg shadow-primary/30 transition-all hover:bg-primary/90 active:scale-[0.98]">
+<span class="relative z-10 text-base font-bold tracking-wide">Request Booking</span>
+<div class="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+</button>
+<div class="mt-3 flex justify-center gap-2 items-center">
+<span class="material-symbols-outlined text-slate-400 text-[16px]">shield_lock</span>
+<p class="text-center text-xs font-medium text-slate-500 dark:text-slate-400">
+                    Not a confirmed booking yet. No charge today.
+                </p>
+</div>
+</div>
+</div>
+</body></html>

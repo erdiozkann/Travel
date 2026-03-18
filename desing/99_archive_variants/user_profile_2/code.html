@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Profile - Travel App</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+            extend: {
+                colors: {
+                "primary": "#137fec",
+                "background-light": "#f6f7f8",
+                "background-dark": "#101922",
+                },
+                fontFamily: {
+                "display": ["Plus Jakarta Sans", "sans-serif"]
+                },
+                borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+            },
+        }
+    </script>
+<style>
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased transition-colors duration-300">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white dark:bg-background-dark shadow-xl">
+<header class="sticky top-0 z-50 flex items-center justify-between bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-3 border-b border-slate-100 dark:border-slate-800/50">
+<button class="flex h-10 w-10 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-base font-bold leading-tight tracking-tight text-slate-900 dark:text-white">Profile</h1>
+<button class="flex h-10 w-10 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</header>
+<main class="flex-1 flex flex-col pb-6">
+<div class="flex flex-col items-center pt-6 px-6 pb-2">
+<div class="relative mb-4">
+<div class="h-28 w-28 rounded-full p-1 border-2 border-slate-100 dark:border-slate-700">
+<div class="h-full w-full rounded-full bg-slate-200 bg-cover bg-center" data-alt="Portrait of Alex Traveller smiling outdoors" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFkqn0yMQqKkAhZCuKQVk29cSk-yEulIT5a_h2Hh5Jfle0fLUshEMmu708A2OnfLcu8wTV-RdMeFqxipWlSdWDLQGaPpXMmk-DOgIiAuleIYTTF7WJdZ8erowu7v-_4cwdh6QW10PKQikSwAd-1NTjd0RHwpiXvP88nYO2v0RO-P55jVqfpclARh4wpCvlYcwGYokhvGxFCFTGNaeDq7m8UUtTRhl8LnLo6pEe1P2ursbJS2yS_1C35YTWe4hiff--TrIbHbG6PJA');">
+</div>
+</div>
+<div class="absolute bottom-1 right-1 bg-primary text-white rounded-full p-1.5 border-2 border-white dark:border-background-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+</div>
+</div>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white text-center mb-1">Alex Traveller</h2>
+<p class="text-slate-500 dark:text-slate-400 text-center text-sm font-medium mb-3 max-w-[260px]">Chasing sunsets and local cafes across Europe.</p>
+<div class="flex flex-wrap justify-center gap-2 mb-6">
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">payments</span>
+<span class="text-xs font-bold text-slate-700 dark:text-white">Spend: $$ (Mid)</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-amber-500 text-[18px]">flight_takeoff</span>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-200">Level 4 Explorer</span>
+</div>
+</div>
+<div class="flex w-full gap-3">
+<button class="flex-1 h-10 rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity shadow-sm">
+<span>Edit Profile</span>
+</button>
+<button class="h-10 w-10 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors border border-transparent dark:border-slate-700">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+<div class="h-px w-full bg-slate-100 dark:bg-slate-800/50 my-4"></div>
+<div class="px-4 py-2">
+<div class="flex items-center justify-between mb-3 px-1">
+<h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">public</span>
+                        3 Cities Visited
+                    </h3>
+<button class="text-primary text-xs font-bold hover:underline">View All</button>
+</div>
+<div class="relative w-full aspect-[2/1] rounded-xl overflow-hidden shadow-sm bg-slate-100 dark:bg-slate-900 group cursor-pointer border dark:border-slate-800">
+<div class="absolute inset-0 bg-cover bg-center opacity-70 dark:opacity-60 grayscale hover:grayscale-0 transition-all duration-500 dark:invert dark:contrast-125" data-alt="Minimalist map of Europe showing outlines of countries" data-location="Europe Map" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA3DjxIRYLHYuuWgdnL-wfFPUViyr3Xfo5fjT3P_TyVqzbgYB8dqgu9hF6X2NH9g1hVuC4L8Q3u3djv9SMJO6zXDB2eYf-0f6fmollhb-Boa9F9ZJzKTf_f9SSMmXZgCwFBJ--8vExFUfhGI0XBuACB5jqjROEM92Kj-pT-_Bu2BlhK4HiQZjB4PGqx5paUCTaCHOdup4ibw3lL-TqWLA7GTGrqNtT8lFdb9hqk0o7Ry-CK_idL1tN1O22M5iPr0Kbscxri84Gmz7A');">
+</div>
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/grid-me.png')] opacity-10 dark:opacity-5"></div>
+<div class="absolute bottom-[20%] left-[15%] flex flex-col items-center group/pin">
+<div class="h-3 w-3 bg-primary rounded-full ring-4 ring-white/30 dark:ring-primary/20 animate-pulse"></div>
+</div>
+<div class="absolute top-[35%] left-[30%] flex flex-col items-center group/pin">
+<div class="h-3 w-3 bg-primary rounded-full ring-4 ring-white/30 dark:ring-primary/20"></div>
+</div>
+<div class="absolute top-[30%] left-[42%] flex flex-col items-center group/pin">
+<div class="h-3 w-3 bg-primary rounded-full ring-4 ring-white/30 dark:ring-primary/20"></div>
+</div>
+<div class="absolute bottom-2 right-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-2 py-1 rounded text-[10px] font-bold text-slate-600 dark:text-slate-200 shadow-sm border border-slate-100 dark:border-slate-700">
+                        Tap to explore
+                    </div>
+</div>
+</div>
+<div class="mt-4 sticky top-[60px] z-40 bg-white dark:bg-background-dark pt-2 transition-colors duration-300">
+<div class="flex border-b border-slate-100 dark:border-slate-800 px-4">
+<button class="flex flex-1 flex-col items-center justify-center pb-3 pt-2 border-b-2 border-primary text-slate-900 dark:text-white">
+<span class="material-symbols-outlined mb-1 text-[20px]">grid_view</span>
+<span class="text-xs font-bold uppercase tracking-wider">Posts</span>
+</button>
+<button class="flex flex-1 flex-col items-center justify-center pb-3 pt-2 border-b-2 border-transparent text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300">
+<span class="material-symbols-outlined mb-1 text-[20px]">bookmark</span>
+<span class="text-xs font-bold uppercase tracking-wider">Saved</span>
+</button>
+</div>
+</div>
+<div class="p-4 bg-white dark:bg-background-dark min-h-[400px] transition-colors duration-300">
+<div class="columns-2 gap-3 space-y-3">
+<div class="break-inside-avoid relative group rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800 dark:border dark:border-slate-700/50 shadow-sm">
+<img alt="Eiffel Tower view from a street in Paris" class="w-full h-auto object-cover" data-alt="Street view of Paris with Eiffel Tower in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7vC1Hst_5C-QvUgDn6zPXStapgCJ-qpNSbxmnDSr0yrcMiXXcz_1XuA63ItQILI4M2FZ-YjL1uJQEa_f2Sigh2BoGpR0JY00SzgezwM6LrtvjHqpEAoOthnjDfkKAyOELgB30sGT1Qwfv6NAu7WPQqqIsrOD85yGLpt2f9uxwSxF4D_A4VLCEyDpvoMkgpk8vtrIVAYssP2O9-U7xUagmqTyMrEI6mOSxOiYas09K4LWCiK_K3PhX9H3_Fakp5MlIb0Fx6ylcHGg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-3">
+<span class="text-white text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Paris
+                            </span>
+</div>
+</div>
+<div class="break-inside-avoid relative group rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800 dark:border dark:border-slate-700/50 shadow-sm">
+<img alt="Yellow tram in Lisbon streets" class="w-full h-auto object-cover" data-alt="Yellow tram moving through Lisbon streets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYrB0nwapU10T1F1bCXYv6HUVKtj3PW0TslYjUBDZnIrYUDCbemMzO2eIFfxFDBxUOLj655RL0d2l_7QV0UkmJ-fdtLmmgAV5ha5vRTkJdoh4_9GSyLOy-ywtSFxr1jvgF3sy_o6E56gIjXY10lRkUbzJ6snHchbDX5ZBH5bnXQns48TOTJF85NNM8XVVuQB_O1SiKFsX6QNcQBS6Ie5tkpjPV93DiUiibN-3tqOUA4qRpwj-mzWKaL0kdLpf_NdtT6dwcKQfNUUc"/>
+<div class="absolute top-2 right-2 bg-black/40 backdrop-blur-sm rounded-full p-1.5">
+<span class="material-symbols-outlined text-white text-[14px] block">collections</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-3">
+<span class="text-white text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Lisbon
+                            </span>
+</div>
+</div>
+<div class="break-inside-avoid relative group rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800 dark:border dark:border-slate-700/50 shadow-sm">
+<img alt="Brandenburg Gate in Berlin" class="w-full h-auto object-cover" data-alt="Berlin Brandenburg Gate architecture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_vGOBNkAgN0LjteoM7y763kSQ7Jccm-dnt8qSShBECTweULZEj9X8iVoqH_EXkghOzkIR-iz40m1Tf5RBeLc8myvxDC4LxYzBB4jQbnyE83Qu5Ak-OB9jA2EY486buI8dn1b0bISe2ek14nMIRS0Hj2catE0R7uRkD9t_s5aicaV71ih8E-3f0bcAggU0DNVT8jKfFFJNrC2l-Ap2qC6XflIXt-grUuzfzRVz5vJcwgCi2If-bo29QDkC4x64SrCcxpjuMxG25FQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-3">
+<span class="text-white text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Berlin
+                            </span>
+</div>
+</div>
+<div class="break-inside-avoid relative group rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800 dark:border dark:border-slate-700/50 shadow-sm">
+<img alt="Coffee cup on a table with a view" class="w-full h-auto object-cover" data-alt="Coffee and croissant on a table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJPMvdNxAvz10UYN8iZ_EJ0LknJCJDBlcT-dWa3EAPq4Zpk3_0HlOF-Ec7Y6IiXbhY1wwsJz1gl0mMr9DhjJ1foUbtVHYwyfilpCxSruqs6867uetMP4T2uTOPMfOmgWvy3Rnz2zN-p6v_r_pLKRwCjdTd3n-DDyf5QMS9tkraiP9ZsQMecNpVyjHXBk9nRLPtyAjUyDmDPUqlb2ItGaH5hOTriQarWjWbhpANKl1XRzLQKguWzL9TzuYQf0G-9GIYqSg9YBdj_40"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-3">
+<span class="text-white text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Cafe
+                            </span>
+</div>
+</div>
+<div class="break-inside-avoid relative group rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800 dark:border dark:border-slate-700/50 shadow-sm">
+<img alt="Scenic sunset over a river" class="w-full h-auto object-cover" data-alt="Sunset view over European river" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYIZuOFOlimWdSEMFtCcat-8Tq0rbYwVjCXyDdyXSVXsJKXX3YxmSbQWBbK2x5-ln87YUO1HdOq7s_68GOS_O3Jat53obL4rBBAvnwlgRk47axa3EOKXbapaPyByu22toLymCV7Rzq0ZCHAqKEdJNvhSzdu8tWfSotrdZLYCEI6WFxcLMCqzhqUiQodqkysL_m70x0kYCWRM6AoLOVehvOA4CHDHzOmfXY_yVHQD6cpqQv-mInSTgqBL5fhSfCW0JlM56QeXfuHl8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-3">
+<span class="text-white text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Danube
+                            </span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

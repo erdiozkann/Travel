@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Main Map View - Light Mode</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#3b82f6",
+              "background-light": "#f6f7f8",
+              "background-dark": "#0B1120",
+              "surface-light": "#FFFFFF",
+              "surface-dark": "#1E293B",
+              "pin-gold": "#EAB308",
+              "pin-teal": "#0D9488",
+              "pin-coffee": "#D97757",
+              "pin-sights": "#6366F1",
+              "text-main": "#1e293b",
+              "text-secondary": "#64748b",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+            boxShadow: {
+              'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.08), 0 2px 8px -2px rgba(0, 0, 0, 0.04)',
+              'card': '0 10px 40px -10px rgba(0, 0, 0, 0.1)',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }.light-map-tiles {
+            filter: grayscale(20%) contrast(95%) brightness(105%);
+        }.material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .font-variation-settings-fill {
+           font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-gray-50 text-text-main h-screen overflow-hidden flex flex-col relative">
+<div class="absolute inset-0 z-0 bg-[#E8EAED]">
+<div class="w-full h-full bg-cover bg-center opacity-80 light-map-tiles" data-alt="Map of a city showing streets and blocks in light mode" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJGfYYRFKDW7crsteaFnlDBmOILLfd2rqkWyLiBX8jSkeLXInwRUPdD6BDDB4NmSJD612XKw6E_QEW9w7TACvWUPIEzwanTNLVxm8ND39EYAyYkkEBdEiSIVXj9rF1uJZ4fVK6tZGbowUCvTc4HBQqwXhQzEbmnTnOpCeL2aZ56oihqvTmmYZm_RMWfIEMpCSPUVHQX6h_E0dYvGlZXwhPpmbU2GuUXq1D-1xPO0Z9MsQJFaUROqeqPFD2nit8SB5N9-L1lYMjGVY');">
+</div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-1 cursor-pointer group z-20 hover:scale-105 transition-transform duration-200">
+<div class="absolute inset-0 bg-pin-coffee/20 blur-md rounded-full animate-pulse"></div>
+<div class="relative flex items-center gap-2 bg-pin-coffee text-white px-4 py-2.5 rounded-full shadow-[0_4px_12px_rgba(217,119,87,0.4)] ring-4 ring-white border border-transparent">
+<span class="material-symbols-outlined text-[20px]">local_cafe</span>
+<span class="text-base font-bold text-white tracking-wide">€€</span>
+</div>
+<div class="w-2.5 h-2.5 bg-pin-coffee rotate-45 -mt-2 rounded-[1px] shadow-sm relative z-10 ring-2 ring-white"></div>
+</div>
+<div class="absolute top-[30%] left-[20%] flex flex-col items-center gap-1 cursor-pointer hover:scale-110 transition-transform duration-200 z-10 opacity-90 hover:opacity-100">
+<div class="flex items-center gap-1.5 bg-pin-teal text-white px-3 py-2 rounded-full shadow-[0_4px_10px_rgba(13,148,136,0.3)] ring-2 ring-white border border-transparent">
+<span class="material-symbols-outlined text-[18px]">restaurant</span>
+<span class="text-sm font-bold">€</span>
+</div>
+<div class="w-2 h-2 bg-pin-teal rotate-45 -mt-2 rounded-[1px] ring-1 ring-white"></div>
+</div>
+<div class="absolute bottom-[40%] right-[15%] flex flex-col items-center gap-1 cursor-pointer hover:scale-110 transition-transform duration-200 z-10 opacity-90 hover:opacity-100">
+<div class="flex items-center gap-1.5 bg-pin-gold text-white px-3 py-2 rounded-full shadow-[0_4px_10px_rgba(234,179,8,0.3)] ring-2 ring-white border border-transparent">
+<span class="material-symbols-outlined text-[18px]">wine_bar</span>
+<span class="text-sm font-bold">€€€</span>
+</div>
+<div class="w-2 h-2 bg-pin-gold rotate-45 -mt-2 rounded-[1px] ring-1 ring-white"></div>
+</div>
+<div class="absolute top-[20%] right-[30%] flex flex-col items-center gap-1 cursor-pointer hover:scale-110 transition-transform duration-200 z-10 opacity-90 hover:opacity-100">
+<div class="flex items-center gap-1.5 bg-pin-sights text-white px-3 py-2 rounded-full shadow-[0_4px_10px_rgba(99,102,241,0.3)] ring-2 ring-white border border-transparent">
+<span class="material-symbols-outlined text-[18px]">attractions</span>
+<span class="text-sm font-bold">€€</span>
+</div>
+<div class="w-2 h-2 bg-pin-sights rotate-45 -mt-2 rounded-[1px] ring-1 ring-white"></div>
+</div>
+</div>
+<div class="absolute top-0 left-0 right-0 z-20 px-4 pt-14 pb-4 bg-gradient-to-b from-white/60 via-white/30 to-transparent pointer-events-none">
+<div class="flex items-center gap-3 pointer-events-auto">
+<div class="flex-1 glass-panel rounded-full shadow-soft flex items-center h-12 px-4 transition-all hover:bg-white">
+<span class="material-symbols-outlined text-slate-500 mr-3">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-slate-800 placeholder-slate-400 text-base p-0 font-medium" placeholder="Find authentic spots..." type="text"/>
+</div>
+<button class="glass-panel h-12 w-12 rounded-full shadow-soft flex items-center justify-center text-slate-700 active:scale-95 transition-transform hover:bg-white hover:text-primary">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+<div class="flex gap-2 mt-3 overflow-x-auto hide-scrollbar pointer-events-auto pl-1 pb-2">
+<button class="bg-slate-800 text-white px-4 py-1.5 rounded-full text-sm font-semibold shadow-md whitespace-nowrap border border-slate-800">
+            All
+        </button>
+<button class="glass-panel text-slate-600 px-4 py-1.5 rounded-full text-sm font-medium shadow-sm whitespace-nowrap hover:bg-white hover:text-slate-900 transition-colors border-white/50">
+            Restaurants
+        </button>
+<button class="glass-panel text-slate-600 px-4 py-1.5 rounded-full text-sm font-medium shadow-sm whitespace-nowrap hover:bg-white hover:text-slate-900 transition-colors border-white/50">
+            Coffee
+        </button>
+<button class="glass-panel text-slate-600 px-4 py-1.5 rounded-full text-sm font-medium shadow-sm whitespace-nowrap hover:bg-white hover:text-slate-900 transition-colors border-white/50">
+            Sights
+        </button>
+</div>
+</div>
+<div class="absolute right-4 bottom-32 z-20 flex flex-col gap-3">
+<button class="bg-white h-12 w-12 rounded-full shadow-card flex items-center justify-center text-slate-700 active:scale-95 transition-transform hover:bg-gray-50 border border-gray-100">
+<span class="material-symbols-outlined">layers</span>
+</button>
+<button class="bg-white h-12 w-12 rounded-full shadow-card flex items-center justify-center text-blue-500 active:scale-95 transition-transform hover:bg-gray-50 border border-gray-100">
+<span class="material-symbols-outlined font-variation-settings-fill">my_location</span>
+</button>
+</div>
+<div class="absolute bottom-[80px] left-0 right-0 z-30 px-4 pb-2">
+<div class="bg-white/95 backdrop-blur-xl border border-white/50 rounded-2xl shadow-card overflow-hidden animate-in slide-in-from-bottom-10 duration-500">
+<div class="w-full flex justify-center pt-3 pb-1">
+<div class="h-1 w-10 rounded-full bg-slate-200"></div>
+</div>
+<div class="p-4 pt-1">
+<div class="flex gap-4">
+<div class="w-24 h-24 rounded-lg bg-cover bg-center shrink-0 shadow-md ring-1 ring-black/5" data-alt="Close up of latte art in a coffee cup" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCd_g5B3U8HAY1SnPto0c_g7kX7jGdlFVy7wPrHA8h0vmEbN7SqzphvekjOsNnO3vC3gtdqKQtFqfqH3HrTPqKKe5dtcTPhElRJdd906bfHW3lA9_75O_BXH_FL18HenUi0gbtr4yAYR0OqHp3Y8j46k9YXIYk-79sqylUHCIgM8I4hjL2lkcLPV86P28mLSEMOtR8QxfgrDXhTQgCAy8jtCrx5PxFGKQRWcLdFc8c9igWRy3GCiQA68byGOppm4S0JjvIK3SwGZYk');">
+</div>
+<div class="flex flex-col flex-1 justify-between py-0.5">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-xl font-bold text-slate-900 leading-tight tracking-tight">The Local Roast</h3>
+<button class="text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</button>
+</div>
+<p class="text-sm text-slate-500 mt-1.5 flex items-center gap-1.5">
+<span class="text-amber-400 material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-semibold text-slate-800">4.8</span>
+<span class="text-slate-400 text-xs">(120)</span>
+<span class="w-1 h-1 rounded-full bg-slate-300"></span>
+<span class="font-bold text-slate-700">€€</span>
+<span class="w-1 h-1 rounded-full bg-slate-300"></span>
+<span class="text-slate-600">Coffee</span>
+</p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-bold bg-blue-50 text-blue-600 border border-blue-100">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                            Local Favorite
+                        </span>
+</div>
+</div>
+</div>
+<div class="mt-5 grid grid-cols-4 gap-3">
+<button class="col-span-3 bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 px-4 rounded-xl text-sm transition-colors flex items-center justify-center gap-2 shadow-lg shadow-slate-900/10">
+                    View Details
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button class="col-span-1 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-medium py-3 rounded-xl text-sm transition-colors flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]">directions</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-0 w-full h-[80px] bg-white/95 backdrop-blur-xl border-t border-slate-100 z-50 flex items-start pt-3 justify-around pb-6 shadow-[0_-4px_20px_rgba(0,0,0,0.03)]">
+<button class="flex flex-col items-center gap-1.5 w-16 group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform font-variation-settings-fill">explore</span>
+<span class="text-[10px] font-bold text-primary">Explore</span>
+</button>
+<button class="flex flex-col items-center gap-1.5 w-16 group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-slate-600 transition-colors">favorite</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-slate-600 transition-colors">Saved</span>
+</button>
+<button class="flex flex-col items-center gap-1.5 w-16 group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-slate-600 transition-colors">airplane_ticket</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-slate-600 transition-colors">Trips</span>
+</button>
+<button class="flex flex-col items-center gap-1.5 w-16 group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-slate-600 transition-colors">person</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-slate-600 transition-colors">Profile</span>
+</button>
+</div>
+
+</body></html>

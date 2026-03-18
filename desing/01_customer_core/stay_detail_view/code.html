@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stay Detail View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased selection:bg-primary/30">
+<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-white dark:bg-slate-900 shadow-2xl overflow-hidden pb-24">
+<!-- Hero Section / Image Gallery -->
+<div class="relative w-full h-[320px] group">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Modern loft living room with high ceilings and natural light" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCxBb-XlHwvlvZSSY7yvxwwSuvG6zL0TAyaKiEWCrwQ6u-21ZLBWoQ-JfNg72H4gMDLk8vXjOQVci3KEke3QhsnEKy-ZJyEhmE2VPkpvw_awIjSSh4nsbf3VivCXDPyixEn-T6bmA0PMixjNHATwAeP0rLdKNNvECVJv-Q6pd5kyb1ttm8kLaCO_uaGG9CAuNH7K47mXZEdmlK-4g_6OaRQ4E2HDvcnbJeq1ZLBq09G3Q3TYlNZn14vOHQqjfh4bRPO-09cTNLAg8Y');"></div>
+<!-- Top Navigation Overlay -->
+<div class="absolute top-0 left-0 w-full p-4 pt-12 flex justify-between items-center z-10 bg-gradient-to-b from-black/50 to-transparent">
+<button class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/30 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex gap-3">
+<button class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/30 transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/30 transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+</div>
+<!-- Gallery Indicators -->
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
+<div class="w-2 h-2 rounded-full bg-white shadow-sm"></div>
+<div class="w-2 h-2 rounded-full bg-white/50 shadow-sm"></div>
+<div class="w-2 h-2 rounded-full bg-white/50 shadow-sm"></div>
+<div class="w-2 h-2 rounded-full bg-white/50 shadow-sm"></div>
+<div class="w-2 h-2 rounded-full bg-white/50 shadow-sm"></div>
+</div>
+<!-- Map FAB -->
+<button class="absolute bottom-4 right-4 h-10 px-4 rounded-full bg-white/90 dark:bg-slate-800/90 backdrop-blur-md shadow-lg flex items-center gap-2 text-xs font-bold text-slate-900 dark:text-white border border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-[18px]">map</span>
+                See on map
+            </button>
+</div>
+<!-- Main Content -->
+<div class="flex flex-col px-4 pt-6 gap-6 relative rounded-t-3xl -mt-6 bg-white dark:bg-slate-900 z-0">
+<!-- Header Info -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-start gap-4">
+<div>
+<h1 class="text-2xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white">Architectural Loft in Alfama</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1 font-medium">Lisbon, Portugal</p>
+</div>
+</div>
+<!-- Price & Rating Row (Above Fold) -->
+<div class="flex items-center justify-between mt-2 pt-4 border-t border-slate-100 dark:border-slate-800">
+<div class="flex flex-col">
+<span class="text-lg font-bold text-slate-900 dark:text-white">€120–€150 <span class="text-sm font-normal text-slate-500 dark:text-slate-400">/ night</span></span>
+</div>
+<div class="flex items-center gap-1.5 bg-slate-50 dark:bg-slate-800 px-3 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-primary text-[20px] fill-current">star</span>
+<span class="font-bold text-slate-900 dark:text-white">4.9</span>
+<span class="text-slate-400 text-xs">(124)</span>
+</div>
+</div>
+</div>
+<!-- AI Summary Block -->
+<div class="rounded-xl p-4 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-800/50 border border-blue-100 dark:border-slate-700">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-[20px]">auto_awesome</span>
+<span class="text-xs font-bold uppercase tracking-wider text-primary">AI Summary</span>
+<div class="ml-auto px-2 py-0.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] font-bold rounded-full border border-green-200 dark:border-green-800">
+                        High Confidence
+                    </div>
+</div>
+<p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                    Guests consistently praise the <span class="font-semibold text-slate-900 dark:text-white">stunning river views</span> and <span class="font-semibold text-slate-900 dark:text-white">quiet location</span>. The host, Joana, is noted for quick responses.
+                </p>
+</div>
+<!-- Room Gallery (Reused/Modified Component) -->
+<div class="flex flex-col gap-3">
+<h3 class="text-base font-bold text-slate-900 dark:text-white">Tour the space</h3>
+<div class="flex w-full overflow-x-auto hide-scrollbar -mx-4 px-4 pb-2">
+<div class="flex min-h-min flex-row items-start justify-start gap-3">
+<div class="flex flex-col justify-center gap-2 w-28 flex-shrink-0 group cursor-pointer">
+<div class="w-full bg-center bg-no-repeat aspect-[4/5] bg-cover rounded-xl shadow-sm group-hover:shadow-md transition-all duration-300" data-alt="Bright modern living room with sofa" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB-O2593-z9oDUqkeTMTKFPQc3Hs71LdezNj3OFLXwoT3mH98ftmAZkwAivtJNifv741lN-RhrDxXTW43YJU7L-79bHFdcTjQFTGaIZO5AxnDE29nVIEmRlEsAM9a0rQxT7uk6qLkxlI2dL2uiTerxKToyNfssZwRtzSfwJOv9xXMKPeQJZyr0YsuCY_TZ1hMe232VswFB-SXx3rvPjdOq0OpqFiKZAsjaRLdgiuULyKadmdlVSTEyfOxDQIm1l0elYPeBQart7g8k");'></div>
+<p class="text-slate-900 dark:text-white text-xs font-medium text-center">Living Room</p>
+</div>
+<div class="flex flex-col justify-center gap-2 w-28 flex-shrink-0 group cursor-pointer">
+<div class="w-full bg-center bg-no-repeat aspect-[4/5] bg-cover rounded-xl shadow-sm group-hover:shadow-md transition-all duration-300" data-alt="Cozy bedroom with white linens" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAn2lQERj4O8MtAshjXULw-QSJfSSdqP_DWizsLM3n76Djs-AlA-qZKfao2w3CkIYikg5OqKuvc8JPcVF-7epNV7iXKel3KREDBtyPSAP-cGrrTuo9ZQB1I4wWTYJW3USXKrsBUnRkJODJ_KvfbG-kqr5v55HF6yIAGQDEfBJ-JxAWbaK3aAQ5-yDo765hT2lFWfKnjYQuaWsItT1Y0Y1YHvxhxZqZ1EJRZ-Y10Xe2hBUABbREogC7ZTa8NUBk4xCSGF5jB1zt1YZs");'></div>
+<p class="text-slate-900 dark:text-white text-xs font-medium text-center">Bedroom</p>
+</div>
+<div class="flex flex-col justify-center gap-2 w-28 flex-shrink-0 group cursor-pointer">
+<div class="w-full bg-center bg-no-repeat aspect-[4/5] bg-cover rounded-xl shadow-sm group-hover:shadow-md transition-all duration-300" data-alt="Modern kitchen with wooden island" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAjfVnRU2I7hErPiKHVfpWzk6B-jkxxdAdZEQNXQlhAYtoO1s7S-ifRCuxxKyf7imp8PIoRMHm1p08oOBcte7Es04Ht-udjjp-G-iKN-UUHi-8-bwtp3zY6mt2HdvG72DTy6TR53hEz5_spnMeKGrL5jYlT6qFr33Ysdko0cqsxbDmR1uHjivVH3loO5Pqdft4ic6MODw5dmlLVJh7TC4UHylZmphHw-jBEcbk4QQ8pmwj6mr_T2YDAU0z4qHDwIcNMg35QdpkDln8");'></div>
+<p class="text-slate-900 dark:text-white text-xs font-medium text-center">Kitchen</p>
+</div>
+<div class="flex flex-col justify-center gap-2 w-28 flex-shrink-0 group cursor-pointer">
+<div class="w-full bg-center bg-no-repeat aspect-[4/5] bg-cover rounded-xl shadow-sm group-hover:shadow-md transition-all duration-300" data-alt="Clean minimalist bathroom" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBuOm3cGLofdO0ZlMQk9-7pRotL6jJ0_qvg6d-a0S0WlAUQ2XzTZb6-oc0b-p5WCh6VIZB2YUINcOTaVKdrQctEwHCzv_Utn-ZoyRGt3-pa4Ts8gZs-zVk-BHNiGODazaMOdArqIddX3bQHMAERVgm-4Hekp_a-b_l-T1rzQybluliVWReBE8OEerR2_HArLByy6lOi18wt1CJQb0F2ifEMr5uXVxnz4IxGcCR1illiWZcScxjBvP8bkRQ__gLqYdnNisK4xa6pfBw");'></div>
+<p class="text-slate-900 dark:text-white text-xs font-medium text-center">Bathroom</p>
+</div>
+<div class="flex flex-col justify-center gap-2 w-28 flex-shrink-0 group cursor-pointer">
+<div class="w-full bg-center bg-no-repeat aspect-[4/5] bg-cover rounded-xl shadow-sm group-hover:shadow-md transition-all duration-300" data-alt="View from the balcony" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuARgmpfxvl-t9SREe1_yH5NBBZEq41wM4cFf-iqD04GpTCW92CoRZz0AlcZgcDwfP6DFW8Wxz8Llgx5j-O31SZSStwRkWYP_e2fmVlpGEOkbkOBk-Z7mh15Q-GN69m9gk9xrX_sJZs1GXnt-ZhOtL91Dt5Vw6v612JwAa6tjtCu0_aRw6YZvIdUStlJbrMYrNT9P7VbU79Z_k6XApaM5c74dMeVbuXr95WUY-HYttZGt1ioMLqVlTtXmAa85gAuwABqSuZ1Fl1OtT4");'></div>
+<p class="text-slate-900 dark:text-white text-xs font-medium text-center">View</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Details Grid -->
+<div class="grid grid-cols-2 gap-3 p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl">
+<div class="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-slate-400">group</span>
+<span>4 Guests</span>
+</div>
+<div class="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-slate-400">door_front</span>
+<span>2 Bedrooms</span>
+</div>
+<div class="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-slate-400">bed</span>
+<span>3 Beds</span>
+</div>
+<div class="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-slate-400">bathtub</span>
+<span>1 Bath</span>
+</div>
+</div>
+<!-- Host Section -->
+<div class="flex items-center justify-between py-2">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover border-2 border-white dark:border-slate-800 shadow-sm" data-alt="Portrait of the host Joana" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAonrs0n790x7f-vBLLjl_e_sRNGtHad_30bLmF1r5w-wucTwqKrpdOzNphpLB0DpNCkxH6BJLBxfna2AzsV82bZoiG-A4lI07jvcSLvh2MfJxXGffbIfS4JR1aX52ZGJcSjgSjdcPOjNXXrXZeopssnUtlnN_-_GlsV15HpXjiQN1fX5BEo_3YryA09_YK8GeU1TMI4JQ63tM9ZMoeqHhEv5nn_V9BCycI5KG_q6VFVpoY2lxhyQwKETm2OXF5u4EA85LgoQqe2zY"/>
+<div class="absolute -bottom-1 -right-1 bg-primary text-white rounded-full p-0.5 border-2 border-white dark:border-slate-800">
+<span class="material-symbols-outlined text-[12px] block">check</span>
+</div>
+</div>
+<div>
+<h3 class="text-sm font-bold text-slate-900 dark:text-white">Hosted by Joana</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400">Joined in 2019 • Superhost</p>
+</div>
+</div>
+<button class="text-sm font-semibold text-primary border border-primary/20 bg-primary/5 px-4 py-2 rounded-full hover:bg-primary/10 transition-colors">
+                    Contact
+                </button>
+</div>
+<hr class="border-slate-100 dark:border-slate-800"/>
+<!-- Amenities -->
+<div class="flex flex-col gap-3">
+<h3 class="text-base font-bold text-slate-900 dark:text-white">Amenities</h3>
+<div class="flex flex-wrap gap-3">
+<div class="flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-[18px]">wifi</span>
+                        Fast Wi-Fi
+                    </div>
+<div class="flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-[18px]">kitchen</span>
+                        Kitchen
+                    </div>
+<div class="flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-[18px]">desk</span>
+                        Workspace
+                    </div>
+<div class="flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-[18px]">ac_unit</span>
+                        Air Conditioning
+                    </div>
+<div class="flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-[18px]">local_laundry_service</span>
+                        Washer
+                    </div>
+</div>
+<button class="w-full py-3 mt-2 text-sm font-semibold text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                    Show all 24 amenities
+                </button>
+</div>
+<hr class="border-slate-100 dark:border-slate-800"/>
+<!-- Ratings Breakdown (Reused Component) -->
+<div class="flex flex-col gap-4">
+<h3 class="text-base font-bold text-slate-900 dark:text-white">Reviews</h3>
+<div class="flex flex-wrap gap-x-8 gap-y-6">
+<div class="flex flex-col gap-2">
+<p class="text-slate-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">4.9</p>
+<div class="flex gap-0.5 text-primary">
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px]">star_half</span>
+</div>
+<p class="text-slate-900 dark:text-white text-sm font-normal leading-normal">124 reviews</p>
+</div>
+<div class="grid min-w-[200px] flex-1 grid-cols-[20px_1fr_40px] items-center gap-y-2">
+<!-- 5 Star -->
+<p class="text-slate-900 dark:text-white text-xs font-medium">5</p>
+<div class="flex h-1.5 flex-1 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
+<div class="rounded-full bg-primary" style="width: 80%;"></div>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-xs text-right">80%</p>
+<!-- 4 Star -->
+<p class="text-slate-900 dark:text-white text-xs font-medium">4</p>
+<div class="flex h-1.5 flex-1 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
+<div class="rounded-full bg-primary" style="width: 12%;"></div>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-xs text-right">12%</p>
+<!-- 3 Star -->
+<p class="text-slate-900 dark:text-white text-xs font-medium">3</p>
+<div class="flex h-1.5 flex-1 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
+<div class="rounded-full bg-primary" style="width: 5%;"></div>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-xs text-right">5%</p>
+<!-- 2 Star -->
+<p class="text-slate-900 dark:text-white text-xs font-medium">2</p>
+<div class="flex h-1.5 flex-1 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
+<div class="rounded-full bg-primary" style="width: 2%;"></div>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-xs text-right">2%</p>
+<!-- 1 Star -->
+<p class="text-slate-900 dark:text-white text-xs font-medium">1</p>
+<div class="flex h-1.5 flex-1 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
+<div class="rounded-full bg-primary" style="width: 1%;"></div>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-xs text-right">1%</p>
+</div>
+</div>
+</div>
+<!-- Map Section -->
+<div class="flex flex-col gap-3 pb-8">
+<h3 class="text-base font-bold text-slate-900 dark:text-white">Where you'll be</h3>
+<div class="w-full h-48 rounded-xl bg-slate-200 dark:bg-slate-800 bg-cover bg-center relative overflow-hidden" data-location="Lisbon Map" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAsl3B2Bz7yomUU93RAdQyotInwaZ7KSpG3vfdKHQoShQ2gnL02vKOmOD_Nf_mTQNA3fnVrQFBMY2ef5_AdobCLVokLHnriqQ2f4DnHNNdYyUWJSbXv5kG-2HmAGXQ4T-MDagnK2FJDSrZlbbURsx8Zv1-CqBIFiLz12ENzw9KQP1xI4qOolDOusgj9u6zL44RfQ5ivmA7-4z8cTV5_B-QapGNH5gf4RlDpoD7R-547EOfCIzf-PYt1N4OuSUaER27fUOVytOF-3sY');">
+<div class="absolute inset-0 flex items-center justify-center bg-black/10">
+<div class="w-12 h-12 bg-primary/90 text-white rounded-full flex items-center justify-center shadow-xl ring-4 ring-white/30 backdrop-blur-sm">
+<span class="material-symbols-outlined">home</span>
+</div>
+</div>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400">Alfama is Lisbon's oldest quarter. It spreads down the southern slope from the Castle of São Jorge to the Tagus river.</p>
+</div>
+</div>
+<!-- Sticky Footer -->
+<div class="fixed bottom-0 w-full max-w-md bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 p-4 pb-8 z-50">
+<div class="flex items-center justify-between gap-4">
+<div class="flex flex-col">
+<span class="text-lg font-bold text-slate-900 dark:text-white">€135</span>
+<span class="text-xs text-slate-500 dark:text-slate-400 decoration-slate-400 underline decoration-dashed">Total for 5 nights</span>
+</div>
+<button class="bg-primary hover:bg-blue-600 text-white font-bold h-12 px-8 rounded-xl shadow-lg shadow-blue-500/30 transition-all active:scale-95 flex-1 max-w-[200px]">
+                    Request booking
+                </button>
+</div>
+</div>
+</div>
+</body></html>

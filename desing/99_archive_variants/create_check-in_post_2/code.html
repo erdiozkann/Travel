@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Create Check-in Post</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3b82f6","primary-dark": "#2563eb",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#0f1115","surface-dark": "#181b21","accent-soft": "#3b82f6",},
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }.no-scrollbar {
+            -ms-overflow-style: none;scrollbar-width: none;}
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark font-display antialiased text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto shadow-2xl bg-background-dark border-x border-gray-800">
+<header class="sticky top-0 z-50 flex items-center justify-between bg-background-dark/90 px-4 py-3 backdrop-blur-md border-b border-gray-800 transition-colors">
+<button class="text-gray-400 text-base font-medium hover:text-white transition-colors">Cancel</button>
+<h2 class="text-white text-base font-bold leading-tight tracking-[-0.015em]">New Check-in</h2>
+<button class="text-accent-soft text-base font-bold leading-normal hover:text-blue-400 transition-colors">Post</button>
+</header>
+<main class="flex-1 flex flex-col gap-6 pb-20 pt-4">
+<section class="px-4">
+<div class="relative w-full aspect-[4/5] bg-gray-900 rounded-2xl overflow-hidden shadow-lg group border border-gray-800">
+<div class="absolute inset-0 bg-cover bg-center opacity-90" data-alt="Close up of a delicious Portuguese custard tart (Pastel de Nata) with cinnamon dusting" data-location="Lisbon, Portugal" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-TacLQ2OPVbanpplvACKDBuIMakqMXQAKr6qWuOcVs1geLYJLk1pkvkmdI9glXNICtonbyvEQHWXjnyf54BSKXj7D_WClwgd3EyXjYtoqFepuw6mjyZr5dN4PxyQC-OPd5idKJfV-5epBGB3CD2JZ0tmw1ZGUPB2WFKLkDsHMai__4Mbymr1fQruGb64rQe3qKSGAwC0g5qXmK1nQnR8kdhVLXKSunt8EqHzlblBGdWcijCSKmz66Fsfs850F0XNdocWk28Lwv5c');">
+</div>
+<div class="absolute bottom-4 right-4 flex gap-2">
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-900/60 backdrop-blur-md text-white border border-white/10 hover:bg-gray-900/80 transition-colors">
+<span class="material-symbols-outlined text-[20px]">crop</span>
+</button>
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-900/60 backdrop-blur-md text-white border border-white/10 hover:bg-gray-900/80 transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-3">
+<div class="px-4 flex items-center justify-between">
+<h3 class="text-gray-400 text-xs font-bold uppercase tracking-wider">Nearby Locations</h3>
+<button class="text-accent-soft text-xs font-medium hover:text-blue-400">See Map</button>
+</div>
+<div class="flex gap-3 px-4 overflow-x-auto no-scrollbar pb-1">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-accent-soft/20 border border-accent-soft/40 pl-3 pr-4 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-blue-400 text-[18px]">location_on</span>
+<p class="text-blue-400 text-sm font-medium leading-normal">Pastéis de Belém</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark pl-3 pr-4 border border-gray-800 hover:bg-gray-800 transition-colors active:scale-95">
+<span class="material-symbols-outlined text-gray-400 text-[18px]">church</span>
+<p class="text-gray-300 text-sm font-medium leading-normal">Jerónimos Monastery</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark pl-3 pr-4 border border-gray-800 hover:bg-gray-800 transition-colors active:scale-95">
+<span class="material-symbols-outlined text-gray-400 text-[18px]">search</span>
+<p class="text-gray-300 text-sm font-medium leading-normal">Search...</p>
+</button>
+</div>
+</section>
+<section class="px-4">
+<div class="bg-surface-dark rounded-xl p-4 flex items-center justify-between shadow-sm border border-gray-800">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-10 rounded-full bg-blue-500/10 text-blue-400">
+<span class="material-symbols-outlined fill-1">verified</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="text-white text-sm font-semibold">Verified Visit</span>
+<span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/20 text-[10px] px-1.5 py-0.5 rounded font-bold uppercase tracking-wide">Booked</span>
+</div>
+<span class="text-gray-400 text-xs">Based on Booking #8291</span>
+</div>
+</div>
+<label class="inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="relative w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-accent-soft"></div>
+</label>
+</div>
+<p class="mt-2 text-xs text-gray-500 px-1">Enabling verification adds a trust badge to your post.</p>
+</section>
+<section class="px-4">
+<div class="bg-surface-dark rounded-xl p-1 shadow-sm border border-gray-800">
+<textarea class="w-full bg-transparent border-none focus:ring-0 p-4 text-white placeholder-gray-500 text-base font-normal leading-relaxed min-h-[120px] resize-none rounded-lg" placeholder="Share your experience! What made this place special? Use #authentic to get featured..."></textarea>
+</div>
+</section>
+<section class="px-4 pb-6">
+<h3 class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-3 px-1">Who can see this?</h3>
+<div class="flex p-1 bg-surface-dark rounded-lg relative border border-gray-800">
+<div class="w-1/2 h-full absolute left-0 top-0 p-1 transition-all duration-300 ease-out translate-x-0">
+<div class="w-full h-full bg-gray-700 rounded shadow-sm border border-gray-600"></div>
+</div>
+<button class="relative z-10 flex-1 flex items-center justify-center gap-2 py-2 rounded-md text-sm font-semibold text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">public</span>
+                    Public
+                </button>
+<button class="relative z-10 flex-1 flex items-center justify-center gap-2 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-gray-200 transition-colors">
+<span class="material-symbols-outlined text-[18px]">group</span>
+                    Followers
+                </button>
+</div>
+</section>
+</main>
+</div>
+
+</body></html>

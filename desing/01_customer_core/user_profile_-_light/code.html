@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Profile - Light</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2632",
+                        "border-light": "#e2e8f0",
+                        "border-dark": "#2d3a4a",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "4.5": "1.125rem",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden mx-auto max-w-[480px] bg-surface-light dark:bg-surface-dark shadow-xl min-h-screen">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-10 flex items-center justify-between bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-md px-4 py-3 border-b border-border-light dark:border-border-dark">
+<div class="w-12 h-12 flex items-center justify-start">
+<!-- Placeholder for back button if needed, left empty for profile root -->
+</div>
+<h1 class="text-lg font-bold tracking-tight text-center flex-1">Profile</h1>
+<div class="w-12 h-12 flex items-center justify-end">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-700 dark:text-slate-200">
+<span class="material-symbols-outlined" style="font-size: 24px;">settings</span>
+</button>
+</div>
+</header>
+<!-- Profile Info Section -->
+<div class="flex flex-col items-center pt-6 pb-4 px-4 gap-4">
+<!-- Avatar Ring with Status Indicator -->
+<div class="relative group cursor-pointer">
+<div class="p-1 rounded-full border-2 border-primary border-dashed">
+<div class="w-28 h-28 rounded-full bg-cover bg-center shadow-sm" data-alt="Portrait of Alex Roam smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC8BbqqDAP_p4f60gIbyFjChYeGXlGHSjwV-gUOLOUoTyf3hg7lR0---FL3iKzfRHSGLw28qToYVE3zsjgyS0OrK_Pm0vP3EVxLutiIn4RHOcQXMMw82Q75db-W5SOZUkToeL1QJRbNPFu_0gAOriHk_zYEHGwrl4_Fc-ZfV-zEkSb2rMXhVAwq3jgp0PS4z_E0KeDKUkK2Nn1hX7UJdpqRyf13EnboEvdTRrJuAxaEVS1c-umQu8wPbbRsbkpW4maHKWBpRO368P4");'></div>
+</div>
+<div class="absolute bottom-1 right-1 bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded-full border-2 border-surface-light dark:border-surface-dark flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[12px]">verified</span>
+<span>PRO</span>
+</div>
+</div>
+<!-- User Text Info -->
+<div class="flex flex-col items-center text-center gap-1">
+<h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Alex Roam</h2>
+<p class="text-primary font-medium text-sm">Trusted Explorer • Verified Local</p>
+<div class="flex items-center gap-1 text-slate-500 dark:text-slate-400 text-sm mt-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<p>San Francisco, CA</p>
+</div>
+</div>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-3 gap-3 px-4 mb-6">
+<div class="flex flex-col gap-1 items-center justify-center p-3 rounded-2xl bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark">
+<p class="text-slate-900 dark:text-white text-xl font-bold">$$$</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wide">Avg Spend</p>
+</div>
+<div class="flex flex-col gap-1 items-center justify-center p-3 rounded-2xl bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark">
+<p class="text-slate-900 dark:text-white text-xl font-bold">12</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wide">Countries</p>
+</div>
+<div class="flex flex-col gap-1 items-center justify-center p-3 rounded-2xl bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark">
+<div class="flex items-center gap-1">
+<p class="text-slate-900 dark:text-white text-xl font-bold">4.9</p>
+<span class="material-symbols-outlined text-yellow-500 text-sm font-variation-FILL-1">star</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wide">Rating</p>
+</div>
+</div>
+<!-- Mini-Map Section -->
+<div class="px-4 mb-6">
+<div class="relative w-full aspect-[2.5/1] rounded-2xl overflow-hidden shadow-sm border border-border-light dark:border-border-dark group">
+<!-- Map Background Image -->
+<div class="absolute inset-0 bg-cover bg-center opacity-80 dark:opacity-60 transition-transform duration-500 group-hover:scale-105" data-alt="Light themed stylized map showing street grid of San Francisco" data-location="San Francisco" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCPE3Z82r9MvQhDFPzPubXy1sVAc1LEJCm1Evaw7FHpypSLAaDqQ_Rt3hQcPJsyCHZ-xHbo1dTrY3AcOr3OsI5g_R9pWCanYizAqKZk7Vor-1vDKDljUMEX7S5it5g2YRugqcrLZV1ADXGrScVXrew9sIDhWgFdX8TeTxTiQA5XfsHSGZ7q35uA092vAiZF9FEO59JThnZj0zYImMbVNjqrmQ9SFHUns9MR8yjYCSDxJzaj7Z8X9c7s9i5TfdtSX0goV1rOkFc22n4");'>
+</div>
+<!-- Gradient Overlay for legibility -->
+<div class="absolute inset-0 bg-gradient-to-r from-surface-light/90 via-transparent to-transparent dark:from-surface-dark/90"></div>
+<!-- Interactive Elements Overlay -->
+<div class="absolute inset-0 p-4 flex flex-col justify-center items-start z-10">
+<div class="bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow-sm mb-2 flex items-center gap-2">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="text-xs font-bold text-slate-800 dark:text-slate-200">Currently in SF</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight mb-1">My Travel Map</h3>
+<p class="text-xs text-slate-600 dark:text-slate-300 font-medium mb-3">42 places pinned in California</p>
+<button class="bg-primary hover:bg-blue-600 text-white text-xs font-bold py-2 px-4 rounded-lg shadow-md transition-colors flex items-center gap-1">
+                        View Map
+                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+<!-- Decorative floating pins -->
+<div class="absolute top-4 right-12 transform translate-x-1/2 -translate-y-1/2">
+<span class="material-symbols-outlined text-primary drop-shadow-md text-3xl font-variation-FILL-1">location_on</span>
+</div>
+<div class="absolute bottom-8 right-24 transform translate-x-1/2 -translate-y-1/2 opacity-70">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 drop-shadow-md text-2xl font-variation-FILL-1">location_on</span>
+</div>
+</div>
+</div>
+<!-- Sticky Tabs -->
+<div class="sticky top-[64px] z-10 bg-surface-light dark:bg-surface-dark border-b border-border-light dark:border-border-dark px-4 mb-4">
+<div class="flex w-full">
+<button class="flex-1 flex flex-col items-center justify-center pt-3 pb-3 relative group">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary text-[20px] font-variation-FILL-1">bookmark</span>
+<span class="text-sm font-bold text-slate-900 dark:text-white">Saved</span>
+</div>
+<div class="absolute bottom-0 w-full h-[3px] bg-primary rounded-t-full"></div>
+</button>
+<button class="flex-1 flex flex-col items-center justify-center pt-3 pb-3 relative group">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">grid_view</span>
+<span class="text-sm font-medium text-slate-500 dark:text-slate-400 group-hover:text-slate-800 dark:group-hover:text-slate-200 transition-colors">My Posts</span>
+</div>
+<!-- Inactive Indicator (Invisible) -->
+<div class="absolute bottom-0 w-full h-[3px] bg-transparent rounded-t-full"></div>
+</button>
+</div>
+</div>
+<!-- Content Grid (Saved Items) -->
+<div class="px-4 pb-20">
+<div class="grid grid-cols-2 gap-4">
+<!-- Card 1 -->
+<div class="flex flex-col gap-2 group cursor-pointer">
+<div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-700">
+<div class="absolute top-2 right-2 z-10 bg-black/40 backdrop-blur-sm p-1.5 rounded-full">
+<span class="material-symbols-outlined text-white text-[16px] font-variation-FILL-1 block">favorite</span>
+</div>
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Golden Gate Bridge view through morning fog" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAKJVm7Rekvg-PABeMCANcQUuSvI2ie4HZ-09wW8M7z-zTrGHtS1aFCADOFbEX0kxXrr4siZ92oTTFwvVQYgr7IeBVB8sZ-Bpr40C8tGdNSn_Amxcf741CSafhFQ4Pd3AQ2LCreAHl14jxkWRSnzYqKJ0P4UHpqkTWSsXN9lI--Ry6SacV5xm7Y-Vg-sCuSnGAa5-ljrYvWTV94Ca7Ftdxe-eg737F5pFSVFMMNgAJX6VDraqZSfWvpY3npD0B_CKouKucvlJ1uElw");'>
+</div>
+<div class="absolute bottom-2 left-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm px-2 py-1 rounded-md shadow-sm">
+<p class="text-[10px] font-bold text-slate-900 dark:text-white flex items-center gap-1">
+                                4.8 <span class="material-symbols-outlined text-[10px] text-yellow-500 font-variation-FILL-1">star</span>
+</p>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white text-sm leading-tight truncate">Golden Gate View</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 truncate">San Francisco • Free</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col gap-2 group cursor-pointer">
+<div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-700">
+<div class="absolute top-2 right-2 z-10 bg-black/40 backdrop-blur-sm p-1.5 rounded-full">
+<span class="material-symbols-outlined text-white text-[16px] font-variation-FILL-1 block">favorite</span>
+</div>
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Cozy interior of a local coffee shop with latte art" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC0MpO8QYZF2ueRBSIjEgmE6BFX9KGxtouweI76rGR59JjcusY9PtL2V7DPXSQaU9DZePylzdGKnx2fp_DN3YzDS1KIqS-mGR7S9v_vH7tSZUN8YbF-SbBgiDPGyHW8zBL1nHHuVmaH7b7IP6pcNOfjxINWw6vkz_sDJHuudkkkKdbe3nuPUN1QnkFWMsohoE-FK1eyNrUwZ-EPEETJLTH9Ql0bl2idCKesdv_SInAg5PD_PrhR3Av5_3zVmquiswH36rJceVHSR-0");'>
+</div>
+<div class="absolute bottom-2 left-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm px-2 py-1 rounded-md shadow-sm">
+<p class="text-[10px] font-bold text-slate-900 dark:text-white flex items-center gap-1">
+                                4.9 <span class="material-symbols-outlined text-[10px] text-yellow-500 font-variation-FILL-1">star</span>
+</p>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white text-sm leading-tight truncate">Sightglass Coffee</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 truncate">SOMA • $$</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex flex-col gap-2 group cursor-pointer">
+<div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-700">
+<div class="absolute top-2 right-2 z-10 bg-black/40 backdrop-blur-sm p-1.5 rounded-full">
+<span class="material-symbols-outlined text-white text-[16px] font-variation-FILL-1 block">favorite</span>
+</div>
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Looking up at the Painted Ladies houses in SF" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBYS4CsShpOkawum2qdiOhHwwLcHuaKFmUwpz86YDfaHTdoSpRQZfCJEZNSFGALc_zzMw6y0bB_wLDtjTv7qJFI79CTdD7dg-XW3buPHkpTNXV9mZ84d-8lI6KS19p-MwBGnbIM5KdZrWN3TVdzY1C4-3OfYNHi5RUYBXPobD0Aqj2oiM72KIzPu8pLU4DgJjklvq1FRkvIZnCnMv8tCagxAB5hlS6bNcEcU1CnDIdxwdhFQxBFjFaDbD3Uc4fYq2iUJ9brQ1p4_bs");'>
+</div>
+<div class="absolute bottom-2 left-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm px-2 py-1 rounded-md shadow-sm">
+<p class="text-[10px] font-bold text-slate-900 dark:text-white flex items-center gap-1">
+                                4.5 <span class="material-symbols-outlined text-[10px] text-yellow-500 font-variation-FILL-1">star</span>
+</p>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white text-sm leading-tight truncate">Alamo Square Park</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 truncate">Alamo Square • Free</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="flex flex-col gap-2 group cursor-pointer">
+<div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-700">
+<div class="absolute top-2 right-2 z-10 bg-black/40 backdrop-blur-sm p-1.5 rounded-full">
+<span class="material-symbols-outlined text-white text-[16px] font-variation-FILL-1 block">favorite</span>
+</div>
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Fresh seafood plate at a pier restaurant" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA9ZCnw0S7a8pjlVxfz8ZoFTQyPo5QpwFciT75AtcDmLMjnMH-A2-iU95RwrifhYPjVuUMfoXOQYg0fDWBp4kiuRBa1crCOQjU5zrTg2yoetM_FqekHdFV8FAolABp0TfcNHhLyHmnRHBYm_QkQFIKbLnxz9jIruHvaVbFt5H2iDd5AtKoZoME9j6d-x9v60PWv5mG051mAgv6783PAyyl3XQpaHLxIv9n7uug9ZVLGxI6UfpV6VTlkONvAPLnjJoRO7g0Ey_FZpOs");'>
+</div>
+<div class="absolute bottom-2 left-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm px-2 py-1 rounded-md shadow-sm">
+<p class="text-[10px] font-bold text-slate-900 dark:text-white flex items-center gap-1">
+                                4.2 <span class="material-symbols-outlined text-[10px] text-yellow-500 font-variation-FILL-1">star</span>
+</p>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white text-sm leading-tight truncate">Hog Island Oyster</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 truncate">Embarcadero • $$$</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

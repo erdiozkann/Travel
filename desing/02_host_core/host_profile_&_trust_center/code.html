@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Host Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for horizontal scroll areas */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0d141b] dark:text-white antialiased overflow-x-hidden">
+<div class="relative flex h-auto min-h-screen w-full flex-col max-w-md mx-auto bg-white dark:bg-[#101922] shadow-2xl border-x border-gray-100 dark:border-gray-800">
+<!-- Header -->
+<div class="sticky top-0 z-50 flex items-center bg-white/90 dark:bg-[#101922]/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-transparent dark:border-gray-800">
+<button class="text-[#0d141b] dark:text-white flex size-12 shrink-0 items-center justify-start transition-opacity hover:opacity-70">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h2 class="text-[#0d141b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Host Profile</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex items-center justify-center text-[#0d141b] dark:text-white transition-opacity hover:opacity-70">
+<span class="material-symbols-outlined text-2xl">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Profile Hero -->
+<div class="flex flex-col items-center px-4 pt-4 pb-2">
+<div class="relative mb-4">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-32 w-32 shadow-lg ring-4 ring-white dark:ring-[#1a2632]" data-alt="Portrait of a smiling woman, Elena Rodriguez" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2X3SGac21_kS7Xov6mYG49_1n4HXo9fdP9In4hh50yfHTgK4pUEYMO8x1X0UviyfAKkQF9MmVyqA7wyC9sDHhglCc5D_T6EdaJGSoZsl1l4uMHEHybf5s9ppbQ0iO09VppAmxWhMuvpCSl8JiDSokGC9aKNm6qCEYXIOFiXkWye81Eaq88n1HAPt4VQ2WeQqX2kKzCp29B9O8pe9CJf6sz6h-JJqdYoEj1vDX32FzfAtSqM_1DfkRTU1ZYe8WQiwp0VMKzt6hvns");'>
+</div>
+<div class="absolute bottom-1 right-1 bg-white dark:bg-[#1a2632] rounded-full p-1.5 shadow-md flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[20px] fill-1" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center space-y-1">
+<div class="flex items-center gap-1.5">
+<h1 class="text-[#0d141b] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">Elena Rodriguez</h1>
+</div>
+<div class="flex items-center gap-2 text-[#4c739a] dark:text-gray-400 text-sm font-medium">
+<div class="flex items-center gap-1 bg-primary/10 dark:bg-primary/20 px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-primary text-[16px] fill-1" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="text-primary font-bold">Verified Host</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-[#4c739a] dark:text-gray-400 text-base pt-1">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span>Lisbon, Portugal</span>
+<span class="text-gray-300 dark:text-gray-600">•</span>
+<span class="flex items-center gap-1 text-[#0d141b] dark:text-white font-bold">
+<span class="material-symbols-outlined text-orange-400 text-[18px] fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+                        4.9
+                    </span>
+<span class="text-sm underline decoration-gray-300">(84 reviews)</span>
+</div>
+</div>
+</div>
+<!-- Bio -->
+<div class="px-6 py-2">
+<p class="text-[#4c739a] dark:text-gray-300 text-base font-normal leading-relaxed text-center">
+                Passionate about sharing the hidden gems of Lisbon. I love cooking, fado music, and meeting travelers from all over the world. 🌊🍷
+            </p>
+</div>
+<!-- Stats Row -->
+<div class="grid grid-cols-3 gap-3 p-4">
+<div class="flex flex-col gap-1 items-center justify-center rounded-2xl p-4 bg-[#f0f4f8] dark:bg-[#1a2632]">
+<span class="material-symbols-outlined text-primary text-2xl mb-1">home_work</span>
+<p class="text-[#0d141b] dark:text-white text-lg font-bold leading-tight">150+</p>
+<p class="text-[#4c739a] dark:text-gray-400 text-xs font-medium uppercase tracking-wider">Stays</p>
+</div>
+<div class="flex flex-col gap-1 items-center justify-center rounded-2xl p-4 bg-[#f0f4f8] dark:bg-[#1a2632]">
+<span class="material-symbols-outlined text-primary text-2xl mb-1">calendar_month</span>
+<p class="text-[#0d141b] dark:text-white text-lg font-bold leading-tight">5 Yrs</p>
+<p class="text-[#4c739a] dark:text-gray-400 text-xs font-medium uppercase tracking-wider">Hosting</p>
+</div>
+<div class="flex flex-col gap-1 items-center justify-center rounded-2xl p-4 bg-[#f0f4f8] dark:bg-[#1a2632]">
+<span class="material-symbols-outlined text-primary text-2xl mb-1">language</span>
+<p class="text-[#0d141b] dark:text-white text-lg font-bold leading-tight">EN/PT</p>
+<p class="text-[#4c739a] dark:text-gray-400 text-xs font-medium uppercase tracking-wider">Speaks</p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex gap-3 px-4 pb-6">
+<button class="flex-1 h-12 flex items-center justify-center gap-2 bg-primary hover:bg-blue-600 text-white rounded-xl text-base font-bold transition-colors shadow-lg shadow-blue-500/20">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+                Message Host
+            </button>
+<button class="flex-1 h-12 flex items-center justify-center gap-2 bg-transparent border-2 border-[#e7edf3] dark:border-gray-700 text-[#0d141b] dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl text-base font-bold transition-colors">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+                Follow
+            </button>
+</div>
+<div class="h-px bg-gray-100 dark:bg-gray-800 w-full mb-6"></div>
+<!-- Hosted Experiences -->
+<div class="flex flex-col gap-4 px-4 pb-8">
+<div class="flex justify-between items-center">
+<h3 class="text-[#0d141b] dark:text-white text-lg font-bold">Hosted Experiences</h3>
+<a class="text-primary text-sm font-semibold hover:underline" href="#">View all</a>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Card 1 -->
+<div class="flex flex-col gap-3 group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl aspect-[4/3]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Traditional Portuguese food spread on a table" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAp3lV0FbaObuEXH5tOUW_kjq5lolBQ4y3L5djVvoip3M3JxsldKYT_jNify337EEQv3QevdoJCRa-l6f7Vkzl6XtUt0hQP4p7Mby-Xwirottyi8lPUFcch34qNlnihFe8gREOIxNzm2fi13asih2OWKUWERFmjBHrzqkdCm-Dxzae5FHtUnMvBwz26ALOASmiHaZEwVvbw9-ZIXIAHyadxylgGgabrIozmGtQSdDPFdDidVcc_LTdAIhPUsPSsjmQ0hlDk0XiN4fA");'>
+</div>
+<div class="absolute top-2 right-2 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-orange-400 text-[14px] fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-bold text-gray-900 dark:text-white">4.9</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-[#0d141b] dark:text-white text-[15px] leading-tight line-clamp-2">Authentic Lisbon Food Tour</h4>
+</div>
+<div class="flex items-center gap-2 text-sm text-[#4c739a] dark:text-gray-400">
+<span class="font-medium text-[#0d141b] dark:text-white">€45</span>
+<span>/ person</span>
+</div>
+<div class="flex flex-wrap gap-2 mt-1">
+<span class="text-[10px] uppercase font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-md">Food</span>
+<span class="text-[10px] uppercase font-bold text-emerald-600 bg-emerald-100 dark:bg-emerald-900/30 dark:text-emerald-400 px-2 py-0.5 rounded-md">Walking</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col gap-3 group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl aspect-[4/3]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Sailing boat on the Tagus river at sunset" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD2z2Ka6DVAkIqJU5rhCmOpDrCYAwQ3bkNcsE_df6ZX88VgYiq2BPj8jlBaKqHRUTq7QGPO6n1Gqu2ULzX1v2XX_pZF8khj5eLEBv_6O4ZXISiVQb-MQn5rqhbZjaXXBbi7FJNVgBvOcDJicXXaLvaepmzNftyWQsXUFNmkDHytDlkPvg1whWkyquUl7NVCq1zsWzTuJOl6-5DpBvkf1Y4jqgc0Tbgmj-LX9u2jknozr46_m_866z8jwPlFr6DTvEIcvJF8mf150nE");'>
+</div>
+<div class="absolute top-2 right-2 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-orange-400 text-[14px] fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-bold text-gray-900 dark:text-white">5.0</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-[#0d141b] dark:text-white text-[15px] leading-tight line-clamp-2">Sunset Sailing on Tagus</h4>
+</div>
+<div class="flex items-center gap-2 text-sm text-[#4c739a] dark:text-gray-400">
+<span class="font-medium text-[#0d141b] dark:text-white">€60</span>
+<span>/ person</span>
+</div>
+<div class="flex flex-wrap gap-2 mt-1">
+<span class="text-[10px] uppercase font-bold text-blue-600 bg-blue-100 dark:bg-blue-900/30 dark:text-blue-400 px-2 py-0.5 rounded-md">Sailing</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Guest Stories Section -->
+<div class="flex flex-col gap-4 px-4 pb-12 bg-[#f6f7f8] dark:bg-[#15202b] -mx-4 pt-8 border-t border-gray-100 dark:border-gray-800">
+<div class="flex justify-between items-center px-4">
+<div class="flex flex-col">
+<h3 class="text-[#0d141b] dark:text-white text-lg font-bold">Guest Stories</h3>
+<p class="text-xs text-[#4c739a] dark:text-gray-400">Recent moments from travelers</p>
+</div>
+<button class="bg-white dark:bg-[#1a2632] p-2 rounded-full shadow-sm border border-gray-100 dark:border-gray-700">
+<span class="material-symbols-outlined text-[20px] text-[#0d141b] dark:text-white">arrow_forward</span>
+</button>
+</div>
+<div class="flex overflow-x-auto no-scrollbar gap-4 px-4 pb-4 snap-x">
+<!-- Story Card 1 -->
+<div class="min-w-[280px] snap-center bg-white dark:bg-[#1a2632] rounded-2xl p-4 shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-cover bg-center" data-alt="User avatar of James" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCX4psoS6SFF19zaLQPuF4f3nX8uftKQK1w7O5VmVAHOONDHgKtPZXe31cEC8pKDnKNqXdNVo7xgKPkFe5QNvyM7SzriiF5NUE6sDSz3ylx9ejOdJDYSNbeEn-oe1uBOEXGldywjtOg1uEt219CK9zjzyMPcz4doQA9NPBpTZ2bFJAyc-0ntssTmESjsATbwojwB04gUF4cuh9yHpyi-j-nQKkpSoiKyKZ68D7cXylyfFhN27eoCeSerQTJomzFSB6w9VeZ4fy026E");'></div>
+<div>
+<p class="text-sm font-bold text-[#0d141b] dark:text-white">James M.</p>
+<p class="text-xs text-[#4c739a] dark:text-gray-400">October 2023</p>
+</div>
+</div>
+<div class="rounded-xl h-32 w-full bg-cover bg-center" data-alt="Pastel de nata pastries close up" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA1hzgcaeAi1TooZtD031TMnbNdWYoyDYJkpLDHvMK8P6IBF9AbpkpfZnnk2U5HcDVJ04u5gCTalBaBtomv8enSz9d1K95yLH4yyk1JXu4nNUn4s2lfV4ORz41tKs9ULqIL8nGkeBpXPUd87kas8fOj4LzCQmz_gYcNxzqc9yYhKrK0jFQnpM4RcstDXApQ5v68-X0jmNuWTNceoKzGUO9yFgvj-9QpgQZ0n90oFCFpNZoLgtqSIUTABwh-ivY_FIAlqwR8VxPsmXA");'></div>
+<p class="text-sm text-[#0d141b] dark:text-gray-300 leading-snug">
+                        "Elena took us to the best Pastel de Nata spot in town! Not the tourist traps, but a real local gem. Highly recommend!"
+                    </p>
+</div>
+<!-- Story Card 2 -->
+<div class="min-w-[280px] snap-center bg-white dark:bg-[#1a2632] rounded-2xl p-4 shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-cover bg-center" data-alt="User avatar of Sarah" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAr-DsHQI5XhljcUYSKTj85_CsGog1S7LTkezL6xBnN7orx6SDoYYKx142rg6ntvIW5K5jBiK11Xo-abEafCK_ywgQ0dNF90RDgcMjUq3BOLS260gg_xY3wi1-nBcVw2fqVXekQy9J4Re9688ZbaGA3iEuDZ0WCO0hEhZ360qoIRHBR_ShZ6Rp1alRLPh87XPfZNwkibWnVzU4vVatHzMfM_3CbgSaqTKqGAfs6OmTe--IBBrLW3-nZly4qpzblsWSRQcFd3xuUUWg");'></div>
+<div>
+<p class="text-sm font-bold text-[#0d141b] dark:text-white">Sarah K.</p>
+<p class="text-xs text-[#4c739a] dark:text-gray-400">September 2023</p>
+</div>
+</div>
+<div class="rounded-xl h-32 w-full bg-cover bg-center" data-alt="Colorful tiled building facade in Lisbon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuANXy5dk95AYuIMzFIK10oCiMm08STOd87qjrONQP2MrHH85FYbCZEwFoPjt7dF_cJUqI8LJglJAsMG47nvCKuIrWcm__BiqwHITxGTmf2QIuJvcYxzVZovn1H4nUSQubBwMKxReUSqnYO6MM8Nv1QFDn8BuPqlEZKqoGV4qoLlyGsnolt1a6ERTmKF3IcCkP-rz0gCSe-eelMhexdfW2TXz6-t1mhz8mtQ76p4b7Cd54pE6nhtZ-f1J6j95uA3gkOzA-TpdTo9Ejw");'></div>
+<p class="text-sm text-[#0d141b] dark:text-gray-300 leading-snug">
+                        "The walking tour was fantastic. I learned so much history about the tiles and architecture. Thank you Elena!"
+                    </p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

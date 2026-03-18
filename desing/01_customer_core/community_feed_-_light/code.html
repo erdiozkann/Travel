@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Community Feed - Light</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#ffffff", /* Request asked for White background */
+                        "background-dark": "#101922",
+                        "surface-light": "#f6f7f8",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d141b] dark:text-white font-display overflow-x-hidden antialiased">
+<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto border-x border-slate-100 dark:border-slate-800 shadow-sm">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 flex items-center bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm p-4 pb-2 justify-between border-b border-slate-100 dark:border-slate-800">
+<button class="text-[#0d141b] dark:text-white flex size-12 shrink-0 items-center justify-start hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[28px]">menu</span>
+</button>
+<h2 class="text-[#0d141b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Community Feed</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex size-12 cursor-pointer items-center justify-end text-[#0d141b] dark:text-white hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[28px]">search</span>
+</button>
+</div>
+</header>
+<!-- Filters -->
+<div class="sticky top-[68px] z-40 bg-background-light dark:bg-background-dark py-3 border-b border-slate-100 dark:border-slate-800">
+<div class="flex gap-3 px-4 overflow-x-auto no-scrollbar">
+<!-- Active Chip -->
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#137fec] text-white pl-3 pr-4 shadow-sm shadow-blue-200 dark:shadow-none transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[20px]">local_fire_department</span>
+<p class="text-sm font-bold leading-normal">Trending</p>
+</button>
+<!-- Inactive Chips -->
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-slate-800 text-[#0d141b] dark:text-slate-200 pl-3 pr-4 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+<p class="text-sm font-medium leading-normal">Nearby</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-slate-800 text-[#0d141b] dark:text-slate-200 pl-3 pr-4 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[20px]">savings</span>
+<p class="text-sm font-medium leading-normal">Budget</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-slate-800 text-[#0d141b] dark:text-slate-200 pl-3 pr-4 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+<p class="text-sm font-medium leading-normal">Luxury</p>
+</button>
+</div>
+</div>
+<!-- Feed Content -->
+<main class="flex flex-col gap-6 pb-20">
+<!-- Post 1: Standard Verified -->
+<article class="flex flex-col border-b border-slate-100 dark:border-slate-800 pb-4">
+<!-- Post Header -->
+<div class="flex items-center justify-between px-4 py-3">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-gray-200 bg-cover bg-center" data-alt="Portrait of a smiling woman" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDGyh-jaAb3DfGs6BKLHXFePB5D8Fm2xAZzNNmRZKGUjDcGMJduTvp8LwYAENCXAGvzzSnVxPWbaYmi6FVe_yfz-80iXKoFAbZcteovv1jg4RK-_z_DjuiOaYY8PZuJFYTuXxOyzGwUJt8Q4VqKdIOoU5AySMirQP01fpaTwV8t8xIFmdaLoEbxbuPiq_5ANlfYod4VWzjCt-jX7c9WGUKuca6Rp5f4ZYXV78Qrw7qDGO1dldLMKg5u3Ji2aRMrq5Tp9CMGTIoZBPs');"></div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-[#0d141b] dark:text-white">Sofia Davis</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Santorini, Greece • 2h ago</span>
+</div>
+</div>
+<button class="text-slate-400 hover:text-slate-900 dark:hover:text-white">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<!-- Image -->
+<div class="w-full aspect-[4/5] bg-slate-100 relative group overflow-hidden">
+<img alt="White architecture of Santorini facing the sunset over the sea" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="White architecture of Santorini facing the sunset over the sea" data-location="Santorini, Greece" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPDR3UuC8KD9PfkUD9ynFLN6KRvnZHtXhbad_E2P-OR9NuDn0cUyvjtGlLDEOmZA1n2-yT_N9h7jdLYufkmoxao2L8UnrHh5KFPv5ryHLHXAjKugVahbL4zcjG7LFdz4vHUGl17Nv9hNPFiSKpApuCM2M8UHXr1gHtw39pliu0fy7GeSzgTYIWSu0mHht4Etpd2VlpNVajpeLWNexBN-z9RsYaRE1ufLK3uYvJ2qyOTS2gKSEPLdhUnW0TejakdC13NCnQxwnsz2Y"/>
+<!-- Floating Price Tag on Image -->
+<div class="absolute bottom-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-lg text-white text-sm font-bold flex items-center gap-1 shadow-lg">
+<span class="material-symbols-outlined text-[16px]">sell</span>
+                        $120/night
+                    </div>
+</div>
+<!-- Action Bar -->
+<div class="flex items-center justify-between px-4 pt-3">
+<div class="flex items-center gap-4">
+<button class="group flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[26px] text-[#0d141b] dark:text-white group-hover:text-red-500 transition-colors">favorite</span>
+</button>
+<button class="group flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[26px] text-[#0d141b] dark:text-white group-hover:text-primary transition-colors">chat_bubble</span>
+</button>
+<button class="group flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[26px] text-[#0d141b] dark:text-white group-hover:text-primary transition-colors">share</span>
+</button>
+</div>
+<button class="text-[#0d141b] dark:text-white hover:text-primary">
+<span class="material-symbols-outlined text-[26px]">bookmark</span>
+</button>
+</div>
+<!-- Likes & Text -->
+<div class="px-4 py-2 flex flex-col gap-1">
+<p class="text-sm font-bold text-[#0d141b] dark:text-white">2,431 likes</p>
+<div class="text-sm leading-relaxed text-[#0d141b] dark:text-slate-200">
+<span class="font-bold mr-1">Sofia Davis</span>
+                        Watching the sunset in Oia is basically a spiritual experience. Can't believe this view was only $120! 🌅 <span class="text-primary cursor-pointer">#santorini #budgettravel</span>
+</div>
+</div>
+<!-- Trust Indicators & CTA -->
+<div class="mx-4 mt-2 p-3 bg-surface-light dark:bg-slate-800 rounded-xl flex items-center justify-between border border-slate-100 dark:border-slate-700/50">
+<div class="flex items-center gap-2">
+<div class="flex items-center justify-center size-8 rounded-full bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-[#0d141b] dark:text-white">Verified Booking</span>
+<span class="text-[10px] text-slate-500 font-medium">Authenticity Guaranteed</span>
+</div>
+</div>
+<button class="bg-primary hover:bg-blue-600 text-white text-xs font-bold px-4 py-2 rounded-lg transition-colors shadow-sm shadow-blue-200 dark:shadow-none">
+                        View Deal
+                    </button>
+</div>
+</article>
+<!-- Post 2: Sponsored -->
+<article class="flex flex-col border-b border-slate-100 dark:border-slate-800 pb-4">
+<!-- Post Header -->
+<div class="flex items-center justify-between px-4 py-3">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-slate-200 flex items-center justify-center border border-slate-100" data-alt="Travel Japan Logo">
+<span class="material-symbols-outlined text-slate-400">public</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-[#0d141b] dark:text-white">Travel Japan</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Sponsored</span>
+</div>
+</div>
+<button class="text-slate-400 hover:text-slate-900 dark:hover:text-white">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<!-- Image -->
+<div class="w-full aspect-[4/5] bg-slate-100 relative group overflow-hidden">
+<img alt="Traditional street in Kyoto with wooden buildings and soft lighting" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Traditional street in Kyoto with wooden buildings and soft lighting" data-location="Kyoto, Japan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDso1129UQaEnuvxB7g7cqBtXaFeP3H-FXcXMIIxReTCEsdGVNVqrNP-PxUz1bygBDpfen2a5rFkKtK-4I1lFF4B7GCPdUcJaaqf28QdQaFTS6dAc4VzMqAfwDj4eqvcpTVC2Fb4Hm4kRlJhhvT9ioPqdWNQ2Sp0G_mYxIGJrBXs6oNDQhKZBTh6SKAfbzhY1xf6V9ZJ-Aq9ACyV6lrslxxShlhWmDe9xQqsieNJEqRCN4jVs141Ml1NvXJvmPrHSKhN3wq76C82g8"/>
+<!-- Floating Badge -->
+<div class="absolute top-4 right-4 bg-white/90 dark:bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-[#0d141b] dark:text-white shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-yellow-500 fill-current">star</span>
+                        Top Rated
+                    </div>
+</div>
+<!-- Action Bar -->
+<div class="flex items-center justify-between px-4 pt-3">
+<div class="flex items-center gap-4">
+<button class="group flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[26px] text-[#0d141b] dark:text-white group-hover:text-red-500 transition-colors">favorite_border</span>
+</button>
+<button class="group flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[26px] text-[#0d141b] dark:text-white group-hover:text-primary transition-colors">chat_bubble_outline</span>
+</button>
+<button class="group flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[26px] text-[#0d141b] dark:text-white group-hover:text-primary transition-colors">share</span>
+</button>
+</div>
+<!-- CTA Button inline for sponsored -->
+<button class="text-primary font-bold text-sm flex items-center gap-1 hover:text-blue-700">
+                        Learn More
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+<!-- Likes & Text -->
+<div class="px-4 py-2 flex flex-col gap-1">
+<p class="text-sm font-bold text-[#0d141b] dark:text-white">8,920 likes</p>
+<div class="text-sm leading-relaxed text-[#0d141b] dark:text-slate-200">
+<span class="font-bold mr-1">Travel Japan</span>
+                        Discover the hidden gems of Kyoto away from the crowds. Experience authentic tea ceremonies and ancient temples. ⛩️
+                    </div>
+</div>
+</article>
+<!-- Post 3: Regular Post -->
+<article class="flex flex-col pb-4">
+<!-- Post Header -->
+<div class="flex items-center justify-between px-4 py-3">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-gray-200 bg-cover bg-center" data-alt="Portrait of a young man with beard" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDr1UZivhtXrUIb4gLNL88qtv8IuzXfStgqZH9VwAKi8fNe6sOP5VtUr_3jELkR_ZPCCLaTCmaRALp-eelNSdLqkBoqNa-Gr7XKbrEJTCQv6ADt2IXvbVNu7U043WJ2UZ9W1FNF0xNsAhl3ifhkVjvOzeDOY-lO-ylhepnQAs4gBviCZpWlrbb-pmU-7lkWChF_fHz_eQqJXpHYOicBxvP1Zsj_6-lUmjmD0agIcv7q-fjc3RoDKU7JRGe9_XqvLfRge4SaUIR_Qao');"></div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-[#0d141b] dark:text-white">Marcus Chen</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Bali, Indonesia • 5h ago</span>
+</div>
+</div>
+<button class="text-slate-400 hover:text-slate-900 dark:hover:text-white">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<!-- Image -->
+<div class="w-full aspect-[4/5] bg-slate-100 relative group overflow-hidden">
+<img alt="Lush green rice terraces in Bali under a clear sky" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Lush green rice terraces in Bali under a clear sky" data-location="Bali, Indonesia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSoPppMnz0Hzl5yN474-qXVy6HvYRVND4sLQXE7isnkOfl-pJBg2uifUO5b7BUuJ5g_WVyyk-E5Ie0cpcu7pk59zwMAbPIGSBX44uyJpxWOsjGpMgNgrTLmZpD_FdrgFiLvYYYSLjjRbEkABYGEnt_rkNfp6Dxisd2uf_zBQYlmZq7alJQjfq6GsthdCu-4gztPwDarbCK-JMBzdEtyNSsqFOeGKgdMQHbRqAgK7T_okMD-3oIoC0RMQY4AeRxf0dMy9FPthRdvNE"/>
+<div class="absolute bottom-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-lg text-white text-sm font-bold flex items-center gap-1 shadow-lg">
+<span class="material-symbols-outlined text-[16px]">sell</span>
+                        $45/night
+                    </div>
+</div>
+<!-- Action Bar -->
+<div class="flex items-center justify-between px-4 pt-3">
+<div class="flex items-center gap-4">
+<button class="group flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[26px] text-[#0d141b] dark:text-white group-hover:text-red-500 transition-colors">favorite_border</span>
+</button>
+<button class="group flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[26px] text-[#0d141b] dark:text-white group-hover:text-primary transition-colors">chat_bubble_outline</span>
+</button>
+<button class="group flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[26px] text-[#0d141b] dark:text-white group-hover:text-primary transition-colors">share</span>
+</button>
+</div>
+<button class="text-[#0d141b] dark:text-white hover:text-primary">
+<span class="material-symbols-outlined text-[26px]">bookmark</span>
+</button>
+</div>
+<!-- Likes & Text -->
+<div class="px-4 py-2 flex flex-col gap-1">
+<p class="text-sm font-bold text-[#0d141b] dark:text-white">563 likes</p>
+<div class="text-sm leading-relaxed text-[#0d141b] dark:text-slate-200">
+<span class="font-bold mr-1">Marcus Chen</span>
+                        Found this incredible villa in Ubud. The peace and quiet here is unmatched. Plus, breakfast is included! 🥥
+                    </div>
+</div>
+<!-- Trust Indicators & CTA -->
+<div class="mx-4 mt-2 p-3 bg-surface-light dark:bg-slate-800 rounded-xl flex items-center justify-between border border-slate-100 dark:border-slate-700/50">
+<div class="flex items-center gap-2">
+<div class="flex items-center justify-center size-8 rounded-full bg-blue-100 text-primary dark:bg-blue-900/30 dark:text-blue-400">
+<span class="material-symbols-outlined text-[18px]">thumb_up</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-[#0d141b] dark:text-white">Host Verified</span>
+<span class="text-[10px] text-slate-500 font-medium">Superhost Status</span>
+</div>
+</div>
+<button class="bg-primary hover:bg-blue-600 text-white text-xs font-bold px-4 py-2 rounded-lg transition-colors shadow-sm shadow-blue-200 dark:shadow-none">
+                        View Deal
+                    </button>
+</div>
+</article>
+</main>
+<!-- Bottom Navigation (Simulated for context) -->
+<nav class="fixed bottom-0 w-full max-w-md bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 flex justify-around items-center py-3 z-50">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[26px] fill-current">home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-[#0d141b] dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[26px]">explore</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-[#0d141b] dark:hover:text-white transition-colors">
+<div class="size-10 bg-primary rounded-full flex items-center justify-center text-white shadow-lg shadow-blue-200 dark:shadow-none -mt-8 border-4 border-white dark:border-background-dark">
+<span class="material-symbols-outlined text-[24px]">add</span>
+</div>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-[#0d141b] dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[26px]">favorite</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-[#0d141b] dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[26px]">person</span>
+</button>
+</nav>
+</div>
+</body></html>

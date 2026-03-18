@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Explore Discovery Hub - Dark Mode</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3b82f6", // Adjusted slightly brighter blue for dark mode contrast
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#0B1120", // Deeper background for premium feel
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e293b",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem", 
+                        "lg": "0.5rem", 
+                        "xl": "0.75rem", 
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.2)', // Darker shadow for dark mode
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+    </style>
+<style>
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-50 font-display antialiased selection:bg-primary selection:text-white">
+<div class="relative flex flex-col min-h-screen w-full max-w-md mx-auto overflow-x-hidden bg-background-light dark:bg-background-dark shadow-2xl">
+<header class="sticky top-0 z-40 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md px-4 pt-6 pb-2 border-b border-slate-200/50 dark:border-slate-800/50 transition-colors">
+<div class="flex items-center justify-between gap-3 mb-2">
+<div class="flex flex-col">
+<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Location</span>
+<div class="flex items-center gap-1 cursor-pointer">
+<span class="text-primary font-bold text-sm">Tokyo, Japan</span>
+<span class="material-symbols-outlined text-primary text-[18px]">expand_more</span>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+<div class="flex items-center gap-3 w-full">
+<label class="flex flex-1 items-center h-12 rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700 focus-within:ring-2 focus-within:ring-primary/40 transition-all overflow-hidden">
+<div class="text-slate-400 pl-4 flex items-center justify-center">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full bg-transparent border-none focus:ring-0 text-slate-900 dark:text-white placeholder:text-slate-500 dark:placeholder:text-slate-400 h-full px-3 text-sm font-medium" placeholder="Where do you want to go?"/>
+</label>
+<button class="flex items-center justify-center w-12 h-12 rounded-xl bg-primary text-white shadow-lg shadow-primary/30 active:scale-95 transition-transform hover:bg-blue-600">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+</header>
+<main class="flex-1 pb-24 space-y-8 pt-6">
+<section class="flex flex-col gap-4 animate-fade-in">
+<div class="flex items-end justify-between px-4">
+<h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white leading-none">Curated by Locals</h2>
+<a class="text-primary text-sm font-semibold hover:text-primary/80 transition-colors" href="#">See all</a>
+</div>
+<div class="flex overflow-x-auto snap-x snap-mandatory gap-4 px-4 pb-4 scrollbar-hide">
+<div class="group relative flex-none w-[200px] aspect-[3/4] rounded-2xl overflow-hidden snap-center cursor-pointer shadow-md border border-slate-100 dark:border-slate-800">
+<div class="absolute inset-0 bg-slate-800 animate-pulse"></div>
+<img alt="Kyoto Tea House" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Traditional Kyoto street with wooden tea houses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrAWszXMYAwCpM-NDlsMVIccOxErRS6mN-aLJ2vTkNzJpngRgn2CATRqfDN0G_FxxkRbWbfUZRNKcP1KO_4cWr0q4azVF4dVEHuq67eNEmJSXoGuv0vHjVxq9E7GnmGu8LGouXTO-4TMrX4ua5r9jYoFcfFfEIxp9kTSlo0NtW7LfTwRCe4OJxDmd6DhU7vwSUUDqIKGKrtIS5gxf3M4_RBivfQgZptERZCsqusYitAWEmps_QGYeFjipiH0O4zIk847MtCj7jceo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-4 w-full">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-primary text-white mb-2 shadow-sm">
+                            Local
+                        </span>
+<h3 class="text-white text-lg font-bold leading-tight">Kyoto Tea Houses</h3>
+<p class="text-slate-300 text-xs mt-1 font-medium truncate">Higashiyama Ward</p>
+</div>
+</div>
+<div class="group relative flex-none w-[200px] aspect-[3/4] rounded-2xl overflow-hidden snap-center cursor-pointer shadow-md border border-slate-100 dark:border-slate-800">
+<img alt="Berlin Art" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Colorful graffiti art on a Berlin underground wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVykDoNPzSzq2NnDN-x57y1J4Ui03Pc6EcH0lDMh_Y6g_i-k6CZovP5ZIuH2veY6mLNZdrkW7g1gG7X_AUyhY8FxXv-buuMfi_vgqiTIGUYkYcl6xWSVzsSc1bQRQNHcw3EQOG8N3Jc9byznh53DVpE4Ak3d9nRv2d7xzeDxsXRT7V03kL2jQ4E35LMuLnRCHMgyfYba1wyONCLek8dBkrNwzgabZZz0QTzw_A6dBeaI7hFoivEaCrms9NZKI6sWZCPPrySaKRo64"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-4 w-full">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-primary text-white mb-2 shadow-sm">
+                            Local
+                        </span>
+<h3 class="text-white text-lg font-bold leading-tight">Berlin Underground</h3>
+<p class="text-slate-300 text-xs mt-1 font-medium truncate">Kreuzberg District</p>
+</div>
+</div>
+<div class="group relative flex-none w-[200px] aspect-[3/4] rounded-2xl overflow-hidden snap-center cursor-pointer shadow-md border border-slate-100 dark:border-slate-800">
+<img alt="Venice Canals" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Gondola in Venice canal during sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9yiUqCq8pOhj9mdQUFCK-wIKg2osHrHpgxaQH1q8afBRSpfFzlhohpxs08-mjbIGvvBzH4j-M3LxroXb2QfY7q0pEddfJLGw5vnteRJovSUPAJluTnL1zuU3rpK-6WMZmRnLJtv_9JvKE2K1UMFIFxnjtJPb3zqNeN7Pxx0xociTGvFUZGVKUaf9kF8jwsmUpqsGHvHgfbJ1o_nh8jHaOby9X8bKXahva02ImH0US5O0bB2upXZztKdJD0TPODbjIzjr3s2KOe80"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-4 w-full">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-primary text-white mb-2 shadow-sm">
+                            Local
+                        </span>
+<h3 class="text-white text-lg font-bold leading-tight">Venice Canals</h3>
+<p class="text-slate-300 text-xs mt-1 font-medium truncate">Cannaregio</p>
+</div>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-4">
+<div class="flex items-end justify-between px-4">
+<h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white leading-none">Hidden Gems</h2>
+<a class="text-primary text-sm font-semibold hover:text-primary/80 transition-colors" href="#">See all</a>
+</div>
+<div class="flex overflow-x-auto snap-x snap-mandatory gap-4 px-4 pb-4 scrollbar-hide">
+<div class="relative flex-none w-[260px] h-[160px] rounded-2xl overflow-hidden snap-center group shadow-md border border-slate-100 dark:border-slate-800">
+<img alt="Secret Lagoon" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Misty mountain landscape with a small lake" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_bFAnXIuRL_Mx3k-vGXmqW-zU3HBXhxrTvU-Wl4R01fKvKcSFFTgXSotB0LlL1jIbxKQRP01rWvIT0nVQjKzo2bH4zET_RBrBuVYpGvgUnLX199ezFg8oEEm5mB_Z1zDIJompKflTTg5hH9jgmOsqZo0xR8XwqLojBmoLhujWlAUuip_iEElqhZ1Hwa_k5HJT_651yxkoUwjSDLwGvmU0ya-8kc_DWoBuZ3lSWO6HI97CKRbFOYN9E6DlE97fku8-dhgnvxIKahs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent opacity-90"></div>
+<div class="absolute top-3 left-3">
+<span class="inline-flex items-center px-2 py-1 rounded-lg text-[10px] font-bold bg-black/40 backdrop-blur-md text-white border border-white/20">
+<span class="material-symbols-outlined text-[12px] mr-1">directions_walk</span> Low Traffic
+                        </span>
+</div>
+<div class="absolute bottom-0 left-0 p-4 w-full">
+<h3 class="text-white text-lg font-bold">Secret Lagoon</h3>
+<p class="text-slate-300 text-xs">0.4 mi away</p>
+</div>
+</div>
+<div class="relative flex-none w-[260px] h-[160px] rounded-2xl overflow-hidden snap-center group shadow-md border border-slate-100 dark:border-slate-800">
+<img alt="The Old Library" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Small cozy library interior with wooden shelves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF-9s_P7b7vNQ2BohvAVAVaAF_x15eK3KjnC-QBJhXjhix6kvreaDuCSllLAV6OoJHIc1frupyb9THYb6Ny9vOBLVvzIpYzy9FfNZRhE2p5-XNRQHImITI2WZnlSXIsn4W9Y1mrdYLYiRQ2yTvEsvi01B4SGPycvjpUWuAozrHAvCq1PN3SPaLlZLubEbePYPcpiyRIKIBxyWd7yPrAYt0Bpi6aKFdnIsdvkbU5GN_VlUqKQu3a_qoAjK1A3OYKXrzglnQ-PaLTd0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent opacity-90"></div>
+<div class="absolute top-3 left-3">
+<span class="inline-flex items-center px-2 py-1 rounded-lg text-[10px] font-bold bg-black/40 backdrop-blur-md text-white border border-white/20">
+<span class="material-symbols-outlined text-[12px] mr-1">quiet_time</span> Quiet
+                        </span>
+</div>
+<div class="absolute bottom-0 left-0 p-4 w-full">
+<h3 class="text-white text-lg font-bold">The Old Library</h3>
+<p class="text-slate-300 text-xs">1.2 mi away</p>
+</div>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-4">
+<div class="flex items-end justify-between px-4">
+<h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white leading-none">Budget Friendly</h2>
+</div>
+<div class="flex overflow-x-auto snap-x snap-mandatory gap-3 px-4 pb-2 scrollbar-hide">
+<button class="flex-none snap-start bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg shadow-primary/25">
+                    Under $20
+                </button>
+<button class="flex-none snap-start bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-4 py-2 rounded-full text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                    Happy Hour
+                </button>
+<button class="flex-none snap-start bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-4 py-2 rounded-full text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                    Free Entry
+                </button>
+<button class="flex-none snap-start bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-4 py-2 rounded-full text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                    Street Food
+                </button>
+</div>
+<div class="flex overflow-x-auto snap-x snap-mandatory gap-4 px-4 pb-4 scrollbar-hide">
+<div class="relative flex-none w-[180px] rounded-xl overflow-hidden snap-center bg-white dark:bg-slate-800 shadow-soft border border-slate-100 dark:border-slate-700/50">
+<div class="h-28 w-full bg-slate-800 relative">
+<img alt="Pizza" class="w-full h-full object-cover" data-alt="Delicious slice of pizza on a wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7gLad7K-sAp8lI5xuB_u-JiYDEzksdRVD6oGoQ8WoDcsHwRMD02klYnrMLUOhREQSncurN5_ln3VkuVUtSltA7WNpi-k6mE6VcVFXIg1I4ubBQvxgfBhX4ZHxvlhNuPR9uqcHHWKV5nMZHDm0EYrLwjblpewmybNvhwdmOueMuLFNu91cwTnhvs1l5aJB-aANE1SgYB1HXzS0Rcwo8LxzANRwn4q53J5QKS3qkn0f9mdyCeDqVc4jh97PQvsPi2BHnDPzKyb4eJ0"/>
+<span class="absolute bottom-2 right-2 bg-black/80 text-white text-[10px] px-2 py-0.5 rounded font-bold backdrop-blur-sm">$5.00</span>
+</div>
+<div class="p-3">
+<h4 class="font-bold text-slate-900 dark:text-white text-sm">Joe's Pizza</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Best slice in town</p>
+</div>
+</div>
+<div class="relative flex-none w-[180px] rounded-xl overflow-hidden snap-center bg-white dark:bg-slate-800 shadow-soft border border-slate-100 dark:border-slate-700/50">
+<div class="h-28 w-full bg-slate-800 relative">
+<img alt="Ice Cream" class="w-full h-full object-cover" data-alt="Two colorful ice cream scoops in a cup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2Lz0oOOp7V1iZxbrZRZM9iKoxIki5nZTMCMheeHAE0kE2bg5eZQv7Tberq0FauENWRahvnyEMDEwxqv-mdQWORpipDQaboZwan4w8I7gDbCiphqEQxiwHR77s3-geDKdXNacF05j_FKRsMROrfQJzFI040j5oyq_GLN4YzomwGZsZfYlZWiJjNMOj8JCMTiymhOj5uJ-m4PZJRPNO5taNVKVQIrSe8MCfAgQshzF-CU3UGJ_pR7ClgIxGCpyBzur616WTlpF-LJ4"/>
+<span class="absolute bottom-2 right-2 bg-black/80 text-white text-[10px] px-2 py-0.5 rounded font-bold backdrop-blur-sm">$3.50</span>
+</div>
+<div class="p-3">
+<h4 class="font-bold text-slate-900 dark:text-white text-sm">Gelato Point</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Artisan flavors</p>
+</div>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-4 px-4">
+<div class="flex items-end justify-between">
+<h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white leading-none">Trending this week</h2>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-4 p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-soft border border-slate-100 dark:border-slate-700/50 cursor-pointer hover:border-primary/30 dark:hover:border-primary/50 transition-colors">
+<div class="w-20 h-20 shrink-0 rounded-xl overflow-hidden relative bg-slate-800">
+<img alt="The Rusty Anchor" class="w-full h-full object-cover" data-alt="Cozy cocktail bar interior with dim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx_yYpFHer27vudfkJRuU4fF72-iXrQAaKJY3wWxS5U9grVQxeq7nRA30r_p5mI5oTos1s-pmwP1Velmk8qZZzqmWF7lf8mgPsy3EZ5ZsuHWJ0vjEu5KM3qiNe2Dy1PchfYJ5tBzd7qYGgPS4GvHKPRdLhNVIub5GsnFcKAxTFUU1iINhohmzTbKMtY5_52dX2f4IeXmxV0DXSi8Q_-afwWdQF0YRJsBqDxq2-fAVg0p0H2I9nEjxD-ZY2pv2Adu55ksGcigXF7zA"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-slate-900 dark:text-white truncate">The Rusty Anchor</h3>
+<span class="font-bold text-primary text-sm">$$</span>
+</div>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-yellow-400 text-[16px] fill-current">star</span>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300">4.8</span>
+<span class="text-xs text-slate-400">(124)</span>
+</div>
+<div class="flex items-center gap-2 mt-2 text-xs text-slate-500 dark:text-slate-400 font-medium">
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">location_on</span> 0.4 mi
+                            </span>
+<span class="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600"></span>
+<span>Bar &amp; Grill</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-soft border border-slate-100 dark:border-slate-700/50 cursor-pointer hover:border-primary/30 dark:hover:border-primary/50 transition-colors">
+<div class="w-20 h-20 shrink-0 rounded-xl overflow-hidden relative bg-slate-800">
+<img alt="Neon Gallery" class="w-full h-full object-cover" data-alt="Modern art gallery interior with paintings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc-T7E7V9XsS_D1UjL7HQZt5TjDECCTJvTP2lR6X89D5mZDBcJElsVgiwr-zSt_qqxkm0UY6QdPsHOzar-IjQGClPop8DR2AdGGm_gto5IqEcTufY5EFVImtVPfwWbPF6wWN77T74qfHUBtS8dIHAdnvXLZIPYYFpXqAtzI-sZ3Fr4os1AaXclbGPvE1jy-jiE0TnTR8wW39exPQsV8UXwt-B8u8fWD-suxNjCvrbua9qHmC4JJHdVdTVJdRtAmj691PqcHmzOisI"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-slate-900 dark:text-white truncate">Neon Gallery</h3>
+<span class="font-bold text-slate-400 text-sm">$</span>
+</div>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-yellow-400 text-[16px] fill-current">star</span>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300">4.5</span>
+<span class="text-xs text-slate-400">(89)</span>
+</div>
+<div class="flex items-center gap-2 mt-2 text-xs text-slate-500 dark:text-slate-400 font-medium">
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">location_on</span> 1.2 mi
+                            </span>
+<span class="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600"></span>
+<span>Exhibition</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-soft border border-slate-100 dark:border-slate-700/50 cursor-pointer hover:border-primary/30 dark:hover:border-primary/50 transition-colors">
+<div class="w-20 h-20 shrink-0 rounded-xl overflow-hidden relative bg-slate-800">
+<img alt="Sakura Sushi" class="w-full h-full object-cover" data-alt="Plate of fresh sushi rolls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc28mp64tKuqOOhLtsc8BGQvvi8JrIlaHnsVxi3LfSyZYeCFUH-xakaWnEj48o-9PodX18u9vqjqoWuLq-Ww2sWIM1VlfukPhxPO0cG9CGmipbcrTDQUq265xMgp9jsxPNY565tzcsU8V00WJdX4tEDTfweQNAPS2z3xt40ujwubuTlGm4eNmmHW_wLge4VQgissVc00mM_2WgDldkr2GwjeHnxDAdCoLlKpaSqTx7YXv6ZVCsRuvSjxlEMrJqpOlSI-ExKyfLhik"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-slate-900 dark:text-white truncate">Sakura Sushi</h3>
+<span class="font-bold text-primary text-sm">$$$</span>
+</div>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-yellow-400 text-[16px] fill-current">star</span>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300">4.9</span>
+<span class="text-xs text-slate-400">(310)</span>
+</div>
+<div class="flex items-center gap-2 mt-2 text-xs text-slate-500 dark:text-slate-400 font-medium">
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">location_on</span> 2.1 mi
+                            </span>
+<span class="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600"></span>
+<span>Japanese</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 w-full max-w-md z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 pb-safe">
+<div class="flex justify-around items-center h-16 px-2">
+<a class="flex flex-col items-center justify-center w-full h-full text-primary gap-1" href="#">
+<span class="material-symbols-outlined fill-1">explore</span>
+<span class="text-[10px] font-bold">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 gap-1 transition-colors" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="text-[10px] font-medium">Map</span>
+</a>
+<div class="relative -top-5">
+<button class="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-primary/40 transform transition-transform active:scale-95 hover:scale-105">
+<span class="material-symbols-outlined text-2xl">add</span>
+</button>
+</div>
+<a class="flex flex-col items-center justify-center w-full h-full text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 gap-1 transition-colors" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-[10px] font-medium">Saved</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 gap-1 transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</div>
+</nav>
+</div>
+
+</body></html>

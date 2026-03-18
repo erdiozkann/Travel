@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Explore Hub</title>
+<!-- Fonts and Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem", 
+                        "lg": "1rem", // 16px as requested
+                        "xl": "1.5rem", 
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "soft": "0 4px 20px -2px rgba(0, 0, 0, 0.05)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-50 font-display antialiased pb-24">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-slate-200/50 dark:border-slate-800/50">
+<div class="flex items-center gap-2">
+<div class="flex items-center justify-center size-10 rounded-full bg-white dark:bg-slate-800 text-primary shadow-sm">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Current Location</p>
+<h1 class="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-1">
+                    Kyoto, Japan
+                    <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</h1>
+</div>
+</div>
+<button class="relative p-2 rounded-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-sm hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border border-white dark:border-slate-800"></span>
+</button>
+</header>
+<!-- Search Section -->
+<section class="px-4 py-6">
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="block w-full pl-12 pr-4 py-4 bg-white dark:bg-slate-800 border-none rounded-xl text-slate-900 dark:text-white placeholder-slate-400 focus:ring-2 focus:ring-primary/20 shadow-soft text-base font-medium transition-all" placeholder="Where do you want to go?" type="text"/>
+<div class="absolute inset-y-0 right-0 pr-2 flex items-center">
+<button class="p-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition-colors">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Quick Filters -->
+<div class="flex gap-3 mt-4 overflow-x-auto no-scrollbar pb-2">
+<button class="flex items-center gap-2 px-4 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full text-sm font-bold whitespace-nowrap shadow-sm">
+<span class="material-symbols-outlined text-[18px]">star</span>
+                All
+            </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 rounded-full text-sm font-semibold whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px]">restaurant</span>
+                Food
+            </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 rounded-full text-sm font-semibold whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px]">hiking</span>
+                Nature
+            </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 rounded-full text-sm font-semibold whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px]">museum</span>
+                Culture
+            </button>
+</div>
+</section>
+<!-- Curated by Locals -->
+<section class="mb-8">
+<div class="flex items-center justify-between px-4 mb-4">
+<h2 class="text-xl font-bold text-slate-900 dark:text-white tracking-tight">Curated by Locals</h2>
+<button class="text-primary text-sm font-bold hover:underline">See All</button>
+</div>
+<div class="flex overflow-x-auto gap-4 px-4 pb-4 no-scrollbar snap-x snap-mandatory">
+<!-- Card 1 -->
+<div class="snap-center shrink-0 w-[280px] bg-white dark:bg-slate-800 rounded-lg p-3 shadow-soft border border-slate-100 dark:border-slate-700/50">
+<div class="relative h-40 w-full rounded-lg overflow-hidden mb-3 group">
+<img alt="Traditional tea ceremony setup with matcha and sweets" class="h-full w-full object-cover transform group-hover:scale-105 transition-transform duration-500" data-alt="Traditional tea ceremony setup with matcha and sweets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5execaAMSHQpD-FIS2D535UDYy4YkPLmj1RQPFgNU97fUcIDNvlQIZnDauwarne-jyiuZH60mFC75hSsTgPn4U_jwmxN5wxW0R4KaaO6OcSiNayj4ojBxSUsyW9NVOmhI1qSc3k2X7YidQoGFhmsma0-5FCGSoRyBt8bqxaOn-SG-vXFJ5nl4Gy0f17FbtPRrH1cVw8zdJYjBlfEC5qQxxRin5utB2rsv1_VVFATBT3C9T4tNdI7v_Xr5t-fp4xNSg27xdFSKRg4"/>
+<div class="absolute top-2 left-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-2 py-1 rounded-md flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[14px] fill-1">verified</span>
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-800 dark:text-slate-200">Verified</span>
+</div>
+<button class="absolute top-2 right-2 p-1.5 bg-black/20 hover:bg-black/40 backdrop-blur-sm rounded-full text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white leading-tight">Hidden Tea Houses</h3>
+<div class="flex items-center gap-1 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[16px] text-amber-400 fill-1">star</span>
+<span class="text-xs font-bold text-slate-900 dark:text-white">4.9</span>
+</div>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400">Gion District</p>
+<div class="flex items-center justify-between mt-2 pt-3 border-t border-slate-100 dark:border-slate-700">
+<p class="text-sm font-medium text-slate-500"><span class="text-primary font-bold text-base">$$$</span> / person</p>
+<button class="bg-primary/10 hover:bg-primary/20 text-primary text-xs font-bold px-3 py-1.5 rounded-lg transition-colors">
+                            Explore
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="snap-center shrink-0 w-[280px] bg-white dark:bg-slate-800 rounded-lg p-3 shadow-soft border border-slate-100 dark:border-slate-700/50">
+<div class="relative h-40 w-full rounded-lg overflow-hidden mb-3 group">
+<img alt="Bamboo forest path in Kyoto with soft sunlight filtering through" class="h-full w-full object-cover transform group-hover:scale-105 transition-transform duration-500" data-alt="Bamboo forest path in Kyoto with soft sunlight filtering through" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu4ISu9HXKqjDJvRwUBTDEc0OxSLTjlzBt6uUjvLdrJGAWHdZzyjXTgSDPV2MuMecnJWKG_FuBjBXskxY99QMi3ylbOn4c8djY5jX4aYCBnNNE9vt-joKS87GcQsGx2fP5U66U-2NKr2hLz4zhkUZxkj3eBDY269BB2UBcMiUX2l-njXTQjguBag9hu_7W1vQnv1gIgfRpB07KB4hznr0PqzoeC07apMBC1fbzKizOrjwfMw2vQGJPrOx0wDN-lVef1JhLA38-yl0"/>
+<div class="absolute top-2 left-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-2 py-1 rounded-md flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[14px] fill-1">verified</span>
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-800 dark:text-slate-200">Verified</span>
+</div>
+<button class="absolute top-2 right-2 p-1.5 bg-black/20 hover:bg-black/40 backdrop-blur-sm rounded-full text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white leading-tight">Arashiyama Morning</h3>
+<div class="flex items-center gap-1 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[16px] text-amber-400 fill-1">star</span>
+<span class="text-xs font-bold text-slate-900 dark:text-white">4.8</span>
+</div>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400">Arashiyama</p>
+<div class="flex items-center justify-between mt-2 pt-3 border-t border-slate-100 dark:border-slate-700">
+<p class="text-sm font-medium text-slate-500"><span class="text-primary font-bold text-base">$$</span> / person</p>
+<button class="bg-primary/10 hover:bg-primary/20 text-primary text-xs font-bold px-3 py-1.5 rounded-lg transition-colors">
+                            Explore
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="snap-center shrink-0 w-[280px] bg-white dark:bg-slate-800 rounded-lg p-3 shadow-soft border border-slate-100 dark:border-slate-700/50">
+<div class="relative h-40 w-full rounded-lg overflow-hidden mb-3 group">
+<img alt="Japanese street food stall with lanterns at night" class="h-full w-full object-cover transform group-hover:scale-105 transition-transform duration-500" data-alt="Japanese street food stall with lanterns at night" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAylY5eLQai1E7YVWVVVsM1wCh5Vpj7tD78YaggGTBT7IBVhSX2sWWUHVS3t8vDbnfg6uzwqi9_rNir3jmAOs9yAurS-ofuHxPQCBMegG6UViUGJkUmsu05L-JcMte8B-UYLYdp9KOYCgHRVQgthXMXyrM91DNwzzt3C-_bWGJhEB6LBk-7pU1AAGxvnoo-xHmTW3bgFbtdOodfWzSF-fxaSvWtO2b3J8D_OedmGoZSAO5bB1zZv948uBEZeXp0uT7pevZsSvyPmlU"/>
+<div class="absolute top-2 left-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-2 py-1 rounded-md flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[14px] fill-1">verified</span>
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-800 dark:text-slate-200">Verified</span>
+</div>
+<button class="absolute top-2 right-2 p-1.5 bg-black/20 hover:bg-black/40 backdrop-blur-sm rounded-full text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white leading-tight">Street Food Walk</h3>
+<div class="flex items-center gap-1 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[16px] text-amber-400 fill-1">star</span>
+<span class="text-xs font-bold text-slate-900 dark:text-white">4.7</span>
+</div>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400">Nishiki Market</p>
+<div class="flex items-center justify-between mt-2 pt-3 border-t border-slate-100 dark:border-slate-700">
+<p class="text-sm font-medium text-slate-500"><span class="text-primary font-bold text-base">$</span> / person</p>
+<button class="bg-primary/10 hover:bg-primary/20 text-primary text-xs font-bold px-3 py-1.5 rounded-lg transition-colors">
+                            Explore
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Hidden Gems -->
+<section>
+<div class="flex items-center justify-between px-4 mb-4">
+<h2 class="text-xl font-bold text-slate-900 dark:text-white tracking-tight">Hidden Gems</h2>
+</div>
+<div class="flex overflow-x-auto gap-4 px-4 pb-8 no-scrollbar snap-x snap-mandatory">
+<!-- Wide Card 1 -->
+<div class="snap-center shrink-0 w-[300px] bg-white dark:bg-slate-800 rounded-lg overflow-hidden shadow-soft border border-slate-100 dark:border-slate-700/50 flex flex-col">
+<div class="relative h-48 w-full bg-slate-200">
+<img alt="Serene temple garden with koi pond" class="h-full w-full object-cover" data-alt="Serene temple garden with koi pond" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEPoACsvAYgJ0ylcEqIul8YDwGrWyxj7QxK31gwffF-goEHSNy9ANiOnPnXX5MWQDj_W-uVEAx9JrOoYzKbIdLZ9wjXflGCRCyEwEwMI7OKpqs8kIzluavMqdTBWS7pbP3g92iz0GySFkaFoJWuYzSFZc6Q2JOEY8elycEaOBQfD6sfEgzMNKUFMP66oXzYFp_4x2pvdXU3FYoL-uRxINdrFtloD_Q9C8xnO_NP5v2ZvZHEZVr-YlXTcoeZBiTUHZFEhOxwGd25mg"/>
+<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 pt-12">
+<h3 class="text-white font-bold text-lg">Secret Garden Temple</h3>
+<p class="text-slate-200 text-xs flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">visibility_off</span>
+                             Low crowds
+                        </p>
+</div>
+</div>
+<div class="p-4 flex items-center justify-between">
+<div>
+<p class="text-xs text-slate-500 uppercase font-bold tracking-wide">Experience</p>
+<p class="text-slate-900 dark:text-white font-bold text-base mt-1">Private Zen Meditation</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-primary font-bold">$$</span>
+<span class="text-[10px] bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-1.5 py-0.5 rounded">Verified</span>
+</div>
+</div>
+</div>
+<!-- Wide Card 2 -->
+<div class="snap-center shrink-0 w-[300px] bg-white dark:bg-slate-800 rounded-lg overflow-hidden shadow-soft border border-slate-100 dark:border-slate-700/50 flex flex-col">
+<div class="relative h-48 w-full bg-slate-200">
+<img alt="Neon lit alleyway in Tokyo at night" class="h-full w-full object-cover" data-alt="Neon lit alleyway in Tokyo at night" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ_YFUXAzoe04QdkWMQse02u9RwQrRCq8xPT_2lQ2o1xkTH7PkqOrwB01q0s3u1-FBaVbO7nLgTqpWsxU_fuTw2VRjK0B1mQKSw_TVJ6dZ7Zel6Jl5ZpO-R2Q1Wx16HwX777PvYDp5ElDBiCbpbq3viQnwrxg2_C1dyOi9eFda3pqTDfBa-x-TY48m8qqfl5L9Vs8c4IlcZb-FVtIcbqTaUB2wO2wRFFPLtEyhc6193nuNZ7EZdorJi_b3vy9cYDazohte9ELubNk"/>
+<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 pt-12">
+<h3 class="text-white font-bold text-lg">Retro Arcade Bar</h3>
+<p class="text-slate-200 text-xs flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">local_fire_department</span>
+                             Trending now
+                        </p>
+</div>
+</div>
+<div class="p-4 flex items-center justify-between">
+<div>
+<p class="text-xs text-slate-500 uppercase font-bold tracking-wide">Nightlife</p>
+<p class="text-slate-900 dark:text-white font-bold text-base mt-1">80s Gaming Night</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-primary font-bold">$</span>
+<span class="text-[10px] bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-1.5 py-0.5 rounded">Verified</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 pb-safe pt-2 px-6 pb-4">
+<ul class="flex justify-between items-center">
+<li class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined fill-1">explore</span>
+<span class="text-[10px] font-bold">Explore</span>
+</li>
+<li class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-[10px] font-medium">Saved</span>
+</li>
+<li class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+<div class="relative">
+<span class="material-symbols-outlined">airplane_ticket</span>
+<span class="absolute -top-1 -right-1 size-2 bg-primary rounded-full"></span>
+</div>
+<span class="text-[10px] font-medium">Trips</span>
+</li>
+<li class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</li>
+</ul>
+</nav>
+</body></html>

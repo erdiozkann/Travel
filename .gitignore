@@ -1,0 +1,11 @@
+.agent/
+.gemini/
+.DS_Store
+.env
+build/
+.dart_tool/
+.flutter-plugins*
+ios/Pods/
+android/.gradle/
+.idea/
+node_modules/

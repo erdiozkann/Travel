@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Community Feed</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "card-light": "#ffffff",
+                        "card-dark": "#1c2630",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Hide scrollbar for clean look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased selection:bg-primary/30">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden pb-24">
+<!-- Sticky Top Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md px-4 py-3 border-b border-slate-200 dark:border-slate-800">
+<h1 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Community</h1>
+<button class="flex items-center justify-center h-10 w-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">tune</span>
+</button>
+</header>
+<!-- Feed Content -->
+<main class="flex flex-col gap-6 px-4 pt-4 max-w-lg mx-auto w-full">
+<!-- Post 1 (Organic) -->
+<article class="flex flex-col bg-card-light dark:bg-card-dark rounded-2xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800">
+<!-- User Meta Header -->
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-slate-200 bg-cover bg-center ring-2 ring-white dark:ring-slate-700" data-alt="Portrait of Sofia Travels" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDAJ2kDmcBJLnW20FSdnaQRy-H87LRMj46x_rw0PzBkrRodkuKnfCpKuxX213PpJeQDF5t8ouLg-ZMYIgG9jO08xkAKjrDyQ1poZWtx7uBAMaHO-oeqciMTFvhcUtCChzVjq3rEqnqvn1hUPvQu_Y9Q0lShQJGzyVxYGTHey05W7zRTmxkcw5aqKWqm-7jW-A5iB-OaPz7yx6kd7QZiTwfz9wyCG2RDpF1q9MZbeqX6WrsLs1kiqgMXkQxhw0o-u97IyDX8DabDOdc');"></div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-slate-900 dark:text-white leading-none">Sofia Travels</span>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400 mt-1">Lisbon, Portugal</span>
+</div>
+</div>
+<button class="text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<!-- Main Visual -->
+<div class="relative w-full aspect-[4/5] bg-slate-200 group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Close up of grilled octopus tentacle plated with gourmet garnish" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCqWh4BVMguFOSz2lxcU6f5Z0aUiiKDT-g9GLFNFg0uSESXm8k7tGKVJlmQ0KrygTjZ050UylEzNu9uddirZvTAzh9C7b0w_SdrXfjJ7PRL97FOAa_ZgwBUt-PrD4xgonoDQ46PXYt5MufrAeNfRJTRV9MXnunIIcmbmvW_ljL999kJikwcxUghuDASQCrVL4TWRC1z27H45RV-sjGpazY0A4gEjP2h_RcLSewCFCN99JZLZQsOsYkcafENfeDT5FtNtx2wzv8-i0U');"></div>
+<!-- Quick Map Save Button Overlay -->
+<button class="absolute top-3 right-3 h-10 w-10 rounded-full bg-white/90 dark:bg-black/50 backdrop-blur-sm flex items-center justify-center text-slate-900 dark:text-white shadow-lg transition-transform active:scale-90 hover:bg-white dark:hover:bg-black/70">
+<span class="material-symbols-outlined filled" style="font-variation-settings: 'FILL' 0;">bookmark</span>
+</button>
+</div>
+<!-- Footer / Details -->
+<div class="p-4 pt-3 flex flex-col gap-3">
+<!-- Action Bar -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<button class="group flex items-center gap-1.5 text-slate-600 dark:text-slate-300 hover:text-red-500 dark:hover:text-red-400 transition-colors">
+<span class="material-symbols-outlined group-hover:fill-current" style="font-size: 26px;">favorite</span>
+<span class="text-sm font-bold">1.2k</span>
+</button>
+<button class="flex items-center gap-1.5 text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 26px;">mode_comment</span>
+<span class="text-sm font-bold">48</span>
+</button>
+<button class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 26px;">send</span>
+</button>
+</div>
+</div>
+<!-- Place Info -->
+<div>
+<div class="flex items-center justify-between mb-1">
+<h3 class="text-lg font-extrabold text-slate-900 dark:text-white leading-tight flex items-center gap-1">
+                                Solar dos Presuntos
+                                <span class="material-symbols-outlined text-primary text-sm" style="font-size: 16px;">verified</span>
+</h3>
+<span class="text-sm font-semibold text-slate-600 dark:text-slate-300">€€€</span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<div class="flex items-center text-primary">
+<span class="material-symbols-outlined" style="font-size: 18px; font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-size: 18px; font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-size: 18px; font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-size: 18px; font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-size: 18px; font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">• Seafood • Lisbon Centre</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+<span class="font-bold text-slate-900 dark:text-white">Sofia Travels</span> 
+                            Ideally located in the heart of Lisbon, this place serves the most authentic seafood I've had in years. The octopus was incredibly tender! 🐙
+                        </p>
+</div>
+</div>
+</article>
+<!-- Post 2 (Sponsored) -->
+<article class="flex flex-col bg-card-light dark:bg-card-dark rounded-2xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800 relative">
+<!-- User Meta Header -->
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-slate-200 bg-cover bg-center ring-2 ring-white dark:ring-slate-700" data-alt="Logo of Visit Porto tourism board" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXY-nxJw9MwK_CBpyGpCmVZ86Ik4GDXHCNxFtDjhgyO8xryy8QvtnxwHIx8mwj26_VhD3gMh_OAi9GydOrdlF0rX1Uzkmc1KXwSKsXtCTH_Dkbn5h5qrD4KN3z0gyebLJhE2ECJU5DZxW_CMchXzlMBAZcG5NGO8ZAHY883DvmMKz_V2t89l9lUEOfbaFBTiXMonfxtK5CRSTmf_D_u2is-9EqdMGL6i59qTlHiKGNDRr2bOLzBsDF6AY3MHcBppjPeYsmCA7gvag');"></div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="text-sm font-bold text-slate-900 dark:text-white leading-none">Visit Porto</span>
+<span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary/10 px-1.5 py-0.5 rounded-sm">Sponsored</span>
+</div>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400 mt-1">Porto, Portugal</span>
+</div>
+</div>
+<button class="text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<!-- Main Visual -->
+<div class="relative w-full aspect-[4/5] bg-slate-200 group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Scenic sunset view over Douro river with wine glasses" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDoIjVPfJiTDi420UlvlQSDd7NgyKPRJ6sd44lSvi-aBr4X3ef8uFozkUjjSpRoz8GtHQEODUdbZoR6Stwh4P-yor3OS0qA39BtXxghkun37YvefWNQHmx0OPv1dHfcY3PSHTr76DK0YmFOOHQxtr5AR2_eHnILZ5YjWwWu40Z3Syk4H8atrTpEqlB47feMHSHJeAr4J26g3CimbXcCRZa51_brDfdnujIX6FB4hRpdU-B9QYyEWBQ6VJR82qBZCKbTvRlI0t2rAaM');"></div>
+<button class="absolute top-3 right-3 h-10 w-10 rounded-full bg-white/90 dark:bg-black/50 backdrop-blur-sm flex items-center justify-center text-slate-900 dark:text-white shadow-lg transition-transform active:scale-90 hover:bg-white dark:hover:bg-black/70">
+<span class="material-symbols-outlined filled" style="font-variation-settings: 'FILL' 0;">bookmark</span>
+</button>
+<!-- Link Out Overlay -->
+<div class="absolute bottom-4 left-4 right-4">
+<button class="w-full bg-white/90 dark:bg-black/80 backdrop-blur-md text-slate-900 dark:text-white font-bold py-2.5 rounded-lg text-sm shadow-lg flex items-center justify-center gap-2 hover:bg-white dark:hover:bg-black transition-colors">
+                            Book Experience
+                            <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Footer / Details -->
+<div class="p-4 pt-3 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<button class="group flex items-center gap-1.5 text-slate-600 dark:text-slate-300 hover:text-red-500 dark:hover:text-red-400 transition-colors">
+<span class="material-symbols-outlined group-hover:fill-current" style="font-size: 26px;">favorite</span>
+<span class="text-sm font-bold">856</span>
+</button>
+<button class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 26px;">send</span>
+</button>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<h3 class="text-lg font-extrabold text-slate-900 dark:text-white leading-tight">Taylor's Port Cellars</h3>
+<span class="text-sm font-semibold text-slate-600 dark:text-slate-300">€€</span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<div class="flex items-center text-primary">
+<span class="material-symbols-outlined" style="font-size: 18px; font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-size: 18px; font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-size: 18px; font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-size: 18px; font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-size: 18px; font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">• Winery • Vila Nova de Gaia</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Discover the rich history of Port wine with breathtaking views of the Douro River. A must-visit for every wine lover.
+                        </p>
+</div>
+</div>
+</article>
+<!-- Post 3 (Organic) -->
+<article class="flex flex-col bg-card-light dark:bg-card-dark rounded-2xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800">
+<!-- User Meta Header -->
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-slate-200 bg-cover bg-center ring-2 ring-white dark:ring-slate-700" data-alt="Portrait of LocalEats_JP" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBc_I84K5stAeKABqL1o_T0jswv2CGz5GSWkcAqWusRtew_io0yw7_joLhvz4t9xh44-9-uaXmbwO9fPxZU-8FfdJgtb_KAcWXSG1l4y9894K45grfqGMkNdulHmbxmYT7qOytctUYjthEa6m6FqO7yFTwL9vGrkmZXhHAQ-mFL8q6TxZA2ftTBFWe4on0kMb_rb8sqiRBaTYKjCGPW3spBUtC6YFLPaRCYJIk_TAI642BDfpLtX80vo3Zz2QVjWfsHh2ITcvL4ZAs');"></div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-slate-900 dark:text-white leading-none">LocalEats_JP</span>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400 mt-1">Kyoto, Japan</span>
+</div>
+</div>
+<button class="text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<!-- Main Visual -->
+<div class="relative w-full aspect-[4/5] bg-slate-200 group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Steaming hot bowl of rich dark ramen noodles with pork" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAnQO3MVpQCACqRY1LcnZhKGzG3x9uTLfGfFyxf-DvQpC_un8HRBEFvIk_ye297A6KUurL0Y3fuQb6PXD-6KWqvOod8php0FjCa5fUM9IKWHxAh-RBZMjNRPq3IsTcBHpVk3ukoki7LlKGeUfRC8YKXt5ex9lekw2tOYNWVtDULeA41WeLcm1O0D3KX7q3UKtsXQ-Gq9OCXDttJ-9YfXmdHPPB591o4xxXEKC4EDLQBWzGXKxQT4so8OTRcuqgj1mP6Av4rxug2VtY');"></div>
+<button class="absolute top-3 right-3 h-10 w-10 rounded-full bg-white/90 dark:bg-black/50 backdrop-blur-sm flex items-center justify-center text-slate-900 dark:text-white shadow-lg transition-transform active:scale-90 hover:bg-white dark:hover:bg-black/70">
+<span class="material-symbols-outlined filled" style="font-variation-settings: 'FILL' 0;">bookmark</span>
+</button>
+</div>
+<!-- Footer / Details -->
+<div class="p-4 pt-3 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<button class="group flex items-center gap-1.5 text-slate-600 dark:text-slate-300 hover:text-red-500 dark:hover:text-red-400 transition-colors">
+<span class="material-symbols-outlined group-hover:fill-current" style="font-size: 26px;">favorite</span>
+<span class="text-sm font-bold">3.4k</span>
+</button>
+<button class="flex items-center gap-1.5 text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 26px;">mode_comment</span>
+<span class="text-sm font-bold">120</span>
+</button>
+<button class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 26px;">send</span>
+</button>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<h3 class="text-lg font-extrabold text-slate-900 dark:text-white leading-tight">Gogyo Ramen</h3>
+<span class="text-sm font-semibold text-slate-600 dark:text-slate-300">€</span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<div class="flex items-center text-primary">
+<span class="material-symbols-outlined" style="font-size: 18px; font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-size: 18px; font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-size: 18px; font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-size: 18px; font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-slate-300 dark:text-slate-600" style="font-size: 18px; font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">• Burnt Miso • Downtown Kyoto</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+<span class="font-bold text-slate-900 dark:text-white">LocalEats_JP</span> 
+                            The famous burnt miso ramen. Dark, smoky, and absolutely unforgettable. Best enjoyed on a rainy evening.
+                        </p>
+</div>
+</div>
+</article>
+<!-- Loading Skeleton (Suggestion for infinite scroll feel) -->
+<div class="h-24 flex items-center justify-center">
+<div class="animate-pulse flex space-x-2">
+<div class="h-2 w-2 bg-slate-300 rounded-full"></div>
+<div class="h-2 w-2 bg-slate-300 rounded-full"></div>
+<div class="h-2 w-2 bg-slate-300 rounded-full"></div>
+</div>
+</div>
+</main>
+<!-- Fixed Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-white/95 dark:bg-background-dark/95 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 pb-safe">
+<div class="flex items-center justify-around h-16 max-w-lg mx-auto">
+<button class="flex flex-col items-center justify-center gap-1 w-16 text-primary">
+<span class="material-symbols-outlined filled" style="font-size: 26px; font-variation-settings: 'FILL' 1;">dynamic_feed</span>
+<span class="text-[10px] font-bold">Feed</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-16 text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 26px;">map</span>
+<span class="text-[10px] font-medium">Map</span>
+</button>
+<button class="flex items-center justify-center -mt-8 h-14 w-14 rounded-full bg-primary text-white shadow-lg shadow-primary/30 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined" style="font-size: 28px;">add</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-16 text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 26px;">favorite</span>
+<span class="text-[10px] font-medium">Saved</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-16 text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 26px;">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</div>
+</nav>
+</div>
+</body></html>

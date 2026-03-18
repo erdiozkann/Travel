@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Create Check-in Post</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto shadow-2xl bg-background-light dark:bg-background-dark">
+<!-- Header -->
+<header class="sticky top-0 z-50 flex items-center justify-between bg-background-light/80 dark:bg-background-dark/80 px-4 py-3 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-colors">
+<button class="text-primary text-base font-medium hover:opacity-70 transition-opacity">Cancel</button>
+<h2 class="text-slate-900 dark:text-white text-base font-bold leading-tight tracking-[-0.015em]">New Check-in</h2>
+<button class="text-primary text-base font-bold leading-normal hover:opacity-70 transition-opacity">Post</button>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col gap-6 pb-20 pt-4">
+<!-- Photo Area -->
+<section class="px-4">
+<div class="relative w-full aspect-[4/5] bg-gray-200 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm group">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Close up of a delicious Portuguese custard tart (Pastel de Nata) with cinnamon dusting" data-location="Lisbon, Portugal" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-TacLQ2OPVbanpplvACKDBuIMakqMXQAKr6qWuOcVs1geLYJLk1pkvkmdI9glXNICtonbyvEQHWXjnyf54BSKXj7D_WClwgd3EyXjYtoqFepuw6mjyZr5dN4PxyQC-OPd5idKJfV-5epBGB3CD2JZ0tmw1ZGUPB2WFKLkDsHMai__4Mbymr1fQruGb64rQe3qKSGAwC0g5qXmK1nQnR8kdhVLXKSunt8EqHzlblBGdWcijCSKmz66Fsfs850F0XNdocWk28Lwv5c');">
+</div>
+<!-- Edit Overlay Buttons -->
+<div class="absolute bottom-4 right-4 flex gap-2">
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-black/40 backdrop-blur-md text-white hover:bg-black/60 transition-colors">
+<span class="material-symbols-outlined text-[20px]">crop</span>
+</button>
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-black/40 backdrop-blur-md text-white hover:bg-black/60 transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Location Picker -->
+<section class="flex flex-col gap-3">
+<div class="px-4 flex items-center justify-between">
+<h3 class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider">Nearby Locations</h3>
+<button class="text-primary text-xs font-medium">See Map</button>
+</div>
+<div class="flex gap-3 px-4 overflow-x-auto no-scrollbar pb-1">
+<!-- Selected Chip -->
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary pl-3 pr-4 shadow-sm shadow-primary/30 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-white text-[18px]">location_on</span>
+<p class="text-white text-sm font-medium leading-normal">Pastéis de Belém</p>
+</button>
+<!-- Suggestions -->
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 pl-3 pr-4 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors active:scale-95">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 text-[18px]">church</span>
+<p class="text-slate-700 dark:text-slate-200 text-sm font-medium leading-normal">Jerónimos Monastery</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 pl-3 pr-4 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors active:scale-95">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 text-[18px]">search</span>
+<p class="text-slate-700 dark:text-slate-200 text-sm font-medium leading-normal">Search...</p>
+</button>
+</div>
+</section>
+<!-- Verified Visit Toggle -->
+<section class="px-4">
+<div class="bg-white dark:bg-gray-800 rounded-xl p-4 flex items-center justify-between shadow-sm border border-gray-100 dark:border-gray-700">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-10 rounded-full bg-blue-50 dark:bg-blue-900/20 text-primary">
+<span class="material-symbols-outlined fill-1">verified</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="text-slate-900 dark:text-white text-sm font-semibold">Verified Visit</span>
+<span class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] px-1.5 py-0.5 rounded font-bold uppercase tracking-wide">Booked</span>
+</div>
+<span class="text-slate-500 dark:text-slate-400 text-xs">Based on Booking #8291</span>
+</div>
+</div>
+<!-- Custom Toggle Switch -->
+<label class="inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</label>
+</div>
+<p class="mt-2 text-xs text-slate-400 px-1">Enabling verification adds a trust badge to your post.</p>
+</section>
+<!-- Caption Input -->
+<section class="px-4">
+<div class="bg-white dark:bg-gray-800 rounded-xl p-1 shadow-sm border border-gray-100 dark:border-gray-700">
+<textarea class="w-full bg-transparent border-none focus:ring-0 p-4 text-slate-900 dark:text-white placeholder-slate-400 text-base font-normal leading-relaxed min-h-[120px] resize-none rounded-lg" placeholder="Share your experience! What made this place special? Use #authentic to get featured..."></textarea>
+</div>
+</section>
+<!-- Privacy Selector -->
+<section class="px-4 pb-6">
+<h3 class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider mb-3 px-1">Who can see this?</h3>
+<div class="flex p-1 bg-gray-200 dark:bg-gray-800/80 rounded-lg relative">
+<!-- This simulates the segmented control indicator -->
+<div class="w-1/2 h-full absolute left-0 top-0 p-1 transition-all duration-300 ease-out translate-x-0">
+<div class="w-full h-full bg-white dark:bg-gray-700 rounded shadow-sm"></div>
+</div>
+<button class="relative z-10 flex-1 flex items-center justify-center gap-2 py-2 rounded-md text-sm font-semibold text-slate-900 dark:text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">public</span>
+                        Public
+                    </button>
+<button class="relative z-10 flex-1 flex items-center justify-center gap-2 py-2 rounded-md text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors">
+<span class="material-symbols-outlined text-[18px]">group</span>
+                        Followers
+                    </button>
+</div>
+</section>
+</main>
+</div>
+</body></html>

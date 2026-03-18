@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Create Post - Light</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex min-h-screen flex-col bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center justify-between p-4 pb-2 bg-background-light dark:bg-background-dark sticky top-0 z-50">
+<div class="flex size-12 shrink-0 items-center justify-center cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100 text-2xl">close</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">New Check-in</h2>
+<button class="flex h-10 px-4 items-center justify-center rounded-lg bg-primary hover:bg-blue-600 text-white text-base font-bold leading-normal tracking-[0.015em] transition-colors">
+            Post
+        </button>
+</div>
+<!-- Main Content Form -->
+<div class="flex flex-col flex-1 px-4 py-3 gap-6 w-full max-w-md mx-auto">
+<!-- User Input Section -->
+<div class="flex flex-col gap-3">
+<div class="flex gap-3">
+<div class="shrink-0">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-12 border-2 border-white dark:border-slate-700 shadow-sm" data-alt="User profile picture placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuASlltVliZ8BwvFKMU_GOv29Dsw3WV96HkeN6ips9r_YCy-DmHDkhsXLgaioXdRfE8yAmltokSnBp7Rfckw4G0imsgoqobRycWs16rZS_hYEOIyl91QBW97MIOOzW4CcMaODQtKXoy3FZbljA1pOHvWc7ars4V1ic7b3bOXe4em2J_nBdGoA-Yb6-liMsHS2-7EfjfCsk2zrDBnymO1qtpzpb6H7LevCweFogeTJlgMWU7qiKbfSQYnPIB8QVurKtO5HrTIm5wpy9g");'></div>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">Alex Morgan</p>
+<textarea class="w-full resize-none border-none bg-transparent p-0 text-lg placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:ring-0 text-slate-900 dark:text-slate-100 min-h-[120px]" placeholder="Share your honest experience about this place..."></textarea>
+</div>
+</div>
+</div>
+<!-- Photo Grid Section -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<h3 class="text-base font-bold text-slate-900 dark:text-slate-100">Photos</h3>
+<button class="text-primary text-sm font-medium hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-lg">add_a_photo</span> Add more
+                </button>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="relative group aspect-[4/3] w-full cursor-pointer overflow-hidden rounded-lg">
+<div class="absolute inset-0 bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Scenic travel destination view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDaFJpthIlw59_e2khHD-sls-q3AXF_-dXzSVEJal0icuL7omQASIZZIFiudCOO0lhoUJoYaUuUjfdGlnIdoXWa_SF3UNcXuUaOFGCRW0lmSmRT-vA9xMl5FxFY5U16ddQVEt9Um7xvQ50sT6ogzj8scTGhxuXrJ4FwnClvv8pezHvbj_SfOA8qF2yPFepxmLer9byRyENIRktosYddjcghM5qHTS6RDg5mFOBf1KXNOZ2YM7KD26ZNqARDDo6-j6LIb3Sa-MutarM");'></div>
+<button class="absolute top-2 right-2 bg-black/50 text-white rounded-full p-1 hover:bg-black/70 transition-colors">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+<div class="relative group aspect-[4/3] w-full cursor-pointer overflow-hidden rounded-lg flex items-center justify-center bg-slate-100 dark:bg-slate-800 border-2 border-dashed border-slate-300 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+<div class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined text-3xl">add_photo_alternate</span>
+<span class="text-xs font-medium">Add Photo</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Settings Section -->
+<div class="flex flex-col gap-4 mt-2">
+<!-- Location Tag -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-10 rounded-full bg-blue-50 dark:bg-blue-900/30 text-primary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div class="flex flex-col">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">Add Location</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">Where are you checking in?</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</div>
+<!-- Verified Booking Toggle -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-10 rounded-full bg-green-50 dark:bg-green-900/30 text-green-600">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div class="flex flex-col">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">Verified Booking</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">Link a booking to verify review</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Private Post Toggle -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-10 rounded-full bg-purple-50 dark:bg-purple-900/30 text-purple-600">
+<span class="material-symbols-outlined">lock</span>
+</div>
+<div class="flex flex-col">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">Private Post</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">Only visible to followers</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Bottom Spacing -->
+<div class="h-8 w-full bg-transparent"></div>
+</body></html>

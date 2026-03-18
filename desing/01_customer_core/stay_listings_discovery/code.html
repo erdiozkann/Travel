@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stay Listings Discovery</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-[#0d141b] dark:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white dark:bg-[#1a2632] shadow-2xl">
+<!-- Header -->
+<div class="sticky top-0 z-50 bg-white/90 dark:bg-[#1a2632]/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center justify-between p-4 pb-2">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-[#0d141b] dark:text-white">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<h2 class="text-[#0d141b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Stays in Barcelona</h2>
+<div class="flex size-10 items-center justify-center">
+<button class="flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors size-10 text-[#0d141b] dark:text-white">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</button>
+</div>
+</div>
+<!-- Filter Bar -->
+<div class="flex gap-3 px-4 pb-4 overflow-x-auto hide-scrollbar">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 shadow-sm active:scale-95 transition-transform">
+<p class="text-[#0d141b] dark:text-white text-sm font-semibold leading-normal">Dates</p>
+<span class="material-symbols-outlined text-[20px] text-gray-500">keyboard_arrow_down</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 shadow-sm active:scale-95 transition-transform">
+<p class="text-[#0d141b] dark:text-white text-sm font-semibold leading-normal">Price</p>
+<span class="material-symbols-outlined text-[20px] text-gray-500">keyboard_arrow_down</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 shadow-sm active:scale-95 transition-transform">
+<p class="text-[#0d141b] dark:text-white text-sm font-semibold leading-normal">Room Type</p>
+<span class="material-symbols-outlined text-[20px] text-gray-500">keyboard_arrow_down</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px] text-[#0d141b] dark:text-white">tune</span>
+</button>
+</div>
+</div>
+<!-- Content List -->
+<div class="flex flex-col gap-6 p-4 pb-24">
+<!-- Card 1 -->
+<div class="flex flex-col gap-3 group cursor-pointer">
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-sm">
+<div class="absolute top-3 right-3 z-10">
+<button class="size-8 rounded-full bg-white/70 backdrop-blur-sm flex items-center justify-center hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-[20px] text-gray-700">favorite</span>
+</button>
+</div>
+<div class="absolute top-3 left-3 z-10 flex gap-2">
+<span class="px-2.5 py-1 rounded-lg bg-white/90 backdrop-blur-md text-[10px] font-bold uppercase tracking-wider text-gray-800 shadow-sm">
+                            Local Favorite
+                        </span>
+</div>
+<div class="w-full h-full bg-gray-200 bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Modern apartment interior with sunlight" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD72nGPUO30KSlR6FXlfu2KyioJxjvgDqaWlgHT69z9ZZZN179RItGzGmdKOD8vOjISG1DF-BppkuwWxTIptaIL_HJ6LB63Gvt1wL3tiCp5JmPzzsPU00Zfano2uazmRQYwH-T9UQITNvxKQCI8wMrachKHr8RzK3naGXVOnC6cl1Vm-BDMZbWDcT7oje2j4vfyjQRqDEqbGrmmt9-yDHjGJbMCeu_pRQ6FBzkXEkgxnaZnroPkenkWlLDRCsktUeR0fKDzIEafENE');"></div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<h3 class="text-[#0d141b] dark:text-white text-lg font-bold leading-tight">Modern Studio in Gràcia</h3>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-[#0d141b] dark:text-white fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-semibold text-[#0d141b] dark:text-white">4.9</span>
+<span class="text-sm text-gray-500">(120)</span>
+</div>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-sm">Gràcia, Barcelona • <span class="text-primary font-medium">Verified Host</span></p>
+<div class="flex justify-between items-center mt-1">
+<p class="text-[#0d141b] dark:text-white text-base font-semibold">€80–130 <span class="text-gray-500 text-sm font-normal">/ night</span></p>
+<button class="h-8 px-4 bg-primary hover:bg-blue-600 text-white text-sm font-semibold rounded-lg transition-colors">
+                            View Stay
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col gap-3 group cursor-pointer">
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-sm">
+<div class="absolute top-3 right-3 z-10">
+<button class="size-8 rounded-full bg-white/70 backdrop-blur-sm flex items-center justify-center hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-[20px] text-gray-700">favorite</span>
+</button>
+</div>
+<div class="absolute top-3 left-3 z-10 flex gap-2">
+<span class="px-2.5 py-1 rounded-lg bg-primary/90 backdrop-blur-md text-[10px] font-bold uppercase tracking-wider text-white shadow-sm">
+                            Rare Find
+                        </span>
+</div>
+<div class="w-full h-full bg-gray-200 bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Bright loft with high ceilings" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJ3848vEB0_dQA-xwU2OtM1nHXvOqEU--Qcs5CQKh-2vmwRL9AShLjeGbULfaOYZy_CcUY_ctZn8L8GZuxpyMCHBbkMk3jy8wqFGrlVAbf8rICDPiB36652SFvBs564eck-qFX4m56wwzVr4UxKZFr8NoZRC1NwgdNdZ7xMMcNc31f3gQ-1uslFjS3-xC0gb4nvtDV4RFVehYcxkIEpBlgh0p_0tLEnQWBXY1mQkxtR6U2_A7GrIWDsBbpyS_OnM8DjERIXVKWuW0');"></div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<h3 class="text-[#0d141b] dark:text-white text-lg font-bold leading-tight">Sunny Loft near Park Güell</h3>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-[#0d141b] dark:text-white fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-semibold text-[#0d141b] dark:text-white">4.8</span>
+<span class="text-sm text-gray-500">(85)</span>
+</div>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-sm">Gràcia, Barcelona • <span class="text-primary font-medium">Verified Host</span></p>
+<div class="flex justify-between items-center mt-1">
+<p class="text-[#0d141b] dark:text-white text-base font-semibold">€95–150 <span class="text-gray-500 text-sm font-normal">/ night</span></p>
+<button class="h-8 px-4 bg-primary hover:bg-blue-600 text-white text-sm font-semibold rounded-lg transition-colors">
+                            View Stay
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex flex-col gap-3 group cursor-pointer">
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-sm">
+<div class="absolute top-3 right-3 z-10">
+<button class="size-8 rounded-full bg-white/70 backdrop-blur-sm flex items-center justify-center hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-[20px] text-gray-700">favorite</span>
+</button>
+</div>
+<div class="absolute top-3 left-3 z-10 flex gap-2">
+<span class="px-2.5 py-1 rounded-lg bg-emerald-500/90 backdrop-blur-md text-[10px] font-bold uppercase tracking-wider text-white shadow-sm">
+                            Superhost
+                        </span>
+</div>
+<div class="w-full h-full bg-gray-200 bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Cozy bedroom with historic details" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAGFGTfQ0KjmSj-sImsmpNTqNdW-P5qpR1qtwTKH6SfR0XxWOUap9Vbnpf19xqZ6QZJtZCS51SZtNWQHu4cFe4lJixoZVBCRLN6eT3xv56F63KRInSq5rIVNtbBPaYTrQdznhyXKzkcCcQ-lBiPYBfMtOMaSZtcdN8ZuDmE3Xt6IdzAW_uuBFZrSy_Xw5PAz6-6nNL1Zt7P5FokApCxz4EkADpn8Ov0uV3pSWJbEqJ742ocdKs0hW2vFyAAkswN93q8wjPjZ4_ABhg');"></div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<h3 class="text-[#0d141b] dark:text-white text-lg font-bold leading-tight">Cozy Room in Historic Building</h3>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-[#0d141b] dark:text-white fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-semibold text-[#0d141b] dark:text-white">4.7</span>
+<span class="text-sm text-gray-500">(200)</span>
+</div>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-sm">Gràcia, Barcelona</p>
+<div class="flex justify-between items-center mt-1">
+<p class="text-[#0d141b] dark:text-white text-base font-semibold">€60–90 <span class="text-gray-500 text-sm font-normal">/ night</span></p>
+<button class="h-8 px-4 bg-primary hover:bg-blue-600 text-white text-sm font-semibold rounded-lg transition-colors">
+                            View Stay
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="flex flex-col gap-3 group cursor-pointer">
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-sm">
+<div class="absolute top-3 right-3 z-10">
+<button class="size-8 rounded-full bg-white/70 backdrop-blur-sm flex items-center justify-center hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-[20px] text-gray-700">favorite</span>
+</button>
+</div>
+<div class="w-full h-full bg-gray-200 bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Luxury penthouse living room" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuArSSRwatWjNdnmiaQEOBuZXDnFcHgExgf9AzWedJlvIJL9ddIzPDTK5vziYtmoDv_pqCbLzXC6UCotH3tEZuozW1t8Bnf0eGdTkll3gQ3f5BOLJlM-TZ3bNbJ8rY71MQWLJL3TYH9idIb5PtaV6umxTB7Q05JRFP8Tt-ImgsBWw5h6tI16pv7ux3WWSvIcn7Jlw6IArmJ-Rg51Xja2aTEqCXWYwxe2Y37QWbSkqxMCfbMeigXE910a9JvESqK5_V0LCWpHD7MOw_8');"></div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<h3 class="text-[#0d141b] dark:text-white text-lg font-bold leading-tight">Penthouse with Terrace</h3>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-[#0d141b] dark:text-white fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-semibold text-[#0d141b] dark:text-white">4.9</span>
+<span class="text-sm text-gray-500">(45)</span>
+</div>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-sm">Eixample, Barcelona • <span class="text-primary font-medium">Verified Host</span></p>
+<div class="flex justify-between items-center mt-1">
+<p class="text-[#0d141b] dark:text-white text-base font-semibold">€180–250 <span class="text-gray-500 text-sm font-normal">/ night</span></p>
+<button class="h-8 px-4 bg-primary hover:bg-blue-600 text-white text-sm font-semibold rounded-lg transition-colors">
+                            View Stay
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 w-full max-w-md bg-white dark:bg-[#1a2632] border-t border-gray-100 dark:border-gray-800 pb-safe">
+<div class="flex justify-around items-center h-16">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[24px] fill-current" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="text-[10px] font-medium">Explore</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+<span class="material-symbols-outlined text-[24px]">favorite</span>
+<span class="text-[10px] font-medium">Saved</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+<span class="material-symbols-outlined text-[24px]">map</span>
+<span class="text-[10px] font-medium">Map</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+<span class="material-symbols-outlined text-[24px]">chat_bubble</span>
+<span class="text-[10px] font-medium">Inbox</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</div>
+<!-- Safe area spacer for mobile home bar -->
+<div class="h-5 w-full"></div>
+</div>
+</div>
+</body></html>

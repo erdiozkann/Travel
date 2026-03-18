@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Trip Planner - Light</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+            extend: {
+                colors: {
+                "primary": "#137fec",
+                "background-light": "#f6f7f8",
+                "background-dark": "#101922",
+                },
+                fontFamily: {
+                "display": ["Plus Jakarta Sans", "sans-serif"]
+                },
+                borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar hiding for cleaner mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased overflow-hidden">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-hidden max-w-md mx-auto shadow-2xl bg-background-light dark:bg-background-dark border-x border-slate-200 dark:border-slate-800">
+<!-- Header -->
+<div class="flex items-center justify-between p-4 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-20 border-b border-slate-100 dark:border-slate-800">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center text-slate-900 dark:text-white">Trip Planner</h2>
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- Scrollable Chat Content -->
+<div class="flex-1 overflow-y-auto overflow-x-hidden p-4 space-y-6 scroll-smooth no-scrollbar pb-32">
+<!-- User Message Context (Optional but adds realism) -->
+<div class="flex justify-end">
+<div class="bg-primary text-white px-5 py-3 rounded-2xl rounded-tr-sm shadow-sm max-w-[85%]">
+<p class="text-sm font-medium">Plan a Saturday in Rome focusing on local food and history.</p>
+</div>
+</div>
+<!-- AI Response Container -->
+<div class="flex gap-3 items-start">
+<!-- Avatar -->
+<div class="shrink-0 rounded-full bg-gradient-to-br from-blue-100 to-indigo-200 p-0.5 mt-1">
+<div class="size-10 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center overflow-hidden">
+<img alt="AI Assistant Avatar" class="size-full object-cover opacity-90" data-alt="Abstract gradient avatar representing AI" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZqEJcvyLJIh4ccj0IirxPArmUGkH7OgswPmpYQe_OeGSrHNz4RRI0S4Ag8riHWjz6XsvUFNDcgtp31WHIPqgmagabVi-cq4xlX0cHu-vEA_nIhX4e06J-1VsMbYjFb6AImrhBrEuAemoi0_opx3hoGF2t8ZQ3HR5nhPUjWKMvkzTU132erGSt-KiJgzFTrNZg2bgwlCDZeV614QmwjJCeNXRJizT2t5CXfqrYXewpiVzJvlB_tserVIcAN_Zi3s0c5eLqyqe--Iw"/>
+</div>
+</div>
+<div class="flex flex-col gap-3 flex-1 min-w-0">
+<!-- AI Name & Confidence Badge -->
+<div class="flex flex-wrap items-center gap-2">
+<span class="text-xs font-semibold text-slate-500 dark:text-slate-400">Travel Assistant</span>
+<div class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-100 dark:border-emerald-800">
+<span class="material-symbols-outlined text-emerald-600 dark:text-emerald-400 text-[14px]">verified</span>
+<span class="text-[10px] font-bold text-emerald-700 dark:text-emerald-300 uppercase tracking-wide">High Confidence</span>
+</div>
+</div>
+<!-- Chat Bubble -->
+<div class="bg-white dark:bg-slate-800 p-4 rounded-2xl rounded-tl-sm shadow-sm border border-slate-100 dark:border-slate-700">
+<p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                            I've crafted an itinerary focusing on authentic local experiences and affordable pricing. Here is a curated plan for your Saturday in Rome.
+                        </p>
+</div>
+<!-- Itinerary Cards Stack -->
+<div class="flex flex-col gap-4 mt-1">
+<!-- Card 1 -->
+<div class="group relative overflow-hidden rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow">
+<div class="flex">
+<div class="w-28 shrink-0 bg-slate-200">
+<img alt="Colosseum in Rome" class="h-full w-full object-cover" data-alt="Ancient Roman Colosseum exterior view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2m3JJrcsM4rvIcNAj6MDiseIle1UcixMm_d8aLuwhfku-cuUxmRdMjwZQIAC8cT7LP7vRvD_qX4OR8Zz1iQy21FJ_g4wPmU57JAIG6uBp8SqSkTq3d4KvCxxxFznY_4X4dAN9ax9xwSh6dtiFmAqqC9q2LWZnlIk9BZ3Oedq54ClVDaqSHYLtbni9u7_mKzx6tiwrAjQfCfZIFEdyIC2JAiK0hepLuPSaBd7MeCqxb4QUbLeQBgg42mubz4eUOKMzDIti8o-5qBo"/>
+</div>
+<div class="flex flex-1 flex-col p-3 gap-1.5 justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-bold text-primary uppercase tracking-wider">09:00 AM</span>
+<span class="text-[11px] font-medium text-slate-400">Rome, Italy</span>
+</div>
+<h3 class="font-bold text-slate-900 dark:text-white leading-tight mt-0.5">Colosseum Tour</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">
+                                                Local Pick
+                                            </span>
+<span class="text-xs text-slate-500 dark:text-slate-400">€€ • History</span>
+</div>
+</div>
+<div class="flex justify-end">
+<button class="bg-background-light dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-900 dark:text-white text-xs font-semibold py-1.5 px-3 rounded-lg transition-colors flex items-center gap-1">
+                                            Details
+                                            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative overflow-hidden rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow">
+<div class="flex">
+<div class="w-28 shrink-0 bg-slate-200">
+<img alt="Pasta dish" class="h-full w-full object-cover" data-alt="Close up of authentic Italian pasta dish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSK-eNBTAxp3plKC3MjCHXagkIoJ31dB-FfuIqcy8NObgVX6VdifYuQFu6cUwsQE3nChbfPeluS7gBVxoudvBaCVU55yMTGLTm8lkAyFXmr4lSq4doW6rmCp-cd7mdFlB9FAwWq1A-Eq0MtotxuQwnvXjzw12p-rI0aLEn4ktbR342IvM3L0MaA_PLRqFPFZ_s2hCh6R8I59T5QPiipjG1vw2K6oh5ZOmfAr6SWKf6Vj3_rNnhZyzEl3fvKiSE_E_iB-vbWqa0jWw"/>
+</div>
+<div class="flex flex-1 flex-col p-3 gap-1.5 justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-bold text-primary uppercase tracking-wider">12:30 PM</span>
+<span class="text-[11px] font-medium text-slate-400">Trastevere</span>
+</div>
+<h3 class="font-bold text-slate-900 dark:text-white leading-tight mt-0.5">Trattoria da Enzo</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300">
+                                                Authentic Cuisine
+                                            </span>
+<span class="text-xs text-slate-500 dark:text-slate-400">€€ • Food</span>
+</div>
+</div>
+<div class="flex justify-end">
+<button class="bg-background-light dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-900 dark:text-white text-xs font-semibold py-1.5 px-3 rounded-lg transition-colors flex items-center gap-1">
+                                            Reserve
+                                            <span class="material-symbols-outlined text-[14px]">restaurant</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative overflow-hidden rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow">
+<div class="flex">
+<div class="w-28 shrink-0 bg-slate-200">
+<img alt="Rome Streets" class="h-full w-full object-cover" data-alt="Cobblestone streets of Rome in afternoon light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_LuEmaIa48u7GLMR6Jy460xyYTtjFVsneSBaa73IqaWcYQLRhYj-yijQzD8QDjGNzhRkSPfCO35MQQ0wL966rcdsrP8Vv_HFiDj8UzT10Dv13DNA_nWRdtj1_joaaTQ6EVhnMlRyBKIkw2tkvgrWvusNeMHamOyaUZNXZPkqkTghtNGtgOl8_9rWOHenz7Z788Awg3-ejY7kWZ3U9cMSmGWI0_x48AykCgl0lfvl3iXt-VvCXkhmkVtRVeSvuQSti8iMtRaZwdP0"/>
+</div>
+<div class="flex flex-1 flex-col p-3 gap-1.5 justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-bold text-primary uppercase tracking-wider">03:00 PM</span>
+<span class="text-[11px] font-medium text-slate-400">Centro Storico</span>
+</div>
+<h3 class="font-bold text-slate-900 dark:text-white leading-tight mt-0.5">Hidden Gems Walk</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300">
+                                                Off-Path
+                                            </span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Free • Walk</span>
+</div>
+</div>
+<div class="flex justify-end">
+<button class="bg-background-light dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-900 dark:text-white text-xs font-semibold py-1.5 px-3 rounded-lg transition-colors flex items-center gap-1">
+                                            Map View
+                                            <span class="material-symbols-outlined text-[14px]">map</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- AI Follow up Suggestion -->
+<div class="flex gap-2 mt-2">
+<button class="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                            Suggest dinner options
+                        </button>
+<button class="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                            Add a museum
+                        </button>
+</div>
+</div>
+</div>
+<div class="flex justify-center py-4">
+<span class="text-[10px] text-slate-400 uppercase tracking-widest font-medium">End of suggestions</span>
+</div>
+</div>
+<!-- Bottom Actions -->
+<div class="absolute bottom-0 left-0 right-0 bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 p-4 pb-6 z-20">
+<div class="flex gap-3 max-w-md mx-auto">
+<button class="flex-1 h-12 flex items-center justify-center gap-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-bold text-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+                    Modify
+                </button>
+<button class="flex-[2] h-12 flex items-center justify-center gap-2 rounded-xl bg-primary text-white font-bold text-sm shadow-lg shadow-primary/25 hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+                    Save Itinerary
+                </button>
+</div>
+</div>
+</div>
+</body></html>

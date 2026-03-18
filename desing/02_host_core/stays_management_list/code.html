@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stays Management List</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0d141b] dark:text-white">
+<div class="relative flex h-full min-h-screen w-full max-w-md mx-auto flex-col bg-background-light dark:bg-background-dark overflow-x-hidden border-x border-[#cfdbe7] dark:border-gray-800 shadow-xl">
+<!-- Header -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<div class="text-[#0d141b] dark:text-white flex size-12 shrink-0 items-center justify-center cursor-pointer hover:bg-black/5 dark:hover:bg-white/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</div>
+<h2 class="text-[#0d141b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Manage Stays</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="text-primary text-base font-bold leading-normal tracking-[0.015em] shrink-0 hover:opacity-80 transition-opacity">Export</button>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="px-4 py-3 bg-background-light dark:bg-background-dark">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full shadow-sm">
+<div class="text-[#4c739a] flex border-none bg-white dark:bg-[#1a2634] items-center justify-center pl-4 rounded-l-xl border-r-0">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0d141b] dark:text-white focus:outline-0 focus:ring-0 border-none bg-white dark:bg-[#1a2634] focus:border-none h-full placeholder:text-[#4c739a] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search properties or hosts" value=""/>
+</div>
+</label>
+</div>
+<!-- Filters -->
+<div class="flex gap-3 px-4 pb-3 overflow-x-auto no-scrollbar bg-background-light dark:bg-background-dark">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-[#1a2634] border border-[#cfdbe7] dark:border-gray-700 pl-4 pr-3 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors shadow-sm">
+<p class="text-[#0d141b] dark:text-white text-sm font-medium leading-normal">Region: All</p>
+<span class="material-symbols-outlined text-[#0d141b] dark:text-white text-[20px]">expand_more</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-[#1a2634] border border-[#cfdbe7] dark:border-gray-700 pl-4 pr-3 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors shadow-sm">
+<p class="text-[#0d141b] dark:text-white text-sm font-medium leading-normal">Price: Any</p>
+<span class="material-symbols-outlined text-[#0d141b] dark:text-white text-[20px]">expand_more</span>
+</button>
+</div>
+<!-- Tabs -->
+<div class="pb-2 bg-background-light dark:bg-background-dark sticky top-[72px] z-10">
+<div class="flex border-b border-[#cfdbe7] dark:border-gray-800 px-4 justify-between">
+<button class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-[#0d141b] dark:text-white pb-[13px] pt-4 flex-1">
+<p class="text-[#0d141b] dark:text-white text-sm font-bold leading-normal tracking-[0.015em]">All</p>
+</button>
+<button class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#4c739a] hover:text-[#0d141b] dark:hover:text-white pb-[13px] pt-4 flex-1 transition-colors">
+<p class="text-current text-sm font-bold leading-normal tracking-[0.015em]">Active</p>
+</button>
+<button class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#4c739a] hover:text-[#0d141b] dark:hover:text-white pb-[13px] pt-4 flex-1 transition-colors">
+<p class="text-current text-sm font-bold leading-normal tracking-[0.015em]">Pending</p>
+</button>
+<button class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#4c739a] hover:text-[#0d141b] dark:hover:text-white pb-[13px] pt-4 flex-1 transition-colors">
+<p class="text-current text-sm font-bold leading-normal tracking-[0.015em]">Suspended</p>
+</button>
+</div>
+</div>
+<!-- List Content -->
+<div class="flex flex-col flex-1 p-4 gap-4 bg-background-light dark:bg-background-dark">
+<!-- Item 1: Active -->
+<div class="flex items-center gap-4 bg-white dark:bg-[#1a2634] p-3 rounded-xl shadow-sm border border-transparent hover:border-[#cfdbe7] dark:hover:border-gray-700 transition-all cursor-pointer group">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16 shrink-0" data-alt="Modern villa with pool" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDHEUahTVAiY-zgJsEwVQRgxloHNnBsVkQ8K06ai6nNJck8BpI29J7b4NTMlThnjg00SHQ8xeUFVge_KotHiGB6SJTs81zN0_KJf1ajTiEo1S1N3HpNAlU1wi3nVbT2F0vlIQlCXShxVFPFcsIwkaYYbNhA2Bf_CWyja1Zx9ucXBkiZUaxvRgq95Jh4SaWqU1CsmHrNZCi7lM8fbo93Kfl_SZf6An19g7B-ApmhsCvKayjYqJ6Y_y3AEzo84iIOmr9VnnFcqhhlAb8");'></div>
+<div class="flex flex-col flex-1 justify-center min-w-0">
+<div class="flex justify-between items-start">
+<p class="text-[#0d141b] dark:text-white text-base font-semibold leading-tight line-clamp-1 group-hover:text-primary transition-colors">Sunset Villa - Bali</p>
+</div>
+<p class="text-[#4c739a] text-sm font-normal leading-normal mt-1 truncate">Host: Wayan Dharma</p>
+<p class="text-[#0d141b] dark:text-gray-300 text-sm font-medium leading-normal mt-0.5">$150 - $250 / night</p>
+</div>
+<div class="shrink-0 flex flex-col items-end gap-2">
+<div class="flex items-center gap-1.5 px-2 py-1 rounded-md bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800">
+<div class="size-2 rounded-full bg-green-600"></div>
+<span class="text-xs font-medium text-green-700 dark:text-green-400">Active</span>
+</div>
+<span class="material-symbols-outlined text-[#cfdbe7] group-hover:text-primary transition-colors text-[20px]">chevron_right</span>
+</div>
+</div>
+<!-- Item 2: Pending -->
+<div class="flex items-center gap-4 bg-white dark:bg-[#1a2634] p-3 rounded-xl shadow-sm border border-transparent hover:border-[#cfdbe7] dark:hover:border-gray-700 transition-all cursor-pointer group">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16 shrink-0" data-alt="White modern home exterior" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBnhePySjsEqL9Sa0wX4gkY1jh0ubUQ7Lrg4QJ-LRIYezWapkwSiKaQWTTsBRF1BTIIwXXBMOaljLDGF7b4qrdDfP--0EpFFs0tcJIXCU6bsKno3CbQ3lKVgfjw9Mjh0PDueDkveomBLwityXjWMhfowWd-zQdzq65If_2dWcPfUissfNG4yfkv9rcJSD1sTIdQr08XP-2JtVKkEtmB25DtltToKPZENQfO89KSBN_u5cB1axD7FNe6Louxi6UdDYhn_tEvWdS1LWs");'></div>
+<div class="flex flex-col flex-1 justify-center min-w-0">
+<div class="flex justify-between items-start">
+<p class="text-[#0d141b] dark:text-white text-base font-semibold leading-tight line-clamp-1 group-hover:text-primary transition-colors">Ocean View Loft</p>
+</div>
+<p class="text-[#4c739a] text-sm font-normal leading-normal mt-1 truncate">Host: Sarah Jenkins</p>
+<p class="text-[#0d141b] dark:text-gray-300 text-sm font-medium leading-normal mt-0.5">$320 - $450 / night</p>
+</div>
+<div class="shrink-0 flex flex-col items-end gap-2">
+<div class="flex items-center gap-1.5 px-2 py-1 rounded-md bg-yellow-50 dark:bg-yellow-900/30 border border-yellow-200 dark:border-yellow-800">
+<div class="size-2 rounded-full bg-yellow-600"></div>
+<span class="text-xs font-medium text-yellow-700 dark:text-yellow-400">Pending</span>
+</div>
+<span class="material-symbols-outlined text-[#cfdbe7] group-hover:text-primary transition-colors text-[20px]">chevron_right</span>
+</div>
+</div>
+<!-- Item 3: Suspended -->
+<div class="flex items-center gap-4 bg-white dark:bg-[#1a2634] p-3 rounded-xl shadow-sm border border-transparent hover:border-[#cfdbe7] dark:hover:border-gray-700 transition-all cursor-pointer group">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16 shrink-0 grayscale opacity-80" data-alt="Traditional wooden house" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAL_Qzt_GKVpZas7h8xYmkNzfCmSbo1OaMzGxgpp2xA9ZTbVVnhgydQu6jqt01Nfcb99HQqjOem_5g5vXY0M4_mmw6fZ1xSD4KZVQMQ28EmckyfdMDHhgmy3ri0QBg9ZOuT8TMTs-XKno6SUAytj3O9_UKV9Ad1AehCQiAMUB8DLFi3S7dhE73FxBOlLnQa9hJDLqLNvt72Qu1KApPyMNPpcgbB6QK_zUZbp8SjcLa6-kUyW-I1EZANVohyjbaSiadblGXn2kojHrk");'></div>
+<div class="flex flex-col flex-1 justify-center min-w-0">
+<div class="flex justify-between items-start">
+<p class="text-[#0d141b] dark:text-white text-base font-semibold leading-tight line-clamp-1 group-hover:text-primary transition-colors">Mountain Cabin Retreat</p>
+</div>
+<p class="text-[#4c739a] text-sm font-normal leading-normal mt-1 truncate">Host: Mike Ross</p>
+<p class="text-[#0d141b] dark:text-gray-300 text-sm font-medium leading-normal mt-0.5">$85 - $120 / night</p>
+</div>
+<div class="shrink-0 flex flex-col items-end gap-2">
+<div class="flex items-center gap-1.5 px-2 py-1 rounded-md bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800">
+<div class="size-2 rounded-full bg-red-600"></div>
+<span class="text-xs font-medium text-red-700 dark:text-red-400">Suspended</span>
+</div>
+<span class="material-symbols-outlined text-[#cfdbe7] group-hover:text-primary transition-colors text-[20px]">chevron_right</span>
+</div>
+</div>
+<!-- Item 4: Active -->
+<div class="flex items-center gap-4 bg-white dark:bg-[#1a2634] p-3 rounded-xl shadow-sm border border-transparent hover:border-[#cfdbe7] dark:hover:border-gray-700 transition-all cursor-pointer group">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16 shrink-0" data-alt="Modern apartment interior" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBa4PlozCzvPORywNQKU_btKUocG7IT8Ge6UqeQYKac6GnxdD5fDPGUAyBHtvY_JFsbTMfzyz8044OlhL54dJV3udlF6xBnwLmehdTeBDaqh4XXpK3yicTG-xTkryLFu2AKMfHTdmhAS4xVppvinqmZRzfUl_CO2_WJrH944vwamrtsJSHWZeZJyHNJamIZnggn_QwGrANnWZq3hBDFIn-ylHNXTGUd6-gQV7FfsHkLkm9dpWXMA2gN-YQlYrriPFl9C6AbFhTbZoI");'></div>
+<div class="flex flex-col flex-1 justify-center min-w-0">
+<div class="flex justify-between items-start">
+<p class="text-[#0d141b] dark:text-white text-base font-semibold leading-tight line-clamp-1 group-hover:text-primary transition-colors">City Center Apartment</p>
+</div>
+<p class="text-[#4c739a] text-sm font-normal leading-normal mt-1 truncate">Host: Elena Fisher</p>
+<p class="text-[#0d141b] dark:text-gray-300 text-sm font-medium leading-normal mt-0.5">$180 / night</p>
+</div>
+<div class="shrink-0 flex flex-col items-end gap-2">
+<div class="flex items-center gap-1.5 px-2 py-1 rounded-md bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800">
+<div class="size-2 rounded-full bg-green-600"></div>
+<span class="text-xs font-medium text-green-700 dark:text-green-400">Active</span>
+</div>
+<span class="material-symbols-outlined text-[#cfdbe7] group-hover:text-primary transition-colors text-[20px]">chevron_right</span>
+</div>
+</div>
+<!-- Item 5: Active -->
+<div class="flex items-center gap-4 bg-white dark:bg-[#1a2634] p-3 rounded-xl shadow-sm border border-transparent hover:border-[#cfdbe7] dark:hover:border-gray-700 transition-all cursor-pointer group">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16 shrink-0" data-alt="Cozy cottage exterior" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBseTeuuwIykg_tAWbw5oK6j48sL1rI7r001yhy5il_GsyRzTFZM1dzsSovNPp_podN0Tmh0HZSG9Ei6T5oBkkZiwufU-P_S-q-ewwwCu3jAnyw7Hjg7nA6rwaGvBjbQzx-Bo4nOzu_hkHooD5nlOiLTvD0mNkWKapquhRFCHynJ5laa5xzQoR-5b9ysFisXUdEow6xDAwywL0Yl9UC_thF7dBYrYJqoVxD-vLDSBcn0KQJ3eyRwYLVY6-XHXP66Qc2xlblEJOwT8s");'></div>
+<div class="flex flex-col flex-1 justify-center min-w-0">
+<div class="flex justify-between items-start">
+<p class="text-[#0d141b] dark:text-white text-base font-semibold leading-tight line-clamp-1 group-hover:text-primary transition-colors">Riverside Cottage</p>
+</div>
+<p class="text-[#4c739a] text-sm font-normal leading-normal mt-1 truncate">Host: John Doe</p>
+<p class="text-[#0d141b] dark:text-gray-300 text-sm font-medium leading-normal mt-0.5">$95 - $110 / night</p>
+</div>
+<div class="shrink-0 flex flex-col items-end gap-2">
+<div class="flex items-center gap-1.5 px-2 py-1 rounded-md bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800">
+<div class="size-2 rounded-full bg-green-600"></div>
+<span class="text-xs font-medium text-green-700 dark:text-green-400">Active</span>
+</div>
+<span class="material-symbols-outlined text-[#cfdbe7] group-hover:text-primary transition-colors text-[20px]">chevron_right</span>
+</div>
+</div>
+<!-- Item 6: Pending -->
+<div class="flex items-center gap-4 bg-white dark:bg-[#1a2634] p-3 rounded-xl shadow-sm border border-transparent hover:border-[#cfdbe7] dark:hover:border-gray-700 transition-all cursor-pointer group">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16 shrink-0" data-alt="Luxury penthouse view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCA23H9LudYROj2ItFoVnueC6auVzEz6AdqTfat8DVBLMTAwZxnfI1Ptlkm3XX0VkGIv_yGW_9c-Ag4EoWAu9AG7ZPnPSlwUyO4q0kRV3Aq5do2CFSxtoJGGwrHwd1my1Kt4yBxpgHLwaE_cgWo4hEagZ20YrhHOHZWjNW46nvInbNyJaBi-gl706p7MhxsCKxk9OU2pZTBV_Max8MhvVpmWKomA-GCpss-E34agWBuXFwKD802I5-pqyFPECqyBiZU1ZdV4CK1XWg");'></div>
+<div class="flex flex-col flex-1 justify-center min-w-0">
+<div class="flex justify-between items-start">
+<p class="text-[#0d141b] dark:text-white text-base font-semibold leading-tight line-clamp-1 group-hover:text-primary transition-colors">Downtown Penthouse</p>
+</div>
+<p class="text-[#4c739a] text-sm font-normal leading-normal mt-1 truncate">Host: Alex Morgan</p>
+<p class="text-[#0d141b] dark:text-gray-300 text-sm font-medium leading-normal mt-0.5">$600 / night</p>
+</div>
+<div class="shrink-0 flex flex-col items-end gap-2">
+<div class="flex items-center gap-1.5 px-2 py-1 rounded-md bg-yellow-50 dark:bg-yellow-900/30 border border-yellow-200 dark:border-yellow-800">
+<div class="size-2 rounded-full bg-yellow-600"></div>
+<span class="text-xs font-medium text-yellow-700 dark:text-yellow-400">Pending</span>
+</div>
+<span class="material-symbols-outlined text-[#cfdbe7] group-hover:text-primary transition-colors text-[20px]">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Floating Action Button (Optional but useful for "Add New") -->
+<div class="fixed bottom-6 right-6 lg:absolute lg:bottom-6 lg:right-6">
+<button class="flex items-center justify-center size-14 rounded-full bg-primary text-white shadow-lg shadow-primary/30 hover:bg-primary/90 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[28px]">add</span>
+</button>
+</div>
+</div>
+</body></html>

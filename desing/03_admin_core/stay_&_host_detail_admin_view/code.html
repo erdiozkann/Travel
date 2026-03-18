@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stay &amp; Host Detail Admin View</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased min-h-screen pb-32">
+<!-- Top Navigation -->
+<div class="sticky top-0 z-20 flex items-center justify-between bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 border-b border-slate-200 dark:border-slate-800">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-white">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold leading-tight flex-1 text-center pr-10">Stay Detail</h2>
+<div class="w-0"></div> <!-- Spacer for centering -->
+</div>
+<!-- Main Content -->
+<div class="flex flex-col w-full max-w-md mx-auto">
+<!-- Hero Image -->
+<div class="p-4">
+<div class="w-full bg-center bg-no-repeat bg-cover aspect-[4/3] rounded-xl shadow-sm relative overflow-hidden" data-alt="Modern sunny oceanside villa exterior" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBWLm9T5l6sMN4XXWExhaNwaaY4jOL6IUsYKEzqfnNRD3CmHskSPzVczSCtfIITjPaq0rjcYfpKErYPa39Wp6VXBrF8uD7c549xUgHFEzNRraHjgu8r_884zOUkeHKoy95f4NtBCXpF61MCvU391Cst0y6KfKN__kvuTiwNnf5cB7mT_fyiSfZQhQc7jeYFdNAbQnLKjdWIor2fhwBTYIOyRXhrSTcPj3-G6lNSdrSb0KQA8vEsE4NEWhHsHaxGD3V5dYiQ-dWeycs");'>
+<div class="absolute top-3 right-3 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium">
+                    ID: #84920
+                 </div>
+</div>
+</div>
+<!-- Title & Status -->
+<div class="px-4 pb-2">
+<h1 class="text-2xl font-bold leading-tight mb-3">Sunny Oceanside Villa</h1>
+<div class="flex items-center gap-3 flex-wrap">
+<div class="flex items-center gap-x-1.5 rounded-full bg-amber-100 dark:bg-amber-900/30 px-3 py-1 border border-amber-200 dark:border-amber-800">
+<span class="material-symbols-outlined text-amber-700 dark:text-amber-500 text-[18px]">pending</span>
+<p class="text-amber-700 dark:text-amber-500 text-xs font-semibold uppercase tracking-wide">Verification Pending</p>
+</div>
+<div class="flex items-center gap-x-1.5 rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1">
+<span class="material-symbols-outlined text-slate-500 text-[18px]">home</span>
+<p class="text-slate-600 dark:text-slate-400 text-xs font-medium">Entire Home</p>
+</div>
+</div>
+</div>
+<!-- Host Card -->
+<div class="px-4 py-4">
+<div class="flex items-center justify-between p-3 bg-white dark:bg-slate-800/50 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-12 w-12 border-2 border-white dark:border-slate-700 shadow-sm" data-alt="Portrait of host Jane Doe" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAOqrLcq-FldCuT8rLBIZeZkaJYUDwbZwcofmEHX5Jm-4739w0v8IRghvhXR_gjk6J_7FZ4VNL1IYEx2RxAAHHWA2RsXLNNuvn_qeiDjp9u9STOPZn791yge2Ir_USxvq0BDUMGc-eqVbSu8jY6j-N6tY9O89h8g4yiFtouGrpkn3I-PoOX46nBpHy70CrhflNYU8zj2GySOTfIedGXOXJYuGe0ldovz8h5NYLBCmH0q__2cERcsFLWA51P_6FmEXltAFAriE9DLxc");'>
+</div>
+<div class="flex flex-col">
+<p class="text-sm font-semibold leading-snug">Jane Doe</p>
+<div class="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[14px] text-primary">verified</span>
+<span>Superhost</span>
+<span class="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600 mx-1"></span>
+<span class="flex items-center"><span class="material-symbols-outlined text-[12px] text-amber-500 mr-0.5" style="font-variation-settings: 'FILL' 1;">star</span> 4.9</span>
+</div>
+</div>
+</div>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Details Grid -->
+<div class="px-4 py-2 grid grid-cols-2 gap-3">
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-2 mb-1 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+<span class="text-xs font-medium uppercase">Price / Night</span>
+</div>
+<p class="text-lg font-bold">$245.00</p>
+</div>
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-2 mb-1 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+<span class="text-xs font-medium uppercase">Location</span>
+</div>
+<p class="text-lg font-bold truncate">San Diego, CA</p>
+</div>
+</div>
+<!-- Map Snippet -->
+<div class="px-4 py-2">
+<div class="w-full h-32 rounded-xl bg-slate-200 dark:bg-slate-800 overflow-hidden relative" data-alt="Map view of San Diego location" data-location="San Diego" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCPSC7HzxZvcV3OPHXMNPkrFOpE6WbwZ8RQczWg-i-1ReYPPyTQ8qY0abrqnOhjRXyHEMZUKOZPpkbSecIvHictLGVyglddcXEfiEGHm0hT3HThmd5VPpumDlYfH8zjqCbYuHoSVBR7l-L3-etUe_7CywaHgwr6Jb9Vr074cTz1wVgbtSkh06yCpwxM7ylBKQJPwi8lPWk0TLdX7YBDQot_1BaL7ZRmTI3G7a5Q6oaom9KXcMa-a7q9K7mUICEOW2UbH6ydIx6DqZE"); background-size: cover; background-position: center;'>
+<div class="absolute inset-0 bg-black/10 flex items-center justify-center">
+<button class="bg-white dark:bg-slate-900 text-slate-900 dark:text-white px-4 py-2 rounded-lg text-sm font-medium shadow-lg hover:bg-slate-50 transition-colors">View on Map</button>
+</div>
+</div>
+</div>
+<!-- Report History -->
+<div class="px-4 py-4">
+<div class="flex items-center justify-between mb-3">
+<h3 class="text-base font-bold">Report History</h3>
+<span class="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-xs font-bold px-2 py-0.5 rounded-md">2 Flags</span>
+</div>
+<div class="space-y-3">
+<!-- Report Item 1 -->
+<div class="flex gap-3 bg-white dark:bg-slate-800/50 p-3 rounded-xl border border-slate-100 dark:border-slate-800">
+<div class="shrink-0 size-10 rounded-full bg-red-50 dark:bg-red-900/20 flex items-center justify-center text-red-500">
+<span class="material-symbols-outlined text-[20px]">broken_image</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="text-sm font-semibold">Misleading Photos</h4>
+<span class="text-[10px] text-slate-400">2 days ago</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">User reported pool was under construction despite photos showing it open.</p>
+</div>
+</div>
+<!-- Report Item 2 -->
+<div class="flex gap-3 bg-white dark:bg-slate-800/50 p-3 rounded-xl border border-slate-100 dark:border-slate-800">
+<div class="shrink-0 size-10 rounded-full bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center text-orange-500">
+<span class="material-symbols-outlined text-[20px]">volume_up</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="text-sm font-semibold">Noise Complaint</h4>
+<span class="text-[10px] text-slate-400">3 weeks ago</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Neighbors complained about loud music after 10PM.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="h-6"></div>
+</div>
+<!-- Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 w-full bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-4 py-4 pb-8 z-30 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+<!-- Toggle Sponsored -->
+<div class="flex items-center justify-between mb-4 px-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">campaign</span>
+<span class="text-sm font-medium">Mark as Sponsored</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Buttons Grid -->
+<div class="grid grid-cols-2 gap-3">
+<button class="col-span-1 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 hover:bg-red-100 dark:hover:bg-red-900/30 h-12 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[20px]">block</span>
+                Reject
+            </button>
+<button class="col-span-1 bg-primary text-white hover:bg-blue-600 h-12 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 shadow-lg shadow-primary/30 transition-colors">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+                Approve
+            </button>
+<button class="col-span-2 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 h-10 rounded-lg font-medium text-sm flex items-center justify-center gap-2 mt-1 transition-colors">
+                Suspend Listing
+            </button>
+</div>
+</div>
+</body></html>

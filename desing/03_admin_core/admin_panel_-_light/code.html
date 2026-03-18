@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Panel - Light</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for high-density feel if needed, though standard is fine on mobile */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light text-slate-900 font-display antialiased overflow-x-hidden">
+<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-white shadow-xl border-x border-slate-200">
+<!-- Header -->
+<header class="sticky top-0 z-50 flex items-center justify-between bg-white/95 backdrop-blur-md border-b border-slate-100 p-4 pb-3">
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center p-1 rounded-full hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined text-slate-800" style="font-size: 24px;">menu</span>
+</button>
+<h1 class="text-lg font-bold text-slate-900 leading-tight">Dashboard</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="relative flex items-center justify-center p-2 rounded-full hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined text-slate-800" style="font-size: 24px;">notifications</span>
+<span class="absolute top-1.5 right-2 size-2 bg-red-500 rounded-full border border-white"></span>
+</button>
+<div class="h-8 w-8 rounded-full bg-slate-200 bg-cover bg-center border border-slate-200" data-alt="Admin user profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDe5471ZYKGxktBrGMaVB2JY7stMIseVuJx1dtgqiA71vUcggwpvTT779gpbyChqJZV0J5h94VitJIAHqaJyCBC20POWVAuQ0EJUALESsRUO_nXn9xhJQQjQBh-wmJIz-C2txaLJ9uXRkmm6-lQ08YwXA01MIHqqbllJP2epcjrMr5x-2s7O2ptjTxJyd1meE4Np6cd40kXJQdcIjGVIObDaVW1hFP6kxh363w6axvVOG3HJow_Y355IxuXpZ3PHLg7-XOeEbHXo1M");'></div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto">
+<!-- Quick Stats -->
+<div class="grid grid-cols-2 gap-3 p-4">
+<div class="flex flex-col gap-1 rounded-xl border border-slate-100 bg-slate-50 p-4 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Active Users</span>
+<span class="material-symbols-outlined text-primary text-opacity-80" style="font-size: 20px;">group</span>
+</div>
+<p class="text-2xl font-bold text-slate-900">12.5k</p>
+<div class="flex items-center gap-1 text-xs font-medium text-emerald-600">
+<span class="material-symbols-outlined" style="font-size: 16px;">trending_up</span>
+<span>+5.2%</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-xl border border-slate-100 bg-slate-50 p-4 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Pending</span>
+<span class="material-symbols-outlined text-orange-500 text-opacity-80" style="font-size: 20px;">pending_actions</span>
+</div>
+<p class="text-2xl font-bold text-slate-900">48</p>
+<div class="flex items-center gap-1 text-xs font-medium text-emerald-600">
+<span class="material-symbols-outlined" style="font-size: 16px;">trending_up</span>
+<span>+12%</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-xl border border-slate-100 bg-slate-50 p-4 shadow-sm col-span-2">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-xs font-semibold uppercase tracking-wider text-slate-500">System Load</span>
+<div class="mt-1 flex items-baseline gap-2">
+<p class="text-xl font-bold text-slate-900">98%</p>
+<span class="text-xs font-medium text-amber-600">High Usage</span>
+</div>
+</div>
+<div class="h-10 w-24 bg-slate-100 rounded overflow-hidden relative">
+<!-- Abstract visualization of server load -->
+<div class="absolute bottom-0 left-0 w-[15%] h-[40%] bg-primary/40"></div>
+<div class="absolute bottom-0 left-[20%] w-[15%] h-[60%] bg-primary/60"></div>
+<div class="absolute bottom-0 left-[40%] w-[15%] h-[50%] bg-primary/50"></div>
+<div class="absolute bottom-0 left-[60%] w-[15%] h-[80%] bg-primary/80"></div>
+<div class="absolute bottom-0 left-[80%] w-[15%] h-[95%] bg-primary"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pending Verifications Section -->
+<div class="border-t border-slate-100 bg-slate-50/50 pb-2">
+<div class="flex items-center justify-between px-4 py-3">
+<h3 class="text-sm font-bold text-slate-900 uppercase tracking-wide">Pending Verifications</h3>
+<button class="text-xs font-medium text-primary hover:text-blue-700">View All</button>
+</div>
+<div class="flex flex-col divide-y divide-slate-100 bg-white border-y border-slate-100">
+<!-- Item 1 -->
+<div class="flex items-center justify-between gap-3 p-3 px-4 hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-3 overflow-hidden">
+<div class="h-10 w-10 shrink-0 rounded-full bg-slate-100 bg-cover bg-center border border-slate-200" data-alt="User avatar placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC5vYBaPxkVt5tSQhVlYWTp3ItFT1jbDAxNUKq6Abp9MBWudy3AnAWWRJzycqd0dQW-tMaZ-ecD9s6ewLA0VqMMT4SmwLJndnXciE0mJg11dYBBz2nNtYH1sI_tLcy0zMD0PrP5a2PXgjFTO0vyXeykuVE7SS_yjRJmJha3rU1j7bRJS_CiJw2hVMmaEFkNzLGgADsOSmxffTRXHoqctxjY-I39jLeDDKhPkXlwesR7TaNCuz4O2uYlYoHkNWDYto8BfcRfQlFMBcQ");'></div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<p class="truncate text-sm font-semibold text-slate-900">User #8821</p>
+<span class="inline-flex items-center rounded bg-blue-50 px-1.5 py-0.5 text-[10px] font-medium text-blue-700">ID Check</span>
+</div>
+<p class="truncate text-xs text-slate-500">Submitted 2h ago</p>
+</div>
+</div>
+<button class="shrink-0 rounded-lg bg-primary px-3 py-1.5 text-xs font-semibold text-white shadow-sm hover:bg-blue-600 transition-colors">
+                            Review
+                        </button>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between gap-3 p-3 px-4 hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-3 overflow-hidden">
+<div class="h-10 w-10 shrink-0 rounded-full bg-slate-100 bg-cover bg-center border border-slate-200" data-alt="User avatar placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCXnXJ-yLVBJNx2AI9xBA2UKv2pQlfNyVjMIh0nP0I9UoM6UCHHau-z1hL9qANzt1tlvD1lB05IA844cHJnOFTTuS3W6yepZR_EItNZNZtFfeZLkDm0W0xKhn2V1rDv9LM88frV3kdDtq5l2uY589EgUxw9zkZbUK95xYwQN3HQ6ay56VMD-ShaT7scawzKK_-dTyF_SirheCu0K8bToZj40CmJ9JvH7aNf_irjq33pNzrg5dm6lfjhLPP9r-4I7pEQx5bDJP7yxqE");'></div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<p class="truncate text-sm font-semibold text-slate-900">User #9943</p>
+<span class="inline-flex items-center rounded bg-purple-50 px-1.5 py-0.5 text-[10px] font-medium text-purple-700">License</span>
+</div>
+<p class="truncate text-xs text-slate-500">Submitted 5h ago</p>
+</div>
+</div>
+<button class="shrink-0 rounded-lg bg-primary px-3 py-1.5 text-xs font-semibold text-white shadow-sm hover:bg-blue-600 transition-colors">
+                            Review
+                        </button>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between gap-3 p-3 px-4 hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-3 overflow-hidden">
+<div class="h-10 w-10 shrink-0 rounded-full flex items-center justify-center bg-slate-100 text-slate-500">
+<span class="material-symbols-outlined" style="font-size: 20px;">person</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<p class="truncate text-sm font-semibold text-slate-900">User #1024</p>
+<span class="inline-flex items-center rounded bg-blue-50 px-1.5 py-0.5 text-[10px] font-medium text-blue-700">ID Check</span>
+</div>
+<p class="truncate text-xs text-slate-500">Submitted 6h ago</p>
+</div>
+</div>
+<button class="shrink-0 rounded-lg bg-primary px-3 py-1.5 text-xs font-semibold text-white shadow-sm hover:bg-blue-600 transition-colors">
+                            Review
+                        </button>
+</div>
+</div>
+</div>
+<!-- Reported Content Section -->
+<div class="border-t border-slate-100 bg-slate-50/50 pb-20">
+<div class="flex items-center justify-between px-4 py-3">
+<h3 class="text-sm font-bold text-slate-900 uppercase tracking-wide">Reported Content</h3>
+<div class="flex gap-2">
+<span class="flex h-5 items-center justify-center rounded-full bg-red-100 px-2 text-[10px] font-bold text-red-700">12 High Priority</span>
+</div>
+</div>
+<div class="flex flex-col divide-y divide-slate-100 bg-white border-y border-slate-100">
+<!-- Report 1 -->
+<div class="relative flex flex-col gap-3 p-4 hover:bg-slate-50 transition-colors">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="flex h-6 w-6 items-center justify-center rounded bg-red-50 text-red-600">
+<span class="material-symbols-outlined" style="font-size: 16px;">flag</span>
+</span>
+<span class="text-sm font-semibold text-slate-900">Harassment</span>
+</div>
+<span class="text-xs text-slate-400">14m ago</span>
+</div>
+<div class="rounded bg-slate-50 p-3 text-xs text-slate-600 border border-slate-100">
+                            "This user keeps sending me spam messages about crypto..."
+                        </div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span>Reported by <strong>Alice_W</strong></span>
+<span>•</span>
+<span>Target: <strong>Bob_Crypto</strong></span>
+</div>
+<div class="flex gap-2">
+<button class="rounded border border-slate-200 bg-white p-1.5 text-slate-500 hover:bg-slate-50 hover:text-slate-700">
+<span class="material-symbols-outlined block" style="font-size: 18px;">visibility</span>
+</button>
+<button class="rounded bg-slate-900 px-3 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-slate-800">
+                                    Action
+                                </button>
+</div>
+</div>
+</div>
+<!-- Report 2 -->
+<div class="relative flex flex-col gap-3 p-4 hover:bg-slate-50 transition-colors">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="flex h-6 w-6 items-center justify-center rounded bg-amber-50 text-amber-600">
+<span class="material-symbols-outlined" style="font-size: 16px;">warning</span>
+</span>
+<span class="text-sm font-semibold text-slate-900">Inappropriate Content</span>
+</div>
+<span class="text-xs text-slate-400">45m ago</span>
+</div>
+<div class="flex gap-3 overflow-hidden">
+<div class="h-16 w-24 shrink-0 rounded bg-slate-200 bg-cover bg-center border border-slate-100" data-alt="Thumbnail of reported content" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD9m4wxcoEj2bPsCPNEKf2oRQW2Ijgr5ER9_IjrWAh_ZDIM5x9gC7mOLqwuZSEDCgNJMQsRyfOk9fk76RcvrpZmcAptV2qMfLq_RtZZfDdhH0qIe3ezhGvV0rN3uEGWS3IEg6o9VRd_RcyFbqEyvh6YPIRFPn0p4HWq_WL9UEWMmv8td1U-dpqxi4Od5Q1T8QDMbfrtms_8aquD5zW2QlPlWyQqR2SsbWEVhls9VFXKgZ_v9YWkmeF_d5MjAlXxTVuRwpa5JksXXfQ");'></div>
+<div class="flex flex-col justify-center gap-1">
+<p class="text-xs text-slate-600 line-clamp-2">Post ID: #88291 - Image content flagged by AI system for review.</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="flex items-center gap-1">
+<span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                                    Auto-Flagged
+                                </span>
+</div>
+<div class="flex gap-2">
+<button class="rounded border border-slate-200 bg-white p-1.5 text-slate-500 hover:bg-slate-50 hover:text-slate-700">
+<span class="material-symbols-outlined block" style="font-size: 18px;">visibility</span>
+</button>
+<button class="rounded bg-slate-900 px-3 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-slate-800">
+                                    Action
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="sticky bottom-0 z-50 flex w-full items-center justify-around border-t border-slate-200 bg-white pb-safe pt-2">
+<button class="group flex flex-col items-center gap-1 p-2 text-primary">
+<span class="material-symbols-outlined" style="font-size: 24px;">dashboard</span>
+<span class="text-[10px] font-medium">Home</span>
+</button>
+<button class="group flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">group</span>
+<span class="text-[10px] font-medium">Users</span>
+</button>
+<button class="group relative flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">shield</span>
+<span class="text-[10px] font-medium">Mod</span>
+<span class="absolute top-2 right-4 size-2 rounded-full bg-red-500 ring-2 ring-white"></span>
+</button>
+<button class="group flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</button>
+</nav>
+<!-- Safe area padding for bottom nav on newer iPhones if needed -->
+<div class="h-6 w-full bg-white"></div>
+</div>
+</body></html>

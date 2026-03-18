@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Business Owner Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111a22", // Matching the component example color slightly adjusted to theme name
+                        "card-dark": "#233648",
+                        "text-secondary": "#92adc9",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#111418] dark:text-white transition-colors duration-200">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden pb-20">
+<!-- Header -->
+<div class="flex items-center bg-white dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-gray-200 dark:border-gray-800">
+<div class="flex items-center gap-3">
+<div class="flex size-12 shrink-0 items-center justify-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 shadow-sm" data-alt="Profile picture of restaurant owner" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBiDidcCevX81jGfRAEHRwM8rmSZZrdI4xfz-MLOw_oblJGPHlyCV9IhTviPMbUibDFNSuCZOBSdeHNOvdviQW8tRPsEwRz69uIPcXp1wl-i2gknqdlRMABfKQPdpl9npmHhLiv0af4_2FjZgLc15v96JV8SSImBC_kUJH_mUNsmZN4MmkTuOQ_Kidx6QASB46GReFQnF2QZK33Bq-LzBy2dvEg04yO49WnwEHb8c4z8xDbl1bFV2oYRmn8ZtUZUEKS0QgLf2Xn_cc");'></div>
+</div>
+<div class="flex flex-col">
+<h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">La Trattoria</h2>
+<span class="text-xs text-gray-500 dark:text-text-secondary">Owner Dashboard</span>
+</div>
+</div>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-transparent text-[#111418] dark:text-white hover:bg-gray-100 dark:hover:bg-card-dark transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</div>
+<!-- Stats Section -->
+<div class="flex flex-wrap gap-4 p-4">
+<!-- Total Bookings -->
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-5 bg-white dark:bg-card-dark shadow-sm border border-gray-100 dark:border-transparent">
+<div class="flex items-center justify-between">
+<p class="text-[#111418] dark:text-white text-base font-medium leading-normal">Total Bookings</p>
+<span class="material-symbols-outlined text-primary text-xl">book_online</span>
+</div>
+<div class="flex items-end gap-2">
+<p class="text-[#111418] dark:text-white tracking-light text-2xl font-bold leading-tight">142</p>
+<p class="text-[#0bda5b] text-sm font-medium leading-normal mb-1 flex items-center">
+<span class="material-symbols-outlined text-sm mr-0.5">trending_up</span>12%
+                    </p>
+</div>
+</div>
+<!-- Avg Rating -->
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-5 bg-white dark:bg-card-dark shadow-sm border border-gray-100 dark:border-transparent">
+<div class="flex items-center justify-between">
+<p class="text-[#111418] dark:text-white text-base font-medium leading-normal">Avg. Rating</p>
+<span class="material-symbols-outlined text-yellow-500 text-xl">star</span>
+</div>
+<p class="text-[#111418] dark:text-white tracking-light text-2xl font-bold leading-tight">4.8</p>
+</div>
+<!-- Monthly Revenue -->
+<div class="flex min-w-[158px] w-full flex-col gap-2 rounded-xl p-5 bg-white dark:bg-card-dark shadow-sm border border-gray-100 dark:border-transparent relative overflow-hidden">
+<div class="absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-primary/10 to-transparent"></div>
+<div class="flex items-center justify-between relative z-10">
+<p class="text-[#111418] dark:text-white text-base font-medium leading-normal">Monthly Revenue</p>
+<span class="material-symbols-outlined text-primary text-xl">payments</span>
+</div>
+<p class="text-primary tracking-light text-2xl font-bold leading-tight relative z-10">€12,450</p>
+</div>
+</div>
+<!-- Upcoming Bookings Section -->
+<div class="flex flex-col">
+<div class="flex items-center justify-between px-4 pb-2 pt-2">
+<h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Upcoming Bookings</h3>
+<button class="text-primary text-sm font-semibold">View All</button>
+</div>
+<!-- Booking 1 -->
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark px-4 min-h-[72px] py-2 justify-between">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12" data-alt="Portrait of Sarah Jenkins" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAfVEd7CmvwVXYPzk_aHtT93ESu1uQw8hVlJSp_lMFBNEdzvIP0XY827rJ6N41EknFGpUzDjyj8lFEetZGgwX4jcz14QexqzdcL7d8vc0OMk1gpG_A-Cjo7h1aqtdu8OTYL7lw3G4eoII-T1ghVNOrWHFzjLJNi6QnPQMBD7_KWSpx9mpdNC-N1rm9EGl7ZRl19o_7mg-fvSDMdWzWR2d9TAAYidVbX2BF0l5me7pP-wz31bTfDhw9HkiGxCEUHLjapdPvsgzDobPQ");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-[#111418] dark:text-white text-base font-medium leading-normal line-clamp-1">Sarah Jenkins</p>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-xs text-gray-500 dark:text-text-secondary">schedule</span>
+<p class="text-gray-500 dark:text-text-secondary text-sm font-normal leading-normal line-clamp-2">19:00 Today • 4 Guests</p>
+</div>
+</div>
+</div>
+<div class="shrink-0">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary text-white text-sm font-medium leading-normal shadow-md hover:bg-blue-600 transition-colors">
+<span class="truncate">Check-in</span>
+</button>
+</div>
+</div>
+<!-- Booking 2 -->
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark px-4 min-h-[72px] py-2 justify-between">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12" data-alt="Portrait of Marc Duval" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAw8zAosWcQE9pZACa-mkg4AGtZMjCNk759s-VDEgHu-BUKhVWUoYAYHfSeQ0yMF7wZSLBvFDhJ-Y0JJo_jvH6kV3KInoJt0V9Mytresv9-iLg523U_Itf8Lt912z3S4uSSFVBan8X26yQsx8nByDsAf95XeARR_CkfkpE021ARN6PYS3KR5ECCii-6l38333ZNsdiZW5Gf3gSNvrlDjJ_jbtRYK3MrEJyXCHUhB6407kcJgP2W8pwY305brjEx23GIEHfC79rWzX4");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-[#111418] dark:text-white text-base font-medium leading-normal line-clamp-1">Marc Duval</p>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-xs text-gray-500 dark:text-text-secondary">schedule</span>
+<p class="text-gray-500 dark:text-text-secondary text-sm font-normal leading-normal line-clamp-2">19:30 Today • 2 Guests</p>
+</div>
+</div>
+</div>
+<div class="shrink-0">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary text-white text-sm font-medium leading-normal shadow-md hover:bg-blue-600 transition-colors">
+<span class="truncate">Check-in</span>
+</button>
+</div>
+</div>
+</div>
+<div class="h-4 bg-transparent"></div>
+<!-- Manage Experience Section -->
+<div class="flex flex-col px-4">
+<h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-3 pt-2">Manage Experience</h3>
+<div class="grid grid-cols-3 gap-3">
+<button class="flex flex-col items-center justify-center gap-2 bg-white dark:bg-card-dark p-4 rounded-xl border border-gray-100 dark:border-transparent shadow-sm active:scale-95 transition-transform">
+<div class="h-10 w-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">euro_symbol</span>
+</div>
+<span class="text-xs font-medium text-[#111418] dark:text-white">Pricing</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 bg-white dark:bg-card-dark p-4 rounded-xl border border-gray-100 dark:border-transparent shadow-sm active:scale-95 transition-transform">
+<div class="h-10 w-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400">
+<span class="material-symbols-outlined">edit_note</span>
+</div>
+<span class="text-xs font-medium text-[#111418] dark:text-white">Details</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 bg-white dark:bg-card-dark p-4 rounded-xl border border-gray-100 dark:border-transparent shadow-sm active:scale-95 transition-transform">
+<div class="h-10 w-10 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center text-orange-600 dark:text-orange-400">
+<span class="material-symbols-outlined">add_photo_alternate</span>
+</div>
+<span class="text-xs font-medium text-[#111418] dark:text-white">Gallery</span>
+</button>
+</div>
+</div>
+<div class="h-6 bg-transparent"></div>
+<!-- Recent Reviews Section -->
+<div class="flex flex-col px-4 pb-4">
+<h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-3">Recent Reviews</h3>
+<div class="flex flex-col gap-3">
+<div class="p-4 bg-white dark:bg-card-dark rounded-xl border border-gray-100 dark:border-transparent shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-8 w-8" data-alt="Reviewer avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA8OtKhHlwLv_-kjuGw66FxSt-IeZpBwks3ImmmMPZoFHGcjuwL0_lLrr2hy7M5M2x5M2TSb7FcLyFLKPcG4GPa3mLCO7WYhienf4J3DHRw9t3q1TTyGZ6_KU7g5lUpXq9WxRnbud-_UPhGbUSHs_aB6pT2-rK9QX16LfT8HTNjapGyMLqcEWrElhVtalDhixOp7BrZAtH96GGGgj0HQWoTGkgvtmW51h8gd6sr5B_1NiJA0plrjXv3BS70BxzYqL-GWgK1q7Nf238");'></div>
+<div>
+<p class="text-sm font-semibold text-[#111418] dark:text-white">Emma W.</p>
+<div class="flex items-center text-yellow-500 text-xs">
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+</div>
+</div>
+</div>
+<span class="text-xs text-gray-500 dark:text-text-secondary">2h ago</span>
+</div>
+<p class="text-sm text-[#111418] dark:text-white leading-relaxed mb-3">
+                        Amazing pasta workshop! The chef was incredibly patient and the food we made was delicious.
+                    </p>
+<button class="flex items-center gap-1.5 text-primary text-sm font-medium hover:text-blue-400 transition-colors">
+<span class="material-symbols-outlined text-lg">reply</span>
+                        Reply to review
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 left-0 right-0 bg-white dark:bg-[#0d141b] border-t border-gray-200 dark:border-gray-800 pb-safe pt-2 px-4 flex justify-between items-center z-50 h-[80px]">
+<button class="flex flex-col items-center gap-1 flex-1 text-primary">
+<span class="material-symbols-outlined fill-current">dashboard</span>
+<span class="text-[10px] font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 flex-1 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] font-medium">Calendar</span>
+</button>
+<button class="flex flex-col items-center gap-1 flex-1 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300">
+<div class="relative">
+<span class="material-symbols-outlined">chat</span>
+<span class="absolute -top-1 -right-1 h-2.5 w-2.5 bg-red-500 rounded-full border-2 border-white dark:border-[#0d141b]"></span>
+</div>
+<span class="text-[10px] font-medium">Messages</span>
+</button>
+<button class="flex flex-col items-center gap-1 flex-1 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</button>
+</div>
+</body></html>
