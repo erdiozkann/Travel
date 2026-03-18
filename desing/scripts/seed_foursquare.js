@@ -80,7 +80,7 @@ async function searchFoursquare(lat, lng, categoryKey, limit = 30) {
     url.searchParams.set('categories', catId);
     url.searchParams.set('radius', '8000');
     url.searchParams.set('limit', String(limit));
-    url.searchParams.set('fields', 'fsq_id,name,geocodes,location,categories,rating,price,stats,photos,hours');
+    url.searchParams.set('fields', 'fsq_id,name,geocodes,location,categories,rating,price');
     url.searchParams.set('sort', 'RATING');
 
     const res = await fetch(url.toString(), {
@@ -169,10 +169,11 @@ async function seedCity(city, cityId) {
                 const lng = geocode.longitude;
                 if (!lat || !lng) continue;
 
-                const mediaUrls = getPhotoUrls(place.photos);
+                const mediaUrls = []; // Search response doesn't return photos easily — keeping empty for now
                 const rating = place.rating ? place.rating / 2 : null; // FSQ is /10, we use /5
                 const priceMin = estimatePrice(place.price, type);
                 const priceMax = priceMin ? Math.round(priceMin * 1.5) : null;
+                const reviewCount = 0; // fsq stats removed from fields for stability
 
                 if (type === 'stay') {
                     stayRows.push({
@@ -182,7 +183,7 @@ async function seedCity(city, cityId) {
                         lat,
                         lng,
                         rating,
-                        review_count: place.stats?.total_ratings || 0,
+                        review_count: reviewCount,
                         price_min: priceMin,
                         price_max: priceMax,
                         currency: 'EUR',
@@ -201,7 +202,7 @@ async function seedCity(city, cityId) {
                         lng,
                         category: catKey,
                         rating,
-                        review_count: place.stats?.total_ratings || 0,
+                        review_count: reviewCount,
                         price_min: priceMin,
                         price_max: priceMax,
                         currency: 'EUR',
@@ -220,7 +221,7 @@ async function seedCity(city, cityId) {
                         lng,
                         category: catKey,
                         rating,
-                        review_count: place.stats?.total_ratings || 0,
+                        review_count: reviewCount,
                         price_level: priceLevel(place.price),
                         media_urls: mediaUrls,
                         is_sponsored: false,
