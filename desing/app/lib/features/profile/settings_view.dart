@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
+import '../../core/services/auth_service.dart';
 import '../../core/ui/design_tokens.dart';
 
 /// Settings View
@@ -36,7 +36,7 @@ class _SettingsViewState extends State<SettingsView> {
     );
 
     if (confirmed == true) {
-      await Supabase.instance.client.auth.signOut();
+      await AuthService.signOut();
       if (mounted) {
         context.go('/map');
       }

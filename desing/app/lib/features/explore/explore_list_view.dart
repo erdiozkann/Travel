@@ -182,10 +182,22 @@ class _ExploreListViewState extends State<ExploreListView> {
   }
 
   void _openCitySelector() {
-    // TODO: Implement full-screen city selector per 3.1
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(const SnackBar(content: Text('City selector coming soon')));
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+      ),
+      builder: (context) => _CitySelectorSheet(
+        selectedCityId: _selectedCityId,
+        onCitySelected: (cityId) {
+          setState(() {
+            _selectedCityId = cityId;
+          });
+          _loadItems();
+        },
+      ),
+    );
   }
 
   @override
@@ -904,6 +916,115 @@ class _FilterSheet extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+/// City selector bottom-sheet widget
+class _CitySelectorSheet extends StatefulWidget {
+  final String? selectedCityId;
+  final void Function(String? cityId) onCitySelected;
+
+  const _CitySelectorSheet({
+    required this.selectedCityId,
+    required this.onCitySelected,
+  });
+
+  @override
+  State<_CitySelectorSheet> createState() => _CitySelectorSheetState();
+}
+
+class _CitySelectorSheetState extends State<_CitySelectorSheet> {
+  bool _isLoading = true;
+  List<Map<String, dynamic>> _cities = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _loadCities();
+  }
+
+  Future<void> _loadCities() async {
+    try {
+      final response = await Supabase.instance.client
+          .from('cities')
+          .select('id, name, country')
+          .order('name');
+      setState(() {
+        _cities = List<Map<String, dynamic>>.from(response);
+        _isLoading = false;
+      });
+    } catch (_) {
+      setState(() => _isLoading = false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return DraggableScrollableSheet(
+      initialChildSize: 0.6,
+      minChildSize: 0.4,
+      maxChildSize: 0.9,
+      expand: false,
+      builder: (context, scrollController) {
+        return Column(
+          children: [
+            // Handle
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 12),
+              width: 36,
+              height: 4,
+              decoration: BoxDecoration(
+                color: Colors.grey[300],
+                borderRadius: BorderRadius.circular(2),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+              child: Text(
+                'Choose a City',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+            ),
+            const Divider(),
+            // All cities option
+            ListTile(
+              leading: const Icon(Icons.public),
+              title: const Text('All Cities'),
+              selected: widget.selectedCityId == null,
+              selectedColor: AppColors.primary,
+              onTap: () {
+                widget.onCitySelected(null);
+                Navigator.pop(context);
+              },
+            ),
+            if (_isLoading)
+              const Expanded(child: Center(child: CircularProgressIndicator()))
+            else
+              Expanded(
+                child: ListView.builder(
+                  controller: scrollController,
+                  itemCount: _cities.length,
+                  itemBuilder: (context, index) {
+                    final city = _cities[index];
+                    final id = city['id'].toString();
+                    return ListTile(
+                      leading: const Icon(Icons.location_city),
+                      title: Text(city['name'] ?? ''),
+                      subtitle: Text(city['country'] ?? ''),
+                      selected: widget.selectedCityId == id,
+                      selectedColor: AppColors.primary,
+                      onTap: () {
+                        widget.onCitySelected(id);
+                        Navigator.pop(context);
+                      },
+                    );
+                  },
+                ),
+              ),
+          ],
+        );
+      },
     );
   }
 }

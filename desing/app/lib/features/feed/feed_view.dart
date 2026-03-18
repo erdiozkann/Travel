@@ -367,13 +367,12 @@ class _FeedViewState extends State<FeedView> {
       onLike: () => _toggleLike(postId),
       onSave: () => _toggleSave(postId),
       onComment: () {
-        // TODO: Open comment sheet
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(const SnackBar(content: Text('Comments coming soon')));
+        context.push('/feed/post/$postId');
       },
       onShare: () {
-        // TODO: Share sheet
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Share: ${post['caption'] ?? 'post'}')),
+        );
       },
       onAvatarTap: () {
         if (profile?['id'] != null) {
@@ -517,7 +516,7 @@ class _FeedViewState extends State<FeedView> {
                 const SizedBox(width: AppSpacing.sm),
                 OutlinedButton(
                   onPressed: () {
-                    // TODO: Find people to follow
+                    context.go('/explore');
                   },
                   style: OutlinedButton.styleFrom(
                     minimumSize: const Size(120, AppButton.height),

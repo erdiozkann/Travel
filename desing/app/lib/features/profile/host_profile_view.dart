@@ -670,7 +670,11 @@ class _HostProfileViewState extends State<HostProfileView> {
               if (_reviews.isNotEmpty)
                 TextButton(
                   onPressed: () {
-                    // TODO: Navigate to full reviews list
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Full reviews page coming soon'),
+                      ),
+                    );
                   },
                   child: const Text('See all'),
                 ),

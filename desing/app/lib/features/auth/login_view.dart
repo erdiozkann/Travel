@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-/// Login View - Auth placeholder
-///
-/// Sprint 2: Sign-in UI stub with returnUrl support (magic link later)
+import '../../core/services/auth_service.dart';
+
+/// Login View — real Supabase email+password auth
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
 
@@ -13,7 +14,10 @@ class LoginView extends StatefulWidget {
 
 class _LoginViewState extends State<LoginView> {
   final _emailController = TextEditingController();
-  final bool _isLoading = false;
+  final _passwordController = TextEditingController();
+  bool _isLoading = false;
+  bool _obscurePassword = true;
+  String? _errorMessage;
 
   /// Get return URL from query params
   String? get _returnUrl {
@@ -28,21 +32,41 @@ class _LoginViewState extends State<LoginView> {
   @override
   void dispose() {
     _emailController.dispose();
+    _passwordController.dispose();
     super.dispose();
   }
 
   Future<void> _handleLogin() async {
-    // Placeholder - magic link implementation in Sprint 3
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Auth implementation coming in Sprint 3')),
-    );
+    final email = _emailController.text.trim();
+    final password = _passwordController.text;
 
-    // TODO: After successful auth, navigate:
-    // _navigateAfterLogin();
+    if (email.isEmpty || password.isEmpty) {
+      setState(() => _errorMessage = 'Please enter your email and password.');
+      return;
+    }
+
+    setState(() {
+      _isLoading = true;
+      _errorMessage = null;
+    });
+
+    try {
+      await AuthService.signInWithPassword(email: email, password: password);
+      if (!mounted) return;
+      _navigateAfterLogin();
+    } on AuthException catch (e) {
+      setState(() {
+        _errorMessage = AuthService.humanizeError(e);
+        _isLoading = false;
+      });
+    } catch (e) {
+      setState(() {
+        _errorMessage = 'Something went wrong. Please try again.';
+        _isLoading = false;
+      });
+    }
   }
 
-  // Suppress unused warning - will be called after real auth implementation
-  // ignore: unused_element
   void _navigateAfterLogin() {
     final returnUrl = _returnUrl;
     if (returnUrl != null) {
@@ -59,11 +83,12 @@ class _LoginViewState extends State<LoginView> {
         title: const Text('Sign In'),
         leading: IconButton(
           icon: const Icon(Icons.close),
-          onPressed: () => context.pop(),
+          onPressed: () =>
+              context.canPop() ? context.pop() : context.go('/map'),
         ),
       ),
       body: SafeArea(
-        child: Padding(
+        child: SingleChildScrollView(
           padding: const EdgeInsets.all(24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,6 +104,38 @@ class _LoginViewState extends State<LoginView> {
               ),
               const SizedBox(height: 32),
 
+              // Error message
+              if (_errorMessage != null) ...[
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.red[50],
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: Colors.red[200]!),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.error_outline,
+                        color: Colors.red[700],
+                        size: 20,
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          _errorMessage!,
+                          style: TextStyle(
+                            color: Colors.red[700],
+                            fontSize: 14,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 16),
+              ],
+
               // Email field
               TextField(
                 controller: _emailController,
@@ -88,9 +145,43 @@ class _LoginViewState extends State<LoginView> {
                   prefixIcon: Icon(Icons.email_outlined),
                 ),
                 keyboardType: TextInputType.emailAddress,
-                textInputAction: TextInputAction.done,
+                textInputAction: TextInputAction.next,
+                autocorrect: false,
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: 16),
+
+              // Password field
+              TextField(
+                controller: _passwordController,
+                obscureText: _obscurePassword,
+                decoration: InputDecoration(
+                  labelText: 'Password',
+                  border: const OutlineInputBorder(),
+                  prefixIcon: const Icon(Icons.lock_outline),
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      _obscurePassword
+                          ? Icons.visibility_off_outlined
+                          : Icons.visibility_outlined,
+                    ),
+                    onPressed: () =>
+                        setState(() => _obscurePassword = !_obscurePassword),
+                  ),
+                ),
+                textInputAction: TextInputAction.done,
+                onSubmitted: (_) => _handleLogin(),
+              ),
+
+              // Forgot password link
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  onPressed: () => context.push('/auth/forgot'),
+                  child: const Text('Forgot password?'),
+                ),
+              ),
+
+              const SizedBox(height: 8),
 
               // Sign in button
               SizedBox(
@@ -106,10 +197,10 @@ class _LoginViewState extends State<LoginView> {
                           height: 20,
                           child: CircularProgressIndicator(strokeWidth: 2),
                         )
-                      : const Text('Continue with Email'),
+                      : const Text('Sign In'),
                 ),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 24),
 
               // Divider
               Row(
@@ -125,46 +216,24 @@ class _LoginViewState extends State<LoginView> {
                   Expanded(child: Divider(color: Colors.grey[300])),
                 ],
               ),
+              const SizedBox(height: 24),
+
+              // Register redirect
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Don't have an account?",
+                    style: TextStyle(color: Colors.grey[600]),
+                  ),
+                  TextButton(
+                    onPressed: () => context.pushReplacement('/auth/register'),
+                    child: const Text('Create one'),
+                  ),
+                ],
+              ),
+
               const SizedBox(height: 16),
-
-              // Social sign in buttons (placeholders)
-              SizedBox(
-                width: double.infinity,
-                child: OutlinedButton.icon(
-                  onPressed: () {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('Google sign-in coming soon'),
-                      ),
-                    );
-                  },
-                  icon: const Icon(Icons.g_mobiledata, size: 24),
-                  label: const Text('Continue with Google'),
-                  style: OutlinedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 12),
-              SizedBox(
-                width: double.infinity,
-                child: OutlinedButton.icon(
-                  onPressed: () {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('Apple sign-in coming soon'),
-                      ),
-                    );
-                  },
-                  icon: const Icon(Icons.apple, size: 24),
-                  label: const Text('Continue with Apple'),
-                  style: OutlinedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                  ),
-                ),
-              ),
-
-              const Spacer(),
 
               // Terms
               Text(

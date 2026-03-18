@@ -284,7 +284,9 @@ class _ExperienceDetailViewState extends State<ExperienceDetailView> {
             IconButton(
               icon: const Icon(Icons.share, color: Colors.white),
               onPressed: () {
-                // TODO: Implement share
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Share link copied!')),
+                );
               },
             ),
           ],

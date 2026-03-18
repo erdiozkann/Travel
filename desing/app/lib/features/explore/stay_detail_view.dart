@@ -786,7 +786,11 @@ class _StayDetailViewState extends State<StayDetailView> {
               if (_reviews.isNotEmpty)
                 TextButton(
                   onPressed: () {
-                    // TODO: Navigate to full reviews page
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Full reviews page coming soon'),
+                      ),
+                    );
                   },
                   child: const Text('See all'),
                 ),

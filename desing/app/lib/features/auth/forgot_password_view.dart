@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-/// Forgot Password View
+import '../../core/services/auth_service.dart';
+
+/// Forgot Password View — sends a Supabase password reset email
 class ForgotPasswordView extends StatefulWidget {
   const ForgotPasswordView({super.key});
 
@@ -11,8 +14,9 @@ class ForgotPasswordView extends StatefulWidget {
 
 class _ForgotPasswordViewState extends State<ForgotPasswordView> {
   final _emailController = TextEditingController();
-  final bool _isLoading = false;
+  bool _isLoading = false;
   bool _isSent = false;
+  String? _errorMessage;
 
   @override
   void dispose() {
@@ -21,17 +25,35 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
   }
 
   Future<void> _handleReset() async {
-    // Placeholder
-    if (_emailController.text.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Please enter an email address')),
-      );
+    final email = _emailController.text.trim();
+    if (email.isEmpty) {
+      setState(() => _errorMessage = 'Please enter your email address.');
       return;
     }
 
     setState(() {
-      _isSent = true;
+      _isLoading = true;
+      _errorMessage = null;
     });
+
+    try {
+      await AuthService.resetPassword(email: email);
+      if (!mounted) return;
+      setState(() {
+        _isSent = true;
+        _isLoading = false;
+      });
+    } on AuthException catch (e) {
+      setState(() {
+        _errorMessage = AuthService.humanizeError(e);
+        _isLoading = false;
+      });
+    } catch (e) {
+      setState(() {
+        _errorMessage = 'Something went wrong. Please try again.';
+        _isLoading = false;
+      });
+    }
   }
 
   @override
@@ -41,7 +63,8 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
         title: const Text('Reset Password'),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-          onPressed: () => context.pop(),
+          onPressed: () =>
+              context.canPop() ? context.pop() : context.go('/auth/login'),
         ),
       ),
       body: SafeArea(
@@ -63,12 +86,36 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
         ),
         const SizedBox(height: 8),
         Text(
-          'Enter your email address to receive a secure password reset link.',
-          style: TextStyle(color: Colors.grey[600]),
+          'Enter the email associated with your account and we\'ll send you a reset link.',
+          style: TextStyle(color: Colors.grey[600], height: 1.5),
         ),
         const SizedBox(height: 32),
 
-        // Email field
+        // Error message
+        if (_errorMessage != null) ...[
+          Container(
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: Colors.red[50],
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(color: Colors.red[200]!),
+            ),
+            child: Row(
+              children: [
+                Icon(Icons.error_outline, color: Colors.red[700], size: 20),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    _errorMessage!,
+                    style: TextStyle(color: Colors.red[700], fontSize: 14),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 16),
+        ],
+
         TextField(
           controller: _emailController,
           decoration: const InputDecoration(
@@ -78,10 +125,11 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
           ),
           keyboardType: TextInputType.emailAddress,
           textInputAction: TextInputAction.done,
+          autocorrect: false,
+          onSubmitted: (_) => _handleReset(),
         ),
         const SizedBox(height: 24),
 
-        // Reset button
         SizedBox(
           width: double.infinity,
           child: ElevatedButton(
@@ -96,6 +144,14 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                     child: CircularProgressIndicator(strokeWidth: 2),
                   )
                 : const Text('Send Reset Link'),
+          ),
+        ),
+
+        const SizedBox(height: 16),
+        Center(
+          child: TextButton(
+            onPressed: () => context.go('/auth/login'),
+            child: const Text('Back to Sign In'),
           ),
         ),
       ],
@@ -114,22 +170,24 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
           ),
           const SizedBox(height: 24),
           const Text(
-            'Check Your Email',
+            'Reset link sent!',
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 8),
           Text(
-            'We sent a password reset link to\n${_emailController.text}',
-            style: TextStyle(color: Colors.grey[600], fontSize: 16),
+            'Check your inbox for\n${_emailController.text}\n\nFollow the link to reset your password.',
+            style: TextStyle(
+              color: Colors.grey[600],
+              fontSize: 16,
+              height: 1.5,
+            ),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 32),
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {
-                context.go('/auth/login');
-              },
+              onPressed: () => context.go('/auth/login'),
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 16),
               ),
