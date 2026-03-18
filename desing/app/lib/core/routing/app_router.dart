@@ -12,14 +12,30 @@ import '../../features/booking/booking_success_view.dart';
 import '../../features/booking/booking_cancel_view.dart';
 import '../../features/booking/request_sent_view.dart';
 import '../../features/planner/ai_trip_planner_view.dart';
+import '../../features/planner/ai_plan_detail_view.dart';
 import '../../features/feed/feed_view.dart';
 import '../../features/feed/create_post_view.dart';
+import '../../features/feed/post_detail_view.dart';
 import '../../features/profile/profile_view.dart';
+import '../../features/profile/settings_view.dart';
+import '../../features/profile/saved_items_view.dart';
+import '../../features/profile/my_plans_view.dart';
+import '../../features/profile/my_requests_view.dart';
 import '../../features/profile/host_profile_view.dart';
 import '../../features/host/trust_center_view.dart';
 import '../../features/host/stays_management_view.dart';
+import '../../features/host/become_host_view.dart';
+import '../../features/host/host_dashboard_view.dart';
+import '../../features/host/host_requests_view.dart';
 import '../../features/admin/admin_dashboard_view.dart';
+import '../../features/admin/admin_hosts_view.dart';
+import '../../features/admin/admin_posts_view.dart';
+import '../../features/admin/admin_reviews_view.dart';
+import '../../features/admin/admin_brand_view.dart';
+import '../../features/admin/admin_audit_view.dart';
 import '../../features/auth/login_view.dart';
+import '../../features/auth/register_view.dart';
+import '../../features/auth/forgot_password_view.dart';
 
 /// ROUTING_FINAL.md Compliant Router Configuration
 ///
@@ -222,8 +238,8 @@ final GoRouter appRouter = GoRouter(
                   path: ':planId',
                   name: 'plan-detail',
                   builder: (context, state) {
-                    // TODO: Implement AIPlanDetailView
-                    return const AITripPlannerView();
+                    final planId = state.pathParameters['planId']!;
+                    return AIPlanDetailView(planId: planId);
                   },
                 ),
               ],
@@ -250,8 +266,8 @@ final GoRouter appRouter = GoRouter(
                   path: 'post/:postId',
                   name: 'post-detail',
                   builder: (context, state) {
-                    // TODO: Implement PostDetailView
-                    return const FeedView();
+                    final postId = state.pathParameters['postId']!;
+                    return PostDetailView(postId: postId);
                   },
                 ),
               ],
@@ -271,37 +287,25 @@ final GoRouter appRouter = GoRouter(
                 GoRoute(
                   path: 'settings',
                   name: 'profile-settings',
-                  builder: (context, state) {
-                    // TODO: Implement SettingsView
-                    return const ProfileView();
-                  },
+                  builder: (context, state) => const SettingsView(),
                 ),
                 // My plans
                 GoRoute(
                   path: 'plans',
                   name: 'my-plans',
-                  builder: (context, state) {
-                    // TODO: Implement MyPlansView
-                    return const ProfileView();
-                  },
+                  builder: (context, state) => const MyPlansView(),
                 ),
                 // Saved items
                 GoRoute(
                   path: 'saved',
                   name: 'saved-items',
-                  builder: (context, state) {
-                    // TODO: Implement SavedItemsView
-                    return const ProfileView();
-                  },
+                  builder: (context, state) => const SavedItemsView(),
                 ),
                 // My booking requests
                 GoRoute(
                   path: 'requests',
                   name: 'my-requests',
-                  builder: (context, state) {
-                    // TODO: Implement MyRequestsView
-                    return const ProfileView();
-                  },
+                  builder: (context, state) => const MyRequestsView(),
                 ),
               ],
             ),
@@ -319,18 +323,12 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: '/auth/register',
       name: 'register',
-      builder: (context, state) {
-        // TODO: Implement RegisterView
-        return const LoginView();
-      },
+      builder: (context, state) => const RegisterView(),
     ),
     GoRoute(
       path: '/auth/forgot',
       name: 'forgot-password',
-      builder: (context, state) {
-        // TODO: Implement ForgotPasswordView
-        return const LoginView();
-      },
+      builder: (context, state) => const ForgotPasswordView(),
     ),
 
     // ============= Booking Routes - Section 4.1, 4.2 =============
@@ -390,10 +388,7 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: '/host',
       name: 'host-dashboard',
-      builder: (context, state) {
-        // TODO: Implement HostDashboardView
-        return const ProfileView();
-      },
+      builder: (context, state) => const HostDashboardView(),
       routes: [
         GoRoute(
           path: 'trust',
@@ -413,8 +408,7 @@ final GoRouter appRouter = GoRouter(
           path: 'requests',
           name: 'host-requests',
           builder: (context, state) {
-            // TODO: Implement HostRequestsView
-            return const ProfileView();
+            return const HostRequestsView();
           },
         ),
       ],
@@ -424,10 +418,7 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: '/become-host',
       name: 'become-host',
-      builder: (context, state) {
-        // TODO: Implement BecomeHostView
-        return const ProfileView();
-      },
+      builder: (context, state) => const BecomeHostView(),
     ),
 
     // ============= Admin Routes - Section 2.4 (Auth + Admin) =============
@@ -449,42 +440,27 @@ final GoRouter appRouter = GoRouter(
         GoRoute(
           path: 'hosts',
           name: 'admin-hosts',
-          builder: (context, state) {
-            // TODO: Implement AdminHostsView
-            return const AdminDashboardView();
-          },
+          builder: (context, state) => const AdminHostsView(),
         ),
         GoRoute(
           path: 'posts',
           name: 'admin-posts',
-          builder: (context, state) {
-            // TODO: Implement AdminPostsView
-            return const AdminDashboardView();
-          },
+          builder: (context, state) => const AdminPostsView(),
         ),
         GoRoute(
           path: 'reviews',
           name: 'admin-reviews',
-          builder: (context, state) {
-            // TODO: Implement AdminReviewsView
-            return const AdminDashboardView();
-          },
+          builder: (context, state) => const AdminReviewsView(),
         ),
         GoRoute(
           path: 'brand',
           name: 'admin-brand',
-          builder: (context, state) {
-            // TODO: Implement AdminBrandView
-            return const AdminDashboardView();
-          },
+          builder: (context, state) => const AdminBrandView(),
         ),
         GoRoute(
           path: 'audit',
           name: 'admin-audit',
-          builder: (context, state) {
-            // TODO: Implement AdminAuditView
-            return const AdminDashboardView();
-          },
+          builder: (context, state) => const AdminAuditView(),
         ),
       ],
     ),
