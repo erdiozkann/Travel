@@ -1,0 +1,15 @@
+{
+  "name": "travel-seed-scripts",
+  "version": "1.0.0",
+  "description": "Data seeding scripts for Travel App",
+  "scripts": {
+    "seed": "node seed_foursquare.js",
+    "seed:dry": "node seed_foursquare.js --dry-run"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
