@@ -38,8 +38,14 @@ class _RegisterViewState extends State<RegisterView> {
       setState(() => _errorMessage = 'Please fill in all fields.');
       return;
     }
-    if (password.length < 6) {
-      setState(() => _errorMessage = 'Password must be at least 6 characters.');
+    if (password.length < 8) {
+      setState(() => _errorMessage = 'Password must be at least 8 characters.');
+      return;
+    }
+    final hasLetter = RegExp(r'[a-zA-Z]').hasMatch(password);
+    final hasDigit = RegExp(r'[0-9]').hasMatch(password);
+    if (!hasLetter || !hasDigit) {
+      setState(() => _errorMessage = 'Password must contain both letters and numbers.');
       return;
     }
 
@@ -169,7 +175,7 @@ class _RegisterViewState extends State<RegisterView> {
             obscureText: _obscurePassword,
             decoration: InputDecoration(
               labelText: 'Password',
-              helperText: 'At least 6 characters',
+              helperText: 'Min 8 characters, include letters and numbers',
               border: const OutlineInputBorder(),
               prefixIcon: const Icon(Icons.lock_outline),
               suffixIcon: IconButton(

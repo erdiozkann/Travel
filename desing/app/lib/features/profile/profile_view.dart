@@ -78,12 +78,23 @@ class _ProfileViewState extends State<ProfileView>
     });
 
     try {
-      // Fetch profile (per 6.1 Read Operations)
-      final profileResponse = await Supabase.instance.client
-          .from('profiles')
+      // Fetch profile from 'users' table
+      Map<String, dynamic>? profileResponse = await Supabase.instance.client
+          .from('users')
           .select()
-          .eq('user_id', _targetUserId!)
+          .eq('id', _targetUserId!)
           .maybeSingle();
+
+      // If no profile row yet, create a mock profile so UI never breaks
+      profileResponse ??= {
+        'id': _targetUserId,
+        'display_name': Supabase.instance.client.auth.currentUser?.email
+                ?.split('@')
+                .first ?? 'Traveler',
+        'avatar_url': null,
+        'bio': null,
+        'home_country': null,
+      };
 
       // Fetch stats (aggregated counts)
       final postCountResponse = await Supabase.instance.client

@@ -47,6 +47,16 @@ class AuthService {
     return _auth.signUp(email: email, password: password, data: data);
   }
 
+  // ─── Social Sign In ───────────────────────────────────────────────────────
+
+  /// Google OAuth sign-in.
+  static Future<void> signInWithGoogle() async {
+    await _auth.signInWithOAuth(
+      OAuthProvider.google,
+      redirectTo: kIsWeb ? null : 'io.supabase.travel://login-callback',
+    );
+  }
+
   // ─── Password Reset ───────────────────────────────────────────────────────
 
   /// Sends a password-reset link to [email].
@@ -77,7 +87,7 @@ class AuthService {
       return 'An account with this email already exists. Please sign in.';
     }
     if (msg.contains('weak password') || msg.contains('password')) {
-      return 'Password must be at least 6 characters.';
+      return 'Password must be at least 8 characters and include letters and numbers.';
     }
     if (msg.contains('rate limit')) {
       return 'Too many attempts. Please wait a moment before trying again.';
