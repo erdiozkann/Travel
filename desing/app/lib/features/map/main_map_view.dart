@@ -121,7 +121,7 @@ class _MainMapViewState extends State<MainMapView> {
           .select(
             'id, title, price_min, price_max, currency, rating, review_count, category, lat, lng, is_sponsored, media_urls',
           )
-          .eq('status', 'active'); // Use status instead of is_active
+          .eq('status', 'active');
 
       if (_selectedCityId != null) {
         query = query.eq('city_id', _selectedCityId!);
@@ -130,11 +130,38 @@ class _MainMapViewState extends State<MainMapView> {
       final response = await query.limit(50);
       return List<Map<String, dynamic>>.from(response);
     } catch (e) {
-      // Fallback without status filter
+      debugPrint('_fetchExperiences error: $e');
+      return [];
+    }
+  }
+
+  Future<List<Map<String, dynamic>>> _fetchStays() async {
+    try {
       dynamic query = Supabase.instance.client
-          .from('experiences')
+          .from('stays')
           .select(
-            'id, title, price_min, price_max, currency, rating, review_count, category, lat, lng, media_urls',
+            'id, title, price_min, price_max, currency, rating, review_count, lat, lng, is_sponsored, media_urls',
+          )
+          .eq('status', 'active');
+
+      if (_selectedCityId != null) {
+        query = query.eq('city_id', _selectedCityId!);
+      }
+
+      final response = await query.limit(50);
+      return List<Map<String, dynamic>>.from(response);
+    } catch (e) {
+      debugPrint('_fetchStays error: $e');
+      return [];
+    }
+  }
+
+  Future<List<Map<String, dynamic>>> _fetchPlaces() async {
+    try {
+      dynamic query = Supabase.instance.client
+          .from('places')
+          .select(
+            'id, name, category, price_level, rating, review_count, lat, lng, is_sponsored, media_urls',
           );
 
       if (_selectedCityId != null) {
@@ -143,38 +170,10 @@ class _MainMapViewState extends State<MainMapView> {
 
       final response = await query.limit(50);
       return List<Map<String, dynamic>>.from(response);
+    } catch (e) {
+      debugPrint('_fetchPlaces error: $e');
+      return [];
     }
-  }
-
-  Future<List<Map<String, dynamic>>> _fetchStays() async {
-    dynamic query = Supabase.instance.client
-        .from('stays')
-        .select(
-          'id, title, price_min, price_max, currency, rating, review_count, lat, lng, is_sponsored, media_urls',
-        )
-        .eq('status', 'active');
-
-    if (_selectedCityId != null) {
-      query = query.eq('city_id', _selectedCityId!);
-    }
-
-    final response = await query.limit(50);
-    return List<Map<String, dynamic>>.from(response);
-  }
-
-  Future<List<Map<String, dynamic>>> _fetchPlaces() async {
-    dynamic query = Supabase.instance.client
-        .from('places')
-        .select(
-          'id, name, category, price_level, rating, review_count, lat, lng, is_sponsored, media_urls',
-        );
-
-    if (_selectedCityId != null) {
-      query = query.eq('city_id', _selectedCityId!);
-    }
-
-    final response = await query.limit(50);
-    return List<Map<String, dynamic>>.from(response);
   }
 
   void _onPinTapped(Map<String, dynamic> pin) {

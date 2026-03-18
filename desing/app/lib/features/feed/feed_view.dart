@@ -74,13 +74,10 @@ class _FeedViewState extends State<FeedView> {
             is_sponsored,
             sponsor_name,
             sponsor_cta,
-            profiles:user_id (
+            users!user_id (
               id,
               display_name,
               avatar_url
-            ),
-            cities:city_id (
-              name
             )
           ''')
           .eq('is_public', true)
@@ -97,15 +94,15 @@ class _FeedViewState extends State<FeedView> {
 
         final saves = await Supabase.instance.client
             .from('saved_items')
-            .select('target_id')
+            .select('tagged_id')
             .eq('user_id', user.id)
-            .eq('target_type', 'post');
+            .eq('tagged_type', 'post');
 
         for (final like in likes) {
           _likedPosts.add(like['post_id'] as String);
         }
         for (final save in saves) {
-          _savedPosts.add(save['target_id'] as String);
+          _savedPosts.add(save['tagged_id'] as String);
         }
       }
 
@@ -135,8 +132,7 @@ class _FeedViewState extends State<FeedView> {
           .select('''
             id, caption, media_urls, city_id, tagged_type, tagged_id,
             is_public, created_at, is_sponsored, sponsor_name, sponsor_cta,
-            profiles:user_id ( id, display_name, avatar_url ),
-            cities:city_id ( name )
+            users!user_id ( id, display_name, avatar_url )
           ''')
           .eq('is_public', true)
           .lt('created_at', lastCreatedAt ?? DateTime.now().toIso8601String())
@@ -225,13 +221,13 @@ class _FeedViewState extends State<FeedView> {
             .from('saved_items')
             .delete()
             .eq('user_id', user.id)
-            .eq('target_id', postId)
-            .eq('target_type', 'post');
+            .eq('tagged_id', postId)
+            .eq('tagged_type', 'post');
       } else {
         await Supabase.instance.client.from('saved_items').insert({
           'user_id': user.id,
-          'target_id': postId,
-          'target_type': 'post',
+          'tagged_id': postId,
+          'tagged_type': 'post',
         });
       }
     } catch (e) {
@@ -331,16 +327,19 @@ class _FeedViewState extends State<FeedView> {
           }
 
           final post = _posts[index];
-          return _buildPostCard(post);
+          final profile = post['users'] as Map<String, dynamic>?;
+          return _buildPostCard(post, profile);
         },
       ),
     );
   }
 
-  Widget _buildPostCard(Map<String, dynamic> post) {
+  Widget _buildPostCard(
+    Map<String, dynamic> post, [
+    Map<String, dynamic>? profileOverride,
+  ]) {
     final postId = post['id'] as String;
-    final profile = post['profiles'] as Map<String, dynamic>?;
-    final city = post['cities'] as Map<String, dynamic>?;
+    final profile = profileOverride ?? post['users'] as Map<String, dynamic>?;
     final mediaUrls =
         (post['media_urls'] as List<dynamic>?)
             ?.map((e) => e.toString())
@@ -353,7 +352,7 @@ class _FeedViewState extends State<FeedView> {
       avatarUrl: profile?['avatar_url'],
       caption: post['caption'],
       mediaUrls: mediaUrls,
-      locationCity: city?['name'],
+      locationCity: null, // city join removed (no FK in schema cache)
       taggedEntityName: null, // TODO: Fetch from tagged_id
       taggedEntityType: post['tagged_type'],
       likeCount: 0, // TODO: Aggregate from likes table
